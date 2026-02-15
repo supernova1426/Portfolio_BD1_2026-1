@@ -2,35 +2,35 @@
 
 
 .primary {
-  color: #7836cf;
+  color: #3e36cf;
 }
 .secondary {
-  color: #512092;
+  color: #352092;
 }
 .bg-primary {
-  background-color: #7836cf;
+  background-color: #4536cf;
 }
 .bg-secondary {
-  background-color: #512092;
+  background-color: #242092;
 }
 .text-primary {
-  color: #7836cf;
+  color: #3636cf;
 }
 
 /* reglas hover (usar estas clases directamente) */
 .hover-text-secondary:hover {
-  color: #7836cf;
+  color: #4a36cf;
 }
 .hover-bg-secondary:hover {
-  background-color: #7836cf;
+  background-color: #3636cf;
 }
 .hover\:bg-secondary:hover {
-  background-color: #512092;
+  background-color: #202492;
 }
 .hover\:text-secondary:hover {
-  color: #512092;
+  color: #2b2092;
 }
 
 .text-shadow {
-  text-shadow: 2px 2px 0 #620deb;
+  text-shadow: 2px 2px 0 #230deb;
 }
