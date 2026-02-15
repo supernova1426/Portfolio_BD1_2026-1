@@ -5,7 +5,7 @@ import Title from "../UI/Title.astro";
 import Badge from "../UI/Badge.astro";
 ---
 
-<Section id="about" title="About Me">
+<Section id="about" title="Presentación">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <!-- Photo Column -->
         <div
@@ -14,11 +14,14 @@ import Badge from "../UI/Badge.astro";
         >
             <div class="absolute -inset-1 rounded-2xl"></div>
             <div class="relative">
-                <img
-                    src="/images/jhon-doe.png"
-                    alt={`${PERSONAL_INFO.name} Portrait`}
-                    class="rounded-2xl w-full max-w-sm object-cover"
-                />
+                <video
+  src="public/videos/VideoPresentacion.mp4"
+  class="rounded-2xl w-full max-w-sm object-cover"
+  autoplay
+  muted
+  loop
+  playsinline
+></video>
             </div>
         </div>
 
@@ -30,7 +33,7 @@ import Badge from "../UI/Badge.astro";
             <p
                 class="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
             >
-                Hi! I'm <span class="text-white font-semibold"
+                Hola yo soy <span class="text-white font-semibold"
                     >{PERSONAL_INFO.name}</span
                 >,
                 {PERSONAL_INFO.description}
