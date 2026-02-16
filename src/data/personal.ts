@@ -1,6 +1,6 @@
 export const PERSONAL_INFO = {
     name: "Daniela Serrato",
-    title: "PRESENTACIÓN",
+    title: "Un gusto",
     description: "Este es mi portafolio académico para la asignatura Bases de Datos I.",
     journey: "Soy estudiante de Ingeniería de Sistemas y actualmente curso cuarto semestre, con interés en la programación y la tecnología.",
     skills: [
