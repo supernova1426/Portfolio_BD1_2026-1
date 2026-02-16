@@ -23,21 +23,12 @@ export const TAGS = {
 
 export const PROJECTS = [
     {
-        title: "CryptoViz - Real-time Analytics Dashboard",
+        title: "Pronto...",
         description:
-            "A high-performance dashboard for tracking cryptocurrency trends. Features live charts, portfolio management, and automated market alerts.",
-        link: "https://cryptoviz-demo.vercel.app/",
-        github: "https://github.com/jhondoe/cryptoviz",
-        image: "/projects/cryptoviz.webp",
+            "Aqui va la descripcion del Proyecto",
+        link: "Aqui va el link del proyecto (si tiene)",
+        github: "Aqui va el link del repositorio github del proyecto",
+        image: "/projects/proyectimage",
         tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
-    },
-    {
-        title: "EcoEarth - Sustainable E-commerce Platform",
-        description:
-            "A modern eco-friendly marketplace focused on sustainable living. Highly optimized for performance and accessibility, featuring a custom CMS for organic product curation.",
-        link: "https://ecoearth-shop.dev",
-        github: "https://github.com/jhondoe/ecoearth",
-        image: "/projects/ecoearth.webp",
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
-    },
+    }
 ];
