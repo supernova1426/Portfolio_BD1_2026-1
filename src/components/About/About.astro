@@ -15,13 +15,15 @@ import Badge from "../UI/Badge.astro";
             <div class="absolute -inset-1 rounded-2xl"></div>
             <div class="relative">
                 <video
-  src="/videos/presentacion.mp4"
   class="rounded-2xl w-full max-w-sm object-cover"
   autoplay
   muted
   loop
   playsinline
-></video>
+>
+  <source src="videos/presentacion.mp4" type="video/mp4" />
+</video>
+
             </div>
         </div>
 
