@@ -1,25 +1,16 @@
-<div class="relative min-h-screen overflow-hidden bg-black">
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header/Header.astro";
+import StatsBanner from "../components/Banners/StatsBanner.astro";
+import About from "../components/About/About.astro";
+import Projects from "../components/Proyect/Projects.astro";
+import Contact from "../components/Contact/Contact.astro";
+---
 
-  <!-- Fondo estrellado -->
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
-
-  <!-- Contenido -->
-  <section id="modeling" class="relative z-10 py-20 px-6">
-    <h3 class="text-2xl font-semibold text-secondary mb-4">
-      Modelado
-    </h3>
-
-    <p class="text-gray-300 max-w-3xl">
-      En esta sección se presentarán las evidencias relacionadas con el
-      modelado de bases de datos, incluyendo diagramas entidad–relación,
-      análisis de requisitos y decisiones de diseño.
-    </p>
-
-    <p class="text-gray-400 italic mt-4">
-      Contenido en construcción.
-    </p>
-  </section>
-
-</div>
+<Layout>
+	<Header />
+	<StatsBanner />
+	<About />
+	<Projects />
+	<Contact />
+</Layout>
