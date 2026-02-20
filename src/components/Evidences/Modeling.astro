@@ -63,28 +63,21 @@ const MODELOS = [
                         </div>
                     </article>
 
-                    <!-- MODAL -->
-                    <dialog
-                        id={`modal-${modelo.name}`}
-                        class="backdrop:bg-black/80 rounded-2xl p-0 border-none max-w-6xl w-full"
-                    >
-                        <form method="dialog" class="relative">
-                            <!-- Cerrar -->
-                            <button
-                                class="absolute top-4 right-4 z-10 text-white bg-black/60 rounded-full p-2 hover:bg-black"
-                                aria-label="Cerrar"
-                            >
-                                ✕
-                            </button>
-
-                            <!-- Imagen tamaño real -->
-                            <img
-                                src={modelo.image}
-                                alt={modelo.name}
-                                class="w-full h-auto rounded-2xl"
-                            />
-                        </form>
-                    </dialog>
+                  <!-- MODAL -->
+<dialog
+  id={`modal-${modelo.name}`}
+  class="backdrop:bg-black/80 p-0 border-none max-w-none w-full h-full"
+  onClick={`event.target === event.currentTarget && event.currentTarget.close()`}
+>
+  <!-- Contenedor centrado -->
+  <div class="flex items-center justify-center w-full h-full p-6">
+    <img
+      src={modelo.image}
+      alt={modelo.name}
+      class="max-w-full max-h-full object-contain rounded-xl shadow-2xl"
+    />
+  </div>
+</dialog>
                 </>
             ))
         }
