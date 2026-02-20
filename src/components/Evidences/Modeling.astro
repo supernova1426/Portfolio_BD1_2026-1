@@ -1,0 +1,57 @@
+---
+import Section from "../UI/Section.astro";
+
+const MODELOS = [
+    {
+        name: "Modelo Biblioteca",
+        description: "Crear un diseño E/R que permita gestionar los datos de una biblioteca de modo que: • Las personas socias de la biblioteca disponen de un código de socio y además necesitar almacenar su cédula, dirección, teléfono, nombre y apellidos. • La biblioteca almacena libros que presta a los socios, de ellos se almacena su título, año en el que se escribió el libro, nombre completo del autor (o autores), año en que se editó, en qué editorial fue y el ISBN. • Necesitamos poder indicar si un libro en la biblioteca está dañado o no.",
+        image: "images/modelobiblioteca.png",
+    },
+    {
+        name: "Modelo Aereolinea",
+        description: "Descripción breve del modelo Beta.",
+        image: "images/modeloaereolinea.png",
+    },
+    {
+        name: "Modelo Beta",
+        description: "Descripción breve del modelo Beta.",
+        image: "/images/modelos/beta.webp",
+    },
+];
+---
+
+<Section id="modelos" title="Modelos" titleClassName="mb-24">
+    <div class="flex flex-col gap-y-32">
+        {
+            MODELOS.map((modelo) => (
+                <article
+                    class="flex flex-col items-center space-y-8 md:flex-row md:space-y-0 md:space-x-16"
+                    data-aos="fade-up"
+                >
+                    <!-- Imagen -->
+                    <div class="w-full md:w-2/5">
+                        <div class="overflow-hidden rounded-2xl border border-white/10 bg-gray-900/50 shadow-2xl transition hover:border-primary/50">
+                            <img
+                                src={modelo.image}
+                                alt={modelo.name}
+                                loading="lazy"
+                                class="w-full aspect-video object-cover transition md:hover:scale-105"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="w-full md:w-3/5">
+                        <h3 class="mb-4 text-3xl font-bold text-white">
+                            {modelo.name}
+                        </h3>
+
+                        <p class="text-lg font-light leading-relaxed text-gray-300">
+                            {modelo.description}
+                        </p>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</Section>
