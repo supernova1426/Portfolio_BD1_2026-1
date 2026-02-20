@@ -66,10 +66,9 @@ const MODELOS = [
                   <!-- MODAL -->
 <dialog
   id={`modal-${modelo.name}`}
-  class="backdrop:bg-black/80 p-0 border-none max-w-none w-full h-full"
+  class="backdrop:bg-black/80 bg-black/60 border-none w-full h-full max-w-none p-0"
   onClick={`event.target === event.currentTarget && event.currentTarget.close()`}
 >
-  <!-- Contenedor centrado -->
   <div class="flex items-center justify-center w-full h-full p-6">
     <img
       src={modelo.image}
