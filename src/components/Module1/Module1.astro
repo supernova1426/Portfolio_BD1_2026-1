@@ -37,11 +37,7 @@ const MODUNO = [
       },
     ],
 
-    <img
-  src="images/modone/aereolinea.png"
-  alt="Aereolinea"
-  class="w-full"
-/>
+    image:"images/modone/aereolinea.png",
   },
 
   {
@@ -98,17 +94,12 @@ const MODUNO = [
           <button
   type="button"
   class="block w-full overflow-hidden"
-  onclick={`document.getElementById('modal-${moduno.name}').showModal()`}
 >
-  {
-    moduno.image?.trim() && (
-      <img
-        src={moduno.image}
-        alt={moduno.name}
-        class="aspect-video w-full object-cover transition duration-500 group-hover:scale-110"
-      />
-    )
-  }
+  <img
+    src={moduno.image}
+    alt={moduno.name}
+    class="w-full"
+  />
 </button>
 
             <!-- Info -->
