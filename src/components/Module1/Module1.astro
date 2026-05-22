@@ -9,10 +9,10 @@ const MODUNO = [
       "El propósito de esta práctica fue diseñar el Modelo Entidad-Relación (MER) para controlar las operaciones diarias de una aerolínea.",
 
     fullDescription:
-      "Se ha planteado la arquitectura de datos para una aerolínea que necesita gestionar el flujo constante entre sus activos físicos (Aviones) y su capital humano (Pilotos y Tripulación). El diseño se centra en la "operación de retorno", asegurando que tanto el personal como las aeronaves tengan una Base asignada para cumplir con mantenimientos y jornadas laborales. Además, se ha integrado la gestión de rutas aéreas definidas por trayectos específicos (origen/destino) y horarios programados.",
+      `Se ha planteado la arquitectura de datos para una aerolínea que necesita gestionar el flujo constante entre sus activos físicos (Aviones) y su capital humano (Pilotos y Tripulación). El diseño se centra en la operación de retorno, asegurando que tanto el personal como las aeronaves tengan una Base asignada para cumplir con mantenimientos y jornadas laborales. Además, se ha integrado la gestión de rutas aéreas definidas por trayectos específicos (origen/destino) y horarios programados.`,
 
     process:
-      "<h2>Análisis de Entidades y Atributos</h2> <br></br>
+      `<h2>Análisis de Entidades y Atributos</h2> <br></br>
       Para modelar esta operación de manera rigurosa, se definieron las siguientes entidades principales con sus respectivos atributos descriptivos:
       <b>AVIÓN:</b> Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota y HorasRegreso para controlar los tiempos de mantenimiento.<br></br>
       <b>PILOTO:</b> Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada. <br></br>
@@ -24,7 +24,7 @@ const MODUNO = [
      <b>Relaciones de Pertenencia hacia la BASE:</b> En lugar de cruzar líneas en una sola relación confusa, se desglosó el retorno en tres conexiones independientes de Muchos a Uno (N:1). Así, la Base ALBERGA muchos Aviones, ADSCRIBE a muchos Pilotos y a ella PERTENECE la Tripulación. Esto indica que muchos recursos están vinculados a un único nodo logístico al cual deben regresar al terminar sus jornadas o ciclos de mantenimiento. <br></br>
      <b>Relación Asigna (AVIÓN - VUELO):</b> Conexión de Uno a Muchos (1:N). Un avión físico puede ser programado para realizar muchos vuelos a lo largo del tiempo, pero un vuelo específico en el itinerario se le asigna a un solo avión. <br></br>
      <b>Relación Comanda (PILOTO - VUELO):</b> Conexión de Uno a Muchos (1:N). Un piloto puede estar al mando de muchos vuelos en su jornada, pero por normatividad, cada vuelo individual es guiado por un único piloto comandante. <br></br>
-     <b>Relación Aborda (TRIPULACIÓN - VUELO):</b> Conexión de Muchos a Muchos (N:M). Bajo la lógica de que varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea. <br></br>",
+     <b>Relación Aborda (TRIPULACIÓN - VUELO):</b> Conexión de Muchos a Muchos (N:M). Bajo la lógica de que varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea. <br></br>`,
 
     skills: [
       "Modelo E/R",
