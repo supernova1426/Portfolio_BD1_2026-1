@@ -133,7 +133,14 @@ const MODUNO = [
             <div class="flex min-h-full items-center justify-center p-6">
 
               <div class="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-white/10 bg-gray-950 shadow-2xl">
-
+            <!-- BOTON CERRAR -->
+            <button
+              type="button"
+             class="absolute right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20 text-2xl font-bold text-red-500 transition hover:scale-110 hover:bg-red-500 hover:text-white"
+            onClick={`document.getElementById('modal-${moduno.name}').close()`}
+             >
+              ×
+            </button>
                 <!-- Imagen -->
                 <img
                   src={moduno.image}
