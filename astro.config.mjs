@@ -8,6 +8,7 @@ export default defineConfig({
   base: '/Portfolio_BD1_2026-1',
   integrations: [icon()],
   vite: {
+    // @ts-ignore
     plugins: [tailwindcss()]
   }
 });
