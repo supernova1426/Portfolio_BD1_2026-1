@@ -76,7 +76,7 @@ const MODUNO = [
       },
     ],
 
-    image: "/images/modeloaereolinea.png",
+    image: "  ",
   },
 ];
 ---
@@ -174,9 +174,10 @@ const MODUNO = [
                       Descripción
                     </h3>
 
-                    <p class="leading-relaxed text-gray-300">
-                      {moduno.fullDescription}
-                    </p>
+                    <div
+  class="leading-relaxed text-gray-300"
+  set:html={moduno.fullDescription}
+/>
                   </div>
 
                   <!-- Proceso -->
@@ -185,9 +186,10 @@ const MODUNO = [
                       Proceso de trabajo
                     </h3>
 
-                    <p class="leading-relaxed text-gray-300">
-                      {moduno.process}
-                    </p>
+                    <div
+  class="leading-relaxed text-gray-300"
+  set:html={moduno.process}
+/>
                   </div>
 
                   <!-- Skills -->
