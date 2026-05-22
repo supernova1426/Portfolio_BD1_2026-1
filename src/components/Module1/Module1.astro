@@ -8,36 +8,7 @@ const MODUNO = [
     shortDescription:
       "El propósito de esta práctica fue diseñar el Modelo Entidad-Relación (MER) para controlar las operaciones diarias de una aerolínea.",
 
-    fullDescription:
-      `Se ha planteado la arquitectura de datos para una aerolínea que necesita gestionar el flujo constante entre sus activos físicos (Aviones) y su capital humano (Pilotos y Tripulación). El diseño se centra en la operación de retorno, asegurando que tanto el personal como las aeronaves tengan una Base asignada para cumplir con mantenimientos y jornadas laborales. Además, se ha integrado la gestión de rutas aéreas definidas por trayectos específicos (origen/destino) y horarios programados.`,
-
-    process:
-      `<h2>Análisis de Entidades y Atributos</h2> <br />
-      Para modelar esta operación de manera rigurosa, se definieron las siguientes entidades principales con sus respectivos atributos descriptivos:
-      <b>AVIÓN:</b> Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota y HorasRegreso para controlar los tiempos de mantenimiento.<br />
-      <b>PILOTO:</b> Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada. <br />
-      <b>TRIPULACIÓN:</b> Al igual que los pilotos, se identifican por un CodigoTripulante (llave primaria) y su nombre también es un atributo compuesto. Se configuró el campo Teléfono como un atributo multivaluado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto. <br />
-      <b>BASE:</b> Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País. <br />
-      <b>VUELO:</b> Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora. <br />
-      
-     <h2>Reglas de Negocio (Relaciones y Cardinalidades)</h2> <br />
-     <b>Relaciones de Pertenencia hacia la BASE:</b> En lugar de cruzar líneas en una sola relación confusa, se desglosó el retorno en tres conexiones independientes de Muchos a Uno (N:1). Así, la Base ALBERGA muchos Aviones, ADSCRIBE a muchos Pilotos y a ella PERTENECE la Tripulación. Esto indica que muchos recursos están vinculados a un único nodo logístico al cual deben regresar al terminar sus jornadas o ciclos de mantenimiento. <br />
-     <b>Relación Asigna (AVIÓN - VUELO):</b> Conexión de Uno a Muchos (1:N). Un avión físico puede ser programado para realizar muchos vuelos a lo largo del tiempo, pero un vuelo específico en el itinerario se le asigna a un solo avión. <br />
-     <b>Relación Comanda (PILOTO - VUELO):</b> Conexión de Uno a Muchos (1:N). Un piloto puede estar al mando de muchos vuelos en su jornada, pero por normatividad, cada vuelo individual es guiado por un único piloto comandante. <br />
-     <b>Relación Aborda (TRIPULACIÓN - VUELO):</b> Conexión de Muchos a Muchos (N:M). Bajo la lógica de que varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea. <br />`,
-
-    skills: [
-      "Modelo E/R",
-    ],
-
-    links: [
-      {
-        name: "Draw.io",
-        url: "#",
-      },
-    ],
-
-    image:"images/modone/aereolinea.png",
+    image: "images/modone/aereolinea.png",
   },
 
   {
@@ -46,203 +17,42 @@ const MODUNO = [
     shortDescription:
       "Modelo relacional para operaciones aéreas.",
 
-    fullDescription:
-      "Sistema orientado a vuelos, pilotos, tripulación y aviones.",
-
-    process:
-      "Análisis de entidades, cardinalidades y organización relacional.",
-
-    skills: [
-      "Modelo Relacional",
-      "SQL",
-      "Bases de Datos",
-    ],
-
-    links: [
-      {
-        name: "GitHub",
-        url: "#",
-      },
-    ],
-
-    documents: [
-      {
-        name: "Documento PDF",
-        url: "#",
-      },
-    ],
-
     image: "images/modone/aereolinea.png",
   },
 ];
 ---
 
-<Section id="modulos" title="Módulo 1" titleClassName="mb-24">
+<Section id="modulos" title="Módulo 1">
 
-  <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
 
     {
       MODUNO.map((moduno) => (
-         <div>
+        <article
+          class="overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl"
+        >
 
-          <!-- CARD -->
-          <article
-            class="group overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:-translate-y-2 hover:border-primary/40"
-          >
+          <!-- Imagen -->
+          <img
+            src={moduno.image}
+            alt={moduno.name}
+            class="w-full"
+          />
 
-            <!-- Imagen -->
-           <div class="w-full">
-  <button
-    type="button"
-    class="w-full cursor-zoom-in"
-    onclick={`document.getElementById('modal-${moduno.name}').showModal()`}
-  >
-    <div class="overflow-hidden rounded-2xl border border-white/10 bg-gray-900/50 shadow-2xl transition hover:border-primary/50">
-      <img
-        src={moduno.image}
-        alt={moduno.name}
-        loading="lazy"
-        class="w-full object-cover transition md:hover:scale-105"
-      />
-    </div>
-  </button>
-</div>
+          <!-- Contenido -->
+          <div class="p-6 space-y-4">
 
-            <!-- Info -->
-            <div class="space-y-4 p-6">
+            <h2 class="text-2xl font-bold text-white">
+              {moduno.name}
+            </h2>
 
-              <h3 class="text-2xl font-bold text-white">
-                {moduno.name}
-              </h3>
+            <p class="text-gray-300">
+              {moduno.shortDescription}
+            </p>
 
-              <p class="text-gray-300">
-                {moduno.shortDescription}
-              </p>
+          </div>
 
-              <button
-                class="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:scale-105"
-                onClick={`document.getElementById('modal-${moduno.name}').showModal()`}
-              >
-                Ver más
-              </button>
-
-            </div>
-          </article>
-
-          <!-- MODAL -->
-          <dialog
-            id={`modal-${moduno.name}`}
-            class="backdrop:bg-black/80 bg-transparent border-none w-full h-full max-w-none p-0"
-            onClick={`event.target === event.currentTarget && event.currentTarget.close()`}
-          >
-
-            <div class="flex min-h-full items-center justify-center p-6">
-
-              <!-- CONTENEDOR -->
-              <div class="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-white/10 bg-gray-950 shadow-2xl">
-
-                <!-- BOTON CERRAR -->
-                <button
-                  type="button"
-                  class="absolute right-6 top-6 z-[999] flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-3xl font-bold text-white shadow-2xl transition hover:scale-110 hover:bg-red-500"
-                  onClick={`document.getElementById('modal-${moduno.name}').close()`}
-                >
-                  ×
-                </button>
-
-                <!-- Imagen -->
-                <img
-                  src={moduno.image}
-                  alt={moduno.name}
-                  class="h-[350px] w-full object-cover"
-                />
-
-                <!-- Contenido -->
-                <div class="space-y-8 p-8">
-
-                  <!-- Título -->
-                  <div>
-                    <h2 class="text-4xl font-bold text-white">
-                      {moduno.name}
-                    </h2>
-                  </div>
-
-                  <!-- Descripción -->
-                  <div>
-                    <h3 class="mb-2 text-xl font-semibold text-primary">
-                      Descripción
-                    </h3>
-
-                    <div
-  class="leading-relaxed text-gray-300"
-  set:html={moduno.fullDescription}
-/>
-                  </div>
-
-                  <!-- Proceso -->
-                  <div>
-                    <h3 class="mb-2 text-xl font-semibold text-primary">
-                      Proceso de trabajo
-                    </h3>
-
-                    <div
-  class="leading-relaxed text-gray-300"
-  set:html={moduno.process}
-/>
-                  </div>
-
-                  <!-- Skills -->
-                  <div>
-                    <h3 class="mb-4 text-xl font-semibold text-primary">
-                      Conocimientos aplicados
-                    </h3>
-
-                    <div class="flex flex-wrap gap-3">
-                      {
-                        moduno.skills.map((skill) => (
-                          <span class="rounded-full bg-primary/20 px-4 py-2 text-sm text-primary">
-                            {skill}
-                          </span>
-                        ))
-                      }
-                    </div>
-                  </div>
-
-                  <!-- Links -->
-                  <div class="flex flex-wrap gap-4">
-
-                    {
-                      moduno.links.map((link) => (
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          class="rounded-xl bg-white/10 px-5 py-3 text-white transition hover:bg-primary"
-                        >
-                          {link.name}
-                        </a>
-                      ))
-                    }
-
-                    {
-                      moduno.documents?.map((doc) => (
-                        <a
-                          href={doc.url}
-                          target="_blank"
-                          class="rounded-xl border border-white/20 px-5 py-3 text-white transition hover:border-primary"
-                        >
-                          {doc.name}
-                        </a>
-                      ))
-                    }
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </dialog>
-
-        </div>
+        </article>
       ))
     }
 
