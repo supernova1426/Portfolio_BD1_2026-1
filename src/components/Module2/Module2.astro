@@ -1,0 +1,243 @@
+---
+import Section from "../UI/Section.astro";
+
+const MODDOS = [
+  {
+    name: "Modelo Biblioteca",
+
+    shortDescription:
+      "Sistema E/R para gestión bibliotecaria.",
+
+    fullDescription:
+      "Diseño completo orientado a préstamos, socios y control de libros dañados.",
+
+    process:
+      "Análisis de requerimientos, identificación de entidades, relaciones y normalización.",
+
+    skills: [
+      "Modelo E/R",
+      "Normalización",
+      "Bases de Datos",
+    ],
+
+    links: [
+      {
+        name: "GitHub",
+        url: "#",
+      },
+    ],
+
+    documents: [
+      {
+        name: "Documento PDF",
+        url: "#",
+      },
+    ],
+
+    image: "/images/modelobiblioteca.png",
+  },
+
+  {
+    name: "Modelo Aerolínea",
+
+    shortDescription:
+      "Modelo relacional para operaciones aéreas.",
+
+    fullDescription:
+      "Sistema orientado a vuelos, pilotos, tripulación y aviones.",
+
+    process:
+      "Análisis de entidades, cardinalidades y organización relacional.",
+
+    skills: [
+      "Modelo Relacional",
+      "SQL",
+      "Bases de Datos",
+    ],
+
+    links: [
+      {
+        name: "GitHub",
+        url: "#",
+      },
+    ],
+
+    documents: [
+      {
+        name: "Documento PDF",
+        url: "#",
+      },
+    ],
+
+    image: "/images/modeloaereolinea.png",
+  },
+];
+---
+
+<Section id="modulos" title="Módulo 2" titleClassName="mb-24">
+
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
+
+    {
+      MODDOS.map((moddos) => (
+        <>
+
+          <!-- CARD -->
+          <article
+            class="group overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:-translate-y-2 hover:border-primary/40"
+          >
+
+            <!-- Imagen -->
+            <button
+              type="button"
+              class="w-full"
+              onClick={`document.getElementById('modal-${moddos.name}').showModal()`}
+            >
+              <div class="overflow-hidden">
+                <img
+                  src={moddos.image}
+                  alt={moddos.name}
+                  class="aspect-video w-full object-cover transition duration-500 group-hover:scale-110"
+                />
+              </div>
+            </button>
+
+            <!-- Info -->
+            <div class="space-y-4 p-6">
+
+              <h3 class="text-2xl font-bold text-white">
+                {moddos.name}
+              </h3>
+
+              <p class="text-gray-300">
+                {moddos.shortDescription}
+              </p>
+
+              <button
+                class="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:scale-105"
+                onClick={`document.getElementById('modal-${moddos.name}').showModal()`}
+              >
+                Ver más
+              </button>
+
+            </div>
+          </article>
+
+          <!-- MODAL -->
+          <dialog
+            id={`modal-${moddos.name}`}
+            class="backdrop:bg-black/80 bg-transparent border-none w-full h-full max-w-none p-0"
+            onClick={`event.target === event.currentTarget && event.currentTarget.close()`}
+          >
+
+            <div class="flex min-h-full items-center justify-center p-6">
+
+              <!-- CONTENEDOR -->
+              <div class="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-white/10 bg-gray-950 shadow-2xl">
+
+                <!-- BOTON CERRAR -->
+                <button
+                  type="button"
+                  class="absolute right-6 top-6 z-[999] flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-3xl font-bold text-white shadow-2xl transition hover:scale-110 hover:bg-red-500"
+                  onClick={`document.getElementById('modal-${moddos.name}').close()`}
+                >
+                  ×
+                </button>
+
+                <!-- Imagen -->
+                <img
+                  src={moddos.image}
+                  alt={moddos.name}
+                  class="h-[350px] w-full object-cover"
+                />
+
+                <!-- Contenido -->
+                <div class="space-y-8 p-8">
+
+                  <!-- Título -->
+                  <div>
+                    <h2 class="text-4xl font-bold text-white">
+                      {moddos.name}
+                    </h2>
+                  </div>
+
+                  <!-- Descripción -->
+                  <div>
+                    <h3 class="mb-2 text-xl font-semibold text-primary">
+                      Descripción
+                    </h3>
+
+                    <p class="leading-relaxed text-gray-300">
+                      {moddos.fullDescription}
+                    </p>
+                  </div>
+
+                  <!-- Proceso -->
+                  <div>
+                    <h3 class="mb-2 text-xl font-semibold text-primary">
+                      Proceso de trabajo
+                    </h3>
+
+                    <p class="leading-relaxed text-gray-300">
+                      {moddos.process}
+                    </p>
+                  </div>
+
+                  <!-- Skills -->
+                  <div>
+                    <h3 class="mb-4 text-xl font-semibold text-primary">
+                      Conocimientos aplicados
+                    </h3>
+
+                    <div class="flex flex-wrap gap-3">
+                      {
+                        moddos.skills.map((skill) => (
+                          <span class="rounded-full bg-primary/20 px-4 py-2 text-sm text-primary">
+                            {skill}
+                          </span>
+                        ))
+                      }
+                    </div>
+                  </div>
+
+                  <!-- Links -->
+                  <div class="flex flex-wrap gap-4">
+
+                    {
+                      moddos.links.map((link) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          class="rounded-xl bg-white/10 px-5 py-3 text-white transition hover:bg-primary"
+                        >
+                          {link.name}
+                        </a>
+                      ))
+                    }
+
+                    {
+                      moddos.documents.map((doc) => (
+                        <a
+                          href={doc.url}
+                          target="_blank"
+                          class="rounded-xl border border-white/20 px-5 py-3 text-white transition hover:border-primary"
+                        >
+                          {doc.name}
+                        </a>
+                      ))
+                    }
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </dialog>
+
+        </>
+      ))
+    }
+
+  </div>
+
+</Section>
