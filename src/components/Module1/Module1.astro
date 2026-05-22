@@ -97,12 +97,16 @@ const MODUNO = [
               onClick={`document.getElementById('modal-${moduno.name}').showModal()`}
             >
               <div class="overflow-hidden">
+                {
+                 moduno.image && moduno.image.trim() !== "" && (
                 <img
-                  src={moduno.image}
-                  alt={moduno.name}
-                  class="aspect-video w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
+                 src={moduno.image}
+                 alt={moduno.name}
+                 class="aspect-video w-full object-cover transition duration-500 group-hover:scale-110"
+                 />
+                 )
+                 }
+</div>
             </button>
 
             <!-- Info -->
