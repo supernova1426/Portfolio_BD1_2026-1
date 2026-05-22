@@ -1,5 +1,5 @@
 <dialog
-  id={`modulo1-${modulo1.name}`}
+  id={`modal-${modulo.name}`}
   class="backdrop:bg-black/80 bg-transparent border-none w-full h-full max-w-none p-0"
   onClick={`event.target === event.currentTarget && event.currentTarget.close()`}
 >
@@ -9,8 +9,8 @@
 
       <!-- Imagen -->
       <img
-        src={modulo1.image}
-        alt={modulo1.name}
+        src={modulo.image}
+        alt={modulo.name}
         class="h-[350px] w-full object-cover"
       />
 
@@ -19,7 +19,7 @@
 
         <div>
           <h2 class="text-4xl font-bold text-white">
-            {modulo1.name}
+            {modulo.name}
           </h2>
         </div>
 
@@ -29,7 +29,7 @@
           </h3>
 
           <p class="text-gray-300 leading-relaxed">
-            {modulo1.fullDescription}
+            {modulo.fullDescription}
           </p>
         </div>
 
@@ -39,7 +39,7 @@
           </h3>
 
           <p class="text-gray-300 leading-relaxed">
-            {modulo1.process}
+            {modulo.process}
           </p>
         </div>
 
@@ -50,7 +50,7 @@
 
           <div class="flex flex-wrap gap-3">
             {
-              modulo1.skills.map((skill) => (
+              modulo.skills.map((skill) => (
                 <span class="rounded-full bg-primary/20 px-4 py-2 text-sm text-primary">
                   {skill}
                 </span>
@@ -62,7 +62,7 @@
         <div class="flex flex-wrap gap-4">
 
           {
-            modulo1.links.map((link) => (
+            modulo.links.map((link) => (
               <a
                 href={link.url}
                 target="_blank"
@@ -74,7 +74,7 @@
           }
 
           {
-            modulo1.documents.map((doc) => (
+            modulo.documents.map((doc) => (
               <a
                 href={doc.url}
                 target="_blank"
