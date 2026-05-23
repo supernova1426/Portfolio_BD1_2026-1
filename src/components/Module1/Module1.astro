@@ -3,6 +3,7 @@ import Section from "../UI/Section.astro";
 
 const MODUNO = [
   {
+    <-- 1. AEREOLINEA --> 
     name: "Ejercicio 1 en Clase_AEREOLINEA",
     shortDescription:
       "El propósito de esta práctica fue diseñar un Modelo Entidad-Relación (MER) sólido y eficiente para controlar las operaciones diarias de una aerolínea.",
@@ -27,9 +28,7 @@ const MODUNO = [
       Relación Aborda (TRIPULACIÓN - VUELO): Conexión de Muchos a Muchos (N:M). Varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea.\n`,
 
     process:
-      `1. Análisis Crítico: Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n
-      2. Prevención de Redundancias: Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n
-      3. Estructuración Semántica y Digitalización: Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
+      `1. Análisis Crítico: Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n2. Prevención de Redundancias: Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n3. Estructuración Semántica y Digitalización: Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
 
     links: [
       { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1DgBU0lWG01YNXXNIAARiruJyB5dDWwut/view?usp=sharing" },
@@ -37,6 +36,7 @@ const MODUNO = [
 
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
+  <-- 2. BILIOTECA -->
   {
     name: "Ejercicio 2 en Clase_BIBLIOTECA",
     shortDescription: "Se ha planteado como objetivo principal diseñar un modelo Entidad-Relación óptimo y normalizado que automatice el control de inventario, la autoría y el flujo de préstamos de la biblioteca.",
@@ -57,13 +57,44 @@ const MODUNO = [
       Relación de Préstamo: Se ha planteado como la conexión entre Socio y Libro. Se ha definido con una cardinalidad de Uno a Muchos (1:N), partiendo de la restricción física de que un ejemplar de libro solo puede estar en posesión de un socio a la vez, aunque un socio pueda tener varios libros bajo su responsabilidad.\n`,  
 
     process:
-      `1. Análisis Crítico: Se interpretó el enunciado textual para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que dejar el nombre del autor como un simple texto dentro de la entidad Libro congelaría la base de datos y causaría inconsistencias masivas cuando un escritor publicara múltiples obras.\n
-      2. Prevención de Redundancias: Se tomó una decisión de diseño clave al determinar que los datos de la temporalidad (fechas de inicio, fin y devolución) no debían ir dentro de las entidades estáticas de Socio o Libro. Al elevar estos atributos directamente al rombo de la relación PRÉSTAMO, se garantizó la independencia de los históricos transaccionales, permitiendo que un libro sea prestado infinitas veces en el tiempo sin duplicar la información del inventario.\n
-      3. Estructuración Semántica y Digitalización: Se separaron las conexiones de la base en dos verbos claros (Escribir para la autoría y Préstamo para la operación) y se realizó el mapeo final en limpio usando la herramienta digital para lograr una presentación impecable, organizada por colores y sin enredos de líneas, facilitando la lectura de los atributos compuestos y multievaluados.\n`,
+      `1. Análisis Crítico: Se interpretó el enunciado textual para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que dejar el nombre del autor como un simple texto dentro de la entidad Libro congelaría la base de datos y causaría inconsistencias masivas cuando un escritor publicara múltiples obras.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al determinar que los datos de la temporalidad (fechas de inicio, fin y devolución) no debían ir dentro de las entidades estáticas de Socio o Libro. Al elevar estos atributos directamente al rombo de la relación PRÉSTAMO, se garantizó la independencia de los históricos transaccionales, permitiendo que un libro sea prestado infinitas veces en el tiempo sin duplicar la información del inventario.\n3. Estructuración Semántica y Digitalización: Se separaron las conexiones de la base en dos verbos claros (Escribir para la autoría y Préstamo para la operación) y se realizó el mapeo final en limpio usando la herramienta digital para lograr una presentación impecable, organizada por colores y sin enredos de líneas, facilitando la lectura de los atributos compuestos y multievaluados.\n`,
     links: [
       { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1qYQh-jPekDigvccEAYjN1_CCn9q4_n6L/view?usp=sharing" },
     ],
     image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
+  },
+<-- TALLER MER - RE 2 -->
+<-- PAQUETERIA -->
+  {
+    name: "Taller MER-RE Ejercicio 1 PAQUETERIA",
+    shortDescription:
+      "El propósito de esta práctica fue diseñar un Modelo Entidad-Relación (MER) sólido y eficiente para una empresa de transporte y logística en Colombia.",
+
+    fullDescription:
+      "Se ha planteado la arquitectura de datos para una empresa de transporte encargada de distribuir mercancía a nivel nacional. El diseño se enfoca en tres pilares operativos: el control del personal (Conductores) y sus herramientas de trabajo (Camiones), el seguimiento individual de la carga (Paquetes) con sus respectivas direcciones de destino, y la organización geográfica de las entregas vinculando de forma precisa cada paquete con la Ciudad correspondiente.",
+
+    analysis:
+      `Entidades y Atributos\n
+      Para modelar esta operación de transporte de manera rigurosa, se definieron las siguientes entidades principales con sus atributos descriptivos: \n
+      CONDUCTOR: Se ha establecido el Número de Cédula de Ciudadanía como su llave primaria única. Incluye atributos para su información personal y laboral como Nombre, Teléfono, Dirección, Salario y la Ciudad en la que vive.\n
+      CAMIÓN: Se identifica mediante la Matrícula como llave primaria. Cuenta con los atributos descriptivos Modelo, Tipo y Potencia para clasificar la flota de vehículos.\n
+      PAQUETE: Se define mediante un Código de paquete único como llave primaria. Interesa conocer su Descripción, el Destinatario y la Dirección de Destino para garantizar la entrega.\n
+      CIUDAD: Funciona como el nodo geográfico del destino. Se identifica con un Código de Ciudad como llave primaria y cuenta con el atributo Nombre.\n
+      
+      Relaciones y Cardinalidades\n
+      La dinámica de distribución de la empresa se resolvió mediante conexiones lógicas bien definidas, estableciendo el comportamiento exacto de los datos en el sistema:\n
+      Relación Conducir (CONDUCTOR - CAMIÓN): Conexión de Muchos a Muchos (N:M) debido a una regla de negocio explícita: un conductor puede manejar diferentes camiones en fechas distintas, y un camión puede ser operado por varios conductores a lo largo del tiempo.\n
+      Relación Distribuir (CONDUCTOR - PAQUETE): Conexión de Uno a Muchos (1:M). Un conductor se encarga de cargar y distribuir muchos paquetes en su ruta, pero cada paquete individual en el sistema está asignado y bajo la responsabilidad de un único conductor.\n
+      Relación Llegar (PAQUETE - CIUDAD): Conexión de Muchos a Uno (M:1). Un paquete específico va dirigido obligatoriamente a una única ciudad de destino, mientras que a una misma ciudad pueden llegar múltiples paquetes en diferentes despachos.\n`,
+
+    process:
+      `1. Extracción de Lógica de Fechas: Al analizar el enunciado, se identificó que la conexión entre conductores y camiones cambia con el tiempo ("fechas diferentes"). En la reducción a tablas, esto implica que la tabla intermedia generada por la relación Muchos a Muchos debe incluir un campo de fecha para registrar el historial sin sobreescribir datos.\n2. Evitar Enredos Geográficos: Se tomó la decisión correcta de mantener separados el atributo de la ciudad donde vive el conductor (que es solo un texto descriptivo en su ficha personal) de la entidad CIUDAD de destino. Esto evita que el sistema confunda el lugar de residencia del empleado con el lugar físico a donde se debe entregar la mercancía.\n3. Modelado Limpio y Digitalización: Mapeo de las dependencias de los paquetes (que dependen tanto de quién los lleva como de a dónde van) y traslado final del bosquejo a una herramienta digital profesional con colores organizados y una distribución de nodos simétrica para facilitar su comprensión.`,
+
+    links: [
+      { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing" },
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/paqueteria.png",
   },
 ];
 ---
