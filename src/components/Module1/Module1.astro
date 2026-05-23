@@ -401,9 +401,200 @@ const MODUNO = [
 
   image: "/Portfolio_BD1_2026-1/images/modone/universidad.png",
 },
-//TALLERES ENTREGADOS
+
+//TALLER ENTREGADO
 ];
 ---
+const TALLER_ENTREGADO = [
+
+  // EJERCICIO 1
+  {
+    name: "Ejercicio 1 - Residuos Tóxicos",
+
+    shortDescription:
+      "Diseño completo del modelo conceptual y lógico para la gestión de residuos tóxicos y peligrosos.",
+
+    topic:
+      "MER • MER-E • Crow's Foot",
+
+    exerciseStatement:
+      `BLOQUE 1: LOS RESIDUOS TÓXICOS
+
+Se desea abordar la problemática ambiental de los residuos tóxicos y peligrosos cuya incorrecta gestión produce daños de gran importancia en el medio ambiente y en la salud del ser humano.
+
+La información a contemplar es la que corresponde desde que es producido el residuo por un centro o empresa productora hasta que éste se encuentra en lugar seguro.
+
+El sistema debe gestionar productores, residuos, empresas transportistas, traslados, envases, tipos de transporte y tratamientos finales.`,
+
+    objective:
+      "Diseñar un modelo conceptual y lógico capaz de representar correctamente el flujo completo de residuos tóxicos.",
+
+    learned:
+      `• Relaciones complejas N:M.\n
+• Uso de entidades débiles.\n
+• Modelado de transporte y logística.\n
+• Conversión de MER a Crow's Foot.\n
+• Aplicación de restricciones semánticas avanzadas.`,
+
+    process:
+      `1. Análisis del enunciado.\n
+2. Identificación de entidades y relaciones.\n
+3. Construcción del MER.\n
+4. Extensión a MER-E.\n
+5. Conversión a Crow's Foot.\n
+6. Documentación final.`,
+
+    tools:
+      `• draw.io\n
+• MySQL Workbench\n`,
+
+    result:
+      "Se obtuvo un modelo completo capaz de representar productores, residuos, transportes y tratamientos.",
+
+    reflection:
+      "Este ejercicio permitió fortalecer el modelado avanzado y el análisis semántico de reglas de negocio complejas.",
+
+    diagrams: [
+      {
+        label: "Modelo MER",
+        url: "LINK_MER"
+      },
+      {
+        label: "Modelo MER-E",
+        url: "LINK_MERE"
+      },
+      {
+        label: "Modelo Crow's Foot",
+        url: "/documentos/residuos-toxicos-crowsfoot.pdf"
+      }
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/residuos.png",
+  },
+
+  // EJERCICIO 2
+  {
+    name: "Ejercicio 2 - Eat'n Go",
+
+    shortDescription:
+      "Sistema de modelado para franquicia internacional de comidas rápidas.",
+
+    topic:
+      "MER • MER-E • Crow's Foot",
+
+    exerciseStatement:
+      `BLOQUE 2: EAT'N GO
+
+Eat'n Go es una empresa internacional dedicada a pizzas, bocadillos y productos complementarios.
+
+El sistema debe controlar ingredientes, tamaños, pedidos, promociones, repartidores, scooters y clientes.`,
+
+    objective:
+      "Representar correctamente la operación comercial y logística de la franquicia.",
+
+    learned:
+      `• Modelado de ventas.\n
+• Manejo de promociones.\n
+• Relaciones ternarias.\n
+• Gestión de pedidos y repartos.\n
+• Conversión a Crow's Foot.`,
+
+    process:
+      `1. Identificación de entidades.\n
+2. Diseño del MER.\n
+3. Construcción del MER-E.\n
+4. Conversión al modelo Crow's Foot.\n
+5. Organización documental.`,
+
+    tools:
+      `• draw.io\n
+• MySQL Workbench\n`,
+
+    result:
+      "Se obtuvo un sistema estructurado para representar ventas, ingredientes, pedidos y logística.",
+
+    reflection:
+      "El ejercicio permitió comprender sistemas comerciales complejos y reglas de negocio extensas.",
+
+    diagrams: [
+      {
+        label: "Modelo MER",
+        url: "LINK_MER"
+      },
+      {
+        label: "Modelo MER-E",
+        url: "LINK_MERE"
+      },
+      {
+        label: "Modelo Crow's Foot",
+        url: "/documentos/eatngo-crowsfoot.pdf"
+      }
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/eatngo.png",
+  },
+
+  // EJERCICIO 3
+  {
+    name: "Ejercicio 3 - Company",
+
+    shortDescription:
+      "Sistema organizacional y administrativo de una compañía multinacional.",
+
+    topic:
+      "MER • MER-E • Crow's Foot",
+
+    exerciseStatement:
+      `BLOQUE 3: LA COMPAÑÍA (COMPANY)
+
+Sistema para gestionar empleados, departamentos, proyectos y dependientes.`,
+
+    objective:
+      "Diseñar un sistema organizacional completo basado en estructuras jerárquicas empresariales.",
+
+    learned:
+      `• Relaciones recursivas.\n
+• Entidades débiles.\n
+• Jerarquías organizacionales.\n
+• Gestión de proyectos.\n
+• Conversión a Crow's Foot.`,
+
+    process:
+      `1. Interpretación del caso.\n
+2. Diseño del MER.\n
+3. Extensión a MER-E.\n
+4. Conversión a Crow's Foot.\n
+5. Validación del modelo.`,
+
+    tools:
+      `• draw.io\n
+• MySQL Workbench\n`,
+
+    result:
+      "Se logró representar correctamente la estructura organizacional y operativa de la empresa.",
+
+    reflection:
+      "El ejercicio fortaleció la comprensión de dependencias, jerarquías y entidades débiles.",
+
+    diagrams: [
+      {
+        label: "Modelo MER",
+        url: "LINK_MER"
+      },
+      {
+        label: "Modelo MER-E",
+        url: "LINK_MERE"
+      },
+      {
+        label: "Modelo Crow's Foot",
+        url: "/documentos/company-crowsfoot.pdf"
+      }
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/company.png",
+  },
+
+];
 
 <Section id="modulos" title="Módulo 1 - MER">
 
@@ -442,6 +633,55 @@ const MODUNO = [
           </div>
 
         </article>
+      ))
+    }
+
+  </div>
+
+</Section>
+
+<!-- TALLER ENTREGADO -->
+<Section
+  id="taller-entregado"
+  title="Taller Entregado"
+>
+
+  <div class="mt-10 space-y-8">
+
+    {
+      TALLER_ENTREGADO.map((taller) => (
+
+        <article
+          class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:scale-[1.01] md:flex-row"
+          onclick={`openModal(${JSON.stringify(taller)})`}
+        >
+
+          <!-- Imagen -->
+          <img
+            src={taller.image}
+            alt={taller.name}
+            class="h-full w-full object-cover md:w-[350px]"
+          />
+
+          <!-- Contenido -->
+          <div class="flex flex-1 flex-col justify-center p-8">
+
+            <h2 class="mb-3 text-3xl font-bold text-white">
+              {taller.name}
+            </h2>
+
+            <p class="mb-4 text-cyan-400">
+              {taller.topic}
+            </p>
+
+            <p class="text-gray-300">
+              {taller.shortDescription}
+            </p>
+
+          </div>
+
+        </article>
+
       ))
     }
 
