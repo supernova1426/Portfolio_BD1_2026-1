@@ -2,6 +2,7 @@
 import Section from "../UI/Section.astro";
 
 const MODUNO = [
+  //AEREOLINEA
   {
     name: "Ejercicio 1 en Clase_AEREOLINEA",
 
@@ -33,9 +34,7 @@ const MODUNO = [
 5. Finalmente, el modelo fue digitalizado y organizado utilizando draw.io.`,
 
     tools:
-      `• draw.io\n
-• app.diagrams.net\n
-• Oracle DataModeler`,
+      `• draw.io\n`,
 
     result:
       "Se obtuvo un modelo MER organizado y coherente que representa adecuadamente la operación logística de una aerolínea, permitiendo visualizar claramente las relaciones entre recursos físicos, personal y vuelos.",
@@ -52,6 +51,7 @@ const MODUNO = [
 
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
+  //BIBLIOTECA
 ];
 ---
 
@@ -326,17 +326,20 @@ const MODUNO = [
       });
     }
 
-    // Mostrar modal
-    document
-      .getElementById("modal")
-      .classList.remove("hidden");
+    // MOSTRAR MODAL CENTRADO
+    const modal = document.getElementById("modal");
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
   }
 
   function closeModal() {
 
-    document
-      .getElementById("modal")
-      .classList.add("hidden");
+    // OCULTAR MODAL
+    const modal = document.getElementById("modal");
+
+    modal.classList.remove("flex");
+    modal.classList.add("hidden");
   }
 
 </script>
