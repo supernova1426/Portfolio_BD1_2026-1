@@ -5,20 +5,35 @@ const MODUNO = [
   {
     name: "Ejercicio 1 en Clase_AEREOLINEA",
     shortDescription:
-      "Diseño del Modelo Entidad-Relación para una aerolínea.",
+      "El propósito de esta práctica fue diseñar un Modelo Entidad-Relación (MER) sólido y eficiente para controlar las operaciones diarias de una aerolínea.",
 
     fullDescription:
-      "Proyecto enfocado en el diseño conceptual de una base de datos para una aerolínea, incluyendo análisis de entidades, relaciones y restricciones.",
+      "Se ha planteado un modelo entidad relacion para una aerolínea que necesita gestionar el flujo constante entre sus activos físicos (Aviones) y su capital humano (Pilotos y Tripulación). El diseño se centra en la operación de retorno, asegurando que tanto el personal como las aeronaves tengan una Base asignada para cumplir con mantenimientos y jornadas laborales. Además, se ha integrado la gestión de rutas aéreas definidas por trayectos específicos (origen/destino) y horarios programados.",
 
     analysis:
-      "Se identificaron entidades clave como Vuelo, Pasajero y Aeronave, analizando sus relaciones y cardinalidades para garantizar consistencia en el modelo.",
+      "<b>Entidades y Atributos</b>\n
+      Para modelar esta operación de manera rigurosa, se definieron las siguientes entidades principales con sus respectivos atributos descriptivos: \n
+      <b>AVIÓN:</b> Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota.\n
+      <b>PILOTO:</b> Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada.\n
+      <b>TRIPULACIÓN:</b> Se identifican por un CodigoTripulante (llave primaria). Se configuró el campo Teléfono como un atributo multivalorado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto.\n
+      <b>BASE:</b> Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País.\n
+      <b>VUELO:</b> Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora./n
+      
+      <b>Relaciones y Cardinalidades</b>\n
+      La dinámica operativa de la aerolínea se resolvió mediante conexiones lógicas binarias, lo que evita enredos en el diagrama y facilita la lectura natural del modelo:\n
+      <b>Relaciones de Pertenencia hacia la BASE:</b> En lugar de cruzar líneas en una sola relación confusa, se desglosó el retorno en tres conexiones independientes de Muchos a Uno (N:1). Así, la Base ALBERGA muchos Aviones, ADSCRIBE a muchos Pilotos y a ella PERTENECE la Tripulación. Esto indica que muchos recursos están vinculados a un único nodo logístico al cual deben regresar al terminar sus jornadas o ciclos de mantenimiento.\n
+      <b>Relación Asigna (AVIÓN - VUELO):</b> Conexión de Uno a Muchos (1:N). Un avión físico puede ser programado para realizar muchos vuelos a lo largo del tiempo, pero un vuelo específico en el itinerario se le asigna a un solo avión.\n
+      <b>Relación Comanda (PILOTO - VUELO):</b> Conexión de Uno a Muchos (1:N). Un piloto puede estar al mando de muchos vuelos en su jornada, pero por normatividad, cada vuelo individual es guiado por un único piloto comandante.\n
+      <b>Relación Aborda (TRIPULACIÓN - VUELO):</b> Conexión de Muchos a Muchos (N:M). Varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea.\n
+      ",
 
     process:
-      "1. Levantamiento de requerimientos\n2. Identificación de entidades\n3. Diseño del MER\n4. Validación del modelo",
+      "<b>1. Análisis Crítico:</b> Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n
+      <b>2. Prevención de Redundancias:</b> Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n
+     <b>3. Estructuración Semántica y Digitalización:<b/> Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.",
 
     links: [
       { label: "Diagrama MER", url: "#" },
-      { label: "Repositorio GitHub", url: "#" },
     ],
 
     docs: [
@@ -40,7 +55,7 @@ const MODUNO = [
     process:
       "1. Conversión MER → Relacional\n2. Normalización\n3. Definición de claves primarias y foráneas",
 
-    image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
+    image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
   },
 ];
 ---
