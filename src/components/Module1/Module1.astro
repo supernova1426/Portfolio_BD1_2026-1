@@ -4,189 +4,54 @@ import Section from "../UI/Section.astro";
 const MODUNO = [
   {
     name: "Ejercicio 1 en Clase_AEREOLINEA",
+
     shortDescription:
-      "El propósito de esta práctica fue diseñar un Modelo Entidad-Relación (MER) sólido y eficiente para controlar las operaciones diarias de una aerolínea.",
+      "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación (MER) para representar la operación básica de una aerolínea y fortalecer el análisis de entidades, relaciones y cardinalidades.",
 
-    fullDescription:
-      "Se ha planteado un modelo entidad relacion para una aerolínea que necesita gestionar el flujo constante entre sus activos físicos (Aviones) y su capital humano (Pilotos y Tripulación). El diseño se centra en la operación de retorno, asegurando que tanto el personal como las aeronaves tengan una Base asignada para cumplir con mantenimientos y jornadas laborales. Además, se ha integrado la gestión de rutas aéreas definidas por trayectos específicos (origen/destino) y horarios programados.",
+    topic:
+      "Modelo Entidad-Relación (MER)",
 
-    analysis:
-      `Entidades y Atributos\n
-      Para modelar esta operación de manera rigurosa, se definieron las siguientes entidades principales con sus respectivos atributos descriptivos: \n
-      AVIÓN: Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota.\n
-      PILOTO: Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada.\n
-      TRIPULACIÓN: Se identifican por un CodigoTripulante (llave primaria). Se configuró el campo Teléfono como un atributo multivalorado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto.\n
-      BASE: Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País.\n
-      VUELO: Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora.\n
-      
-      Relaciones y Cardinalidades\n
-      La dinámica operativa de la aerolínea se resolvió mediante conexiones lógicas binarias, lo que evita enredos en el diagrama y facilita la lectura natural del modelo:\n
-      Relaciones de Pertenencia hacia la BASE: En lugar de cruzar líneas en una sola relación confusa, se desglosó el retorno en tres conexiones independientes de Muchos a Uno (N:1). Así, la Base ALBERGA muchos Aviones, ADSCRIBE a muchos Pilotos y a ella PERTENECE la Tripulación. Esto indica que muchos recursos están vinculados a un único nodo logístico al cual deben regresar al terminar sus jornadas o ciclos de mantenimiento.\n
-      Relación Asigna (AVIÓN - VUELO): Conexión de Uno a Muchos (1:N). Un avión físico puede ser programado para realizar muchos vuelos a lo largo del tiempo, pero un vuelo específico en el itinerario se le asigna a un solo avión.\n
-      Relación Comanda (PILOTO - VUELO): Conexión de Uno a Muchos (1:N). Un piloto puede estar al mando de muchos vuelos en su jornada, pero por normatividad, cada vuelo individual es guiado por un único piloto comandante.\n
-      Relación Aborda (TRIPULACIÓN - VUELO): Conexión de Muchos a Muchos (N:M). Varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea.\n`,
+    objective:
+      "Aplicar los conceptos fundamentales del modelado conceptual mediante el desarrollo de un MER capaz de representar la gestión de vuelos, aviones, pilotos, tripulación y bases operativas.",
+
+    learned:
+      `• Identificación de entidades principales y atributos.\n
+• Uso de llaves primarias para representar entidades únicas.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Manejo de atributos compuestos y multivalorados.\n
+• Organización correcta de procesos operativos dentro de entidades independientes para evitar redundancia.\n
+• Interpretación de reglas de negocio a partir de un caso real.`,
 
     process:
-      `1. Análisis Crítico: Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n2. Prevención de Redundancias: Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n3. Estructuración Semántica y Digitalización: Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
+      `1. Se analizó el problema planteado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para cada entidad.\n
+3. Se establecieron las relaciones entre aviones, vuelos, pilotos, tripulación y bases.\n
+4. Se determinaron las cardinalidades según las reglas del negocio.\n
+5. Finalmente, el modelo fue digitalizado y organizado utilizando draw.io.`,
+
+    tools:
+      `• draw.io\n
+• app.diagrams.net`,
+
+    result:
+      "Se obtuvo un modelo MER organizado y coherente que representa adecuadamente la operación logística de una aerolínea, permitiendo visualizar claramente las relaciones entre recursos físicos, personal y vuelos.",
+
+    reflection:
+      "Este ejercicio permitió fortalecer la comprensión de las cardinalidades y la importancia de separar correctamente las entidades operativas para evitar redundancia en el diseño conceptual.",
 
     links: [
-      { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1DgBU0lWG01YNXXNIAARiruJyB5dDWwut/view?usp=sharing" },
+      {
+        label: "Diagrama MER",
+        url: "https://drive.google.com/file/d/1DgBU0lWG01YNXXNIAARiruJyB5dDWwut/view?usp=sharing",
+      },
     ],
 
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
-
-  {
-    name: "Ejercicio 2 en Clase_BIBLIOTECA",
-    shortDescription: "Se ha planteado como objetivo principal diseñar un modelo Entidad-Relación óptimo y normalizado que automatice el control de inventario, la autoría y el flujo de préstamos de la biblioteca.",
-
-    fullDescription:
-      "Se ha planteado la creación de un sistema de gestión para una biblioteca que requiere un control estricto sobre sus activos y usuarios. El diseño se enfoca en tres ejes: la identificación detallada de los Socios (incluyendo datos de contacto y localización), la gestión del catálogo de Libros (considerando su ciclo de vida desde la creación hasta la edición) y la vinculación con sus respectivos Autores. Un requisito indispensable que se ha integrado es la capacidad de monitorear el estado físico de cada libro para determinar si se encuentra dañado.",
-
-    analysis:
-      `Entidades y Atributos\n
-      Para estructurar la información, se han identificado las siguientes entidades con sus respectivos atributos técnicos:\n
-      SOCIO: Se ha definido como la entidad que representa a los usuarios. Se ha seleccionado el CodigoSocio como llave primaria. El nombre y los apellidos se han planteado como atributos compuestos para mejorar la organización de la data, y el Teléfono como un atributo multievaluado para permitir múltiples entradas de contacto.\n
-      LIBRO: Representa el inventario físico. Se ha establecido el ISBN como identificador único. Entre sus atributos se han incluido el título, la editorial y los años de creación y edición. Fundamentalmente, se ha incorporado el atributo Estado para registrar la integridad física del ejemplar.\n
-      AUTOR: Se ha modelado como una entidad independiente para evitar la redundancia. Se ha asignado un CodigoAutor como llave primaria y un atributo compuesto para su nombre completo.\n
-      
-      Relaciones y Cardinalidades\n
-      La lógica de interacción entre los datos se ha resuelto mediante las siguientes reglas de correspondencia:\n
-      Relación de Autoría (Escribir): Se ha determinado una cardinalidad de Muchos a Muchos (N:M). Esta decisión se tomó para reflejar que un autor puede escribir múltiples libros y que un libro puede ser el resultado del trabajo de varios autores simultáneamente.\n
-      Relación de Préstamo: Se ha planteado como la conexión entre Socio y Libro. Se ha definido con una cardinalidad de Uno a Muchos (1:N), partiendo de la restricción física de que un ejemplar de libro solo puede estar en posesión de un socio a la vez, aunque un socio pueda tener varios libros bajo su responsabilidad.\n`,  
-
-    process:
-      `1. Análisis Crítico: Se interpretó el enunciado textual para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que dejar el nombre del autor como un simple texto dentro de la entidad Libro congelaría la base de datos y causaría inconsistencias masivas cuando un escritor publicara múltiples obras.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al determinar que los datos de la temporalidad (fechas de inicio, fin y devolución) no debían ir dentro de las entidades estáticas de Socio o Libro. Al elevar estos atributos directamente al rombo de la relación PRÉSTAMO, se garantizó la independencia de los históricos transaccionales, permitiendo que un libro sea prestado infinitas veces en el tiempo sin duplicar la información del inventario.\n3. Estructuración Semántica y Digitalización: Se separaron las conexiones de la base en dos verbos claros (Escribir para la autoría y Préstamo para la operación) y se realizó el mapeo final en limpio usando la herramienta digital para lograr una presentación impecable, organizada por colores y sin enredos de líneas, facilitando la lectura de los atributos compuestos y multievaluados.\n`,
-    links: [
-      { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1qYQh-jPekDigvccEAYjN1_CCn9q4_n6L/view?usp=sharing" },
-    ],
-    image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
-  },
-
-  {
-    name: "Taller 1 MER-RE Ejercicio 1 PAQUETERIA",
-    shortDescription:
-      "El propósito de esta práctica fue diseñar un Modelo Entidad-Relación (MER) sólido y eficiente para una empresa de transporte y logística en Colombia.",
-
-    fullDescription:
-      "Se ha planteado la arquitectura de datos para una empresa de transporte encargada de distribuir mercancía a nivel nacional. El diseño se enfoca en tres pilares operativos: el control del personal (Conductores) y sus herramientas de trabajo (Camiones), el seguimiento individual de la carga (Paquetes) con sus respectivas direcciones de destino, y la organización geográfica de las entregas vinculando de forma precisa cada paquete con la Ciudad correspondiente.",
-
-    analysis:
-      `Entidades y Atributos\n
-      Para modelar esta operación de transporte de manera rigurosa, se definieron las siguientes entidades principales con sus atributos descriptivos: \n
-      CONDUCTOR: Se ha establecido el Número de Cédula de Ciudadanía como su llave primaria única. Incluye atributos para su información personal y laboral como Nombre, Teléfono, Dirección, Salario y la Ciudad en la que vive.\n
-      CAMIÓN: Se identifica mediante la Matrícula como llave primaria. Cuenta con los atributos descriptivos Modelo, Tipo y Potencia para clasificar la flota de vehículos.\n
-      PAQUETE: Se define mediante un Código de paquete único como llave primaria. Interesa conocer su Descripción, el Destinatario y la Dirección de Destino para garantizar la entrega.\n
-      CIUDAD: Funciona como el nodo geográfico del destino. Se identifica con un Código de Ciudad como llave primaria y cuenta con el atributo Nombre.\n
-      
-      Relaciones y Cardinalidades\n
-      La dinámica de distribución de la empresa se resolvió mediante conexiones lógicas bien definidas, estableciendo el comportamiento exacto de los datos en el sistema:\n
-      Relación Conducir (CONDUCTOR - CAMIÓN): Conexión de Muchos a Muchos (N:M) debido a una regla de negocio explícita: un conductor puede manejar diferentes camiones en fechas distintas, y un camión puede ser operado por varios conductores a lo largo del tiempo.\n
-      Relación Distribuir (CONDUCTOR - PAQUETE): Conexión de Uno a Muchos (1:M). Un conductor se encarga de cargar y distribuir muchos paquetes en su ruta, pero cada paquete individual en el sistema está asignado y bajo la responsabilidad de un único conductor.\n
-      Relación Llegar (PAQUETE - CIUDAD): Conexión de Muchos a Uno (M:1). Un paquete específico va dirigido obligatoriamente a una única ciudad de destino, mientras que a una misma ciudad pueden llegar múltiples paquetes en diferentes despachos.\n`,
-
-    process:
-      `1. Extracción de Lógica de Fechas: Al analizar el enunciado, se identificó que la conexión entre conductores y camiones cambia con el tiempo ("fechas diferentes"). En la reducción a tablas, esto implica que la tabla intermedia generada por la relación Muchos a Muchos debe incluir un campo de fecha para registrar el historial sin sobreescribir datos.\n2. Evitar Enredos Geográficos: Se tomó la decisión correcta de mantener separados el atributo de la ciudad donde vive el conductor (que es solo un texto descriptivo en su ficha personal) de la entidad CIUDAD de destino. Esto evita que el sistema confunda el lugar de residencia del empleado con el lugar físico a donde se debe entregar la mercancía.\n3. Modelado Limpio y Digitalización: Mapeo de las dependencias de los paquetes (que dependen tanto de quién los lleva como de a dónde van) y traslado final del bosquejo a una herramienta digital profesional con colores organizados y una distribución de nodos simétrica para facilitar su comprensión.`,
-
-    links: [
-      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing" },
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/paqueteria.png",
-  },
-
-  {
-    name: "Taller 1 MER-RE Ejercicio 2 BIENES RAICES",
-    shortDescription:
-      "Se ha planteado como objetivo principal diseñar un modelo Entidad-Relación estructurado y flexible que controle el mercado inmobiliario de la empresa, permitiendo asociar de forma eficiente el inventario de casas con sus respectivos dueños, firmas y agentes responsables.",
-
-    fullDescription:
-      "Se ha planteado el diseño de un sistema de información para una empresa de bienes raíces enfocado en el cruce de información entre la oferta inmobiliaria (Casas) y la demanda del mercado (Clientes). El diseño se centra en la trazabilidad comercial de los inmuebles, identificando si están vinculados internamente a la Firma mediante contratos directos con sus Agentes, o si pertenecen a firmas competidoras. Un requisito indispensable que se ha integrado es la gestión de perfiles detallados tanto para el personal (rastreando métricas de rendimiento y datos demográficos) como para las propiedades y clientes, unificando los criterios de búsqueda (características físicas y rangos de precios) para automatizar el emparejamiento de opciones.",
-
-    analysis:
-      `Entidades y Atributos\n
-      Para estructurar la lógica del negocio de manera limpia, se han identificado las siguientes entidades con sus respectivos atributos técnicos basados en el modelado: \n
-      AGENTE: Representa a los corredores inmobiliarios de la empresa. Se ha seleccionado la Cédula como su llave primaria. Su nombre completo se ha planteado como un atributo compuesto para desglosar meticulosamente cada campo. Adicionalmente, Edad se ha configurado como un atributo derivado (línea discontinua) ya que se calcula dinámicamente a partir de la FechaNacimiento.\n
-      DUEÑO: Representa a los propietarios de los inmuebles. Se ha establecido un Código único como su llave primaria, complementado con atributos simples de contacto como nombre, dirección y teléfono.\n
-      CASA: Representa los activos inmobiliarios en venta. Se ha asignado un Código de propiedad como llave primaria.\n
-      FIRMA: Representa a la inmobiliaria local o a empresas externas del sector. Se ha identificado mediante un Código de firma único, nombre y dirección corporativa.\n
-      
-      Relaciones y Cardinalidades\n
-      La interacción operativa y las dependencias del modelo se han resuelto mediante las siguientes reglas de correspondencia:\n
-      Relación de Contratación (Contratar): Se ha determinado una cardinalidad de Muchos a Uno ($M:1$) entre Dueño y Agente. Esta decisión refleja que un dueño puede contratar a un agente específico de la firma para gestionar sus propiedades, y un agente puede manejar una cartera de múltiples clientes propietarios simultáneamente. En el rombo se ha incluido el atributo VentasÚltimoMes como una métrica del resultado de dicha relación.\n
-      Relación de Afiliación (Pertenecer): Se ha planteado una relación de tipo condicional o de pertenencia entre las Casas, los Dueños y la Firma. En la gráfica, se ha estructurado una relación ternaria indirecta (etiquetada como MINNESOTA) para conectar la propiedad con la empresa que posee la exclusividad del listado en el mercado.\n`,
-
-    process:
-      `1. Análisis Crítico: Se interpretó el enunciado textual para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que el requerimiento de las "características de la casa" (baños, dormitorios, garaje) y las "preferencias del cliente" compartían la misma naturaleza semántica. Se previó que tratarlos como atributos simples y fijos congelaría el modelo, optando críticamente por un enfoque flexible que permita que varíen entre propiedades sin alterar la estructura física de la base de datos.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al no almacenar la edad del agente de forma estática en la entidad. Al definirla como un atributo derivado basado en la fecha de nacimiento, se garantizó la integridad del modelo en el tiempo, evitando información desactualizada o redundante que requiera mantenimiento manual cada año.\n3.Estructuración Semántica y Digitalización: Se separaron las conexiones operativas de los bienes raíces en verbos claros (Pertenecer para la exclusividad del inventario y Contratar para el vínculo laboral-comercial) y se realizó el mapeo final en limpio utilizando la herramienta digital para lograr una presentación impecable, organizada por colores y sin enredos de líneas, visibilizando correctamente la jerarquía de los atributos compuestos y derivados.`,
-    links: [
-      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/10wQNOVIzKaaIHCVCZrBF7xVNMJGnQnzF/view?usp=sharing" },
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/bienesRaices.png",
-  },
-
-    {
-    name: "Taller 1 MER-RE Ejercicio 3 PROVEDOR",
-    shortDescription:
-      "Se ha planteado como objetivo principal reconstruir de forma inversa el modelo Entidad-Relación que dio origen al esquema de tablas suministrado.",
-
-    fullDescription:
-      "Se ha planteado la ingeniería inversa de un sistema logístico y de compras que vincula tres componentes fundamentales: el catálogo de mercancías (Elementos), las empresas que los comercializan (Proveedores) fijando un valor económico específico, y los consumidores finales (Clientes). El núcleo del diseño radica en estructurar el ciclo transaccional de los Pedidos, garantizando que el sistema registre de forma inequívoca qué cliente le compra a qué proveedor un artículo determinado y en qué volumen exacto.",
-
-    analysis:
-      `Entidades y Atributos\n
-      Para mostrar la estructura requerida y fundamentar el diagrama digitalizado, se han identificado las siguientes entidades principales con sus atributos descriptivos: \n
-      CLIENTE: Representa a los compradores del sistema. Se ha seleccionado el atributo NombreCliente (CName) como su llave primaria única, complementado por la propiedad simple Dirección (Address).\n
-      PROVEEDOR: Representa a las organizaciones vendedoras. Se ha establecido NombreProveedor (SName) como su identificador o llave primaria.\n
-      ELEMENTO: Representa los artículos disponibles en el mercado. Se ha asignado NombreItem (ItemName) como llave primaria y Descripción como su atributo descriptivo secundario.\n
-
-      Relaciones y Cardinalidades\n
-      La interacción operativa y el flujo transaccional reflejado en las tablas originales se han resuelto mediante el planteamiento de las siguientes relaciones complejas:\n
-      Relación de Catálogo y Oferta (Vendedor): Conecta a las entidades Proveedor y Elemento. En ella se ha inyectado el atributo descriptivo Precio, ya que el valor económico no es una propiedad intrínseca del artículo ni de la empresa, sino que nace únicamente cuando un proveedor decide vender un ítem específico.\n
-      Relación de Demanda y Transacción (Contactar / Pedido): Vincula la interacción de compra. En esta unión se ha ubicado el atributo Cantidad (Qty), el cual registra de manera exacta el volumen físico que un Cliente ha solicitado formalmente de un Elemento suministrado por un Proveedor.\n`,
-
-    process:
-      `1. Análisis Crítico: Se interpretó el enunciado textual de las tablas para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que las tablas de origen presentaban una fuerte interdependencia de llaves compuestas. Se previó el riesgo de aislar los pedidos como una simple relación binaria, deduciendo críticamente que el "Pedido" y la "Venta" actúan como puentes lógicos que necesitan cruzar simultáneamente al Cliente, al Proveedor y al Elemento para no perder la integridad de la cadena de suministro.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al no fragmentar o crear identificadores artificiales numéricos (como IDs autonuméricos) que no estuvieran explícitamente en el requerimiento del esquema relacional original. Al mantener los nombres (SName, CName, ItemName) como las llaves primarias naturales de sus respectivas entidades, se garantizó que la reducción inversa a tablas correspondiera de forma exacta y matemática con la estructura provista en el enunciado.\n3.Estructuración Semántica y Digitalización: Se separaron las conexiones del negocio en verbos operativos claros (Vendedor para la oferta comercial y Contactar para la ejecución del pedido) y se realizó el mapeo final en limpio utilizando la herramienta digital para lograr una presentación impecable, organizada por colores consistentes (bloques oscuros para entidades y rombos contrastados para relaciones), evitando el cruce desordenado de líneas y destacando visualmente los atributos subrayados que componen las llaves primarias.`,
-    links: [
-      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/19hIvxS4Qh95XasWiD-iNGcLTMUJw2N2-/view?usp=sharing" },
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/proveedor.png",
-  },
-
-    {
-    name: "Taller 1 MER-RE Ejercicio 4 PRESTAMOS BIBLIOTECA",
-    shortDescription:
-      "Se ha planteado como objetivo principal reconstruir de forma inversa el modelo Entidad-Relación que dio origen al esquema de tablas suministrado.",
-
-    fullDescription:
-      "Se ha planteado la gestión logística de un catálogo de Artículos (que abarca libros, CD y cintas) prestados a los Usuarios de la comunidad. El negocio exige un control estricto sobre los tiempos de entrega, determinando que cualquier artículo devuelto por fuera de la fecha límite acumule una Penalización económica inmediata. Como restricción crítica, los usuarios menores de 18 años deben contar obligatoriamente con un Patrocinador adulto que asuma la responsabilidad legal de pagar sus multas o reemplazar los elementos en caso de pérdida.",
-
-    analysis:
-      `Entidades y Atributos\n
-      Para estructurar la información de manera clara en el diagrama, se han identificado las siguientes entidades y tipos de atributos:\n
-      USUARIO: Representa a los afiliados. Se ha seleccionado NúmeroCuenta como su llave primaria. Cuenta con atributos simples como Salario y Ciudad, y atributos multievaluados para Dirección y Teléfono. Además, Edad se ha configurado como un atributo derivado basado en la fechaNacimiento para calcular de forma automática la minoría de edad.\n
-      ARTÍCULO: Modela los recursos disponibles de la biblioteca. Se ha establecido IdArticulo como su llave primaria y Titulo como atributo descriptivo, unificando bajo un mismo concepto los libros, CD y cintas.\n
-      PENALIZACIÓN: Estructura de control financiero para las sanciones. Se identifica mediante un IdPenalización único y registra la FechaLímiteEntrega para validar la vigencia del recargo.\n
-
-      Relaciones y Cardinalidades\n
-      La interacción operativa y las políticas de la biblioteca se han resuelto mediante las siguientes conexiones lógicas:\n
-      Relación "Prestar" (1:M): Conecta a Usuario con Artículo. Esta cardinalidad indica que un artículo físico específico solo puede estar en manos de un usuario a la vez, aunque un usuario tiene la facultad de retirar múltiples recursos de forma simultánea.\n
-      Relación "Patrocinar" (Recursiva): Conecta a la entidad Usuario consigo misma. Al definir los roles de patrocinador (adulto) y patrocinado (menor), se resuelve el respaldo económico solicitado sin necesidad de duplicar tablas ni crear entidades espejo.\n
-      Agregación "PRESTAMO" y relación "Generador" (1:1): Se ha encapsulado el acto del préstamo (Usuario + Artículo) en una súper-entidad dotada de un IdPrestamo. Esta estructura se conecta directamente con la entidad PENALIZACIÓN mediante el verbo Generador, asegurando que a cada préstamo vencido le corresponda una única multa histórica.\n`,
-
-    process:
-      `1. Análisis Crítico: Se interpretó el texto para aislar las variables del negocio. Al identificar que los libros, CD y cintas compartían exactamente el mismo comportamiento (se prestan y penalizan igual), se tomó la decisión crítica de unificarlos en la entidad ARTÍCULO, evitando la complejidad de crear tablas individuales para cada formato.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al resolver el amparo de los menores mediante una relación recursiva en Usuario y al situar la multa fuera del flujo estático del usuario. Al conectar la Penalización a una agregación del préstamo, se garantizó que el historial de multas dependa de la transacción y no altere los datos demográficos del socio.\n3.Estructuración Semántica y Digitalización: Se separaron las operaciones del negocio en verbos claros y se realizó el mapeo final en limpio utilizando la herramienta digital. El resultado es un diagrama impecable estructurado bajo la notación de Chen, ordenado por bloques de color para distinguir las entidades, relaciones, agregaciones y la jerarquía de los atributos.`,
-    links: [
-      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/1Uh5CpTJPbA51WKbNoiZu8J4FmWjGZEFo/view?usp=sharing" },
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/prestamosBiblioteca.png",
-  },
 ];
 ---
 
-<Section id="modulos" title="Módulo 1">
+<Section id="modulos" title="Módulo 1 - MER">
 
   <!-- GRID -->
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -194,24 +59,32 @@ const MODUNO = [
     {
       MODUNO.map((moduno) => (
         <article
-          class="cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl hover:scale-[1.02] transition"
+          class="cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:scale-[1.02]"
           onclick={`openModal(${JSON.stringify(moduno)})`}
         >
+
           <img
             src={moduno.image}
             alt={moduno.name}
             class="w-full"
           />
 
-          <div class="p-6 space-y-4">
+          <div class="space-y-4 p-6">
+
             <h2 class="text-2xl font-bold text-white">
               {moduno.name}
             </h2>
 
+            <p class="text-sm text-cyan-400">
+              {moduno.topic}
+            </p>
+
             <p class="text-gray-300">
               {moduno.shortDescription}
             </p>
+
           </div>
+
         </article>
       ))
     }
@@ -223,36 +96,124 @@ const MODUNO = [
 <!-- MODAL -->
 <div
   id="modal"
-  class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4"
   onclick="closeModal()"
 >
+
   <div
-    class="bg-gray-900 text-white p-6 rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-gray-900"
+    class="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-gray-900 p-6 text-white shadow-2xl scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900"
     onclick="event.stopPropagation()"
   >
 
-    <img id="modal-img" class="w-full rounded-xl" />
+    <!-- Imagen -->
+    <img
+      id="modal-img"
+      class="mb-6 w-full rounded-2xl"
+    />
 
-    <h2 id="modal-title" class="text-2xl font-bold"></h2>
+    <!-- Título -->
+    <h2
+      id="modal-title"
+      class="mb-2 text-3xl font-bold"
+    ></h2>
 
-    <p id="modal-full" class="text-gray-300"></p>
+    <!-- Descripción corta -->
+    <p
+      id="modal-short"
+      class="mb-6 text-gray-300"
+    ></p>
 
-    <div>
-      <h3 class="font-semibold">Análisis</h3>
-      <p id="modal-analysis" class="text-gray-300"></p>
+    <!-- CONTENIDO -->
+    <div class="space-y-6">
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Tema trabajado
+        </h3>
+
+        <p
+          id="modal-topic"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Objetivo
+        </h3>
+
+        <p
+          id="modal-objective"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Conceptos aprendidos
+        </h3>
+
+        <pre
+          id="modal-learned"
+          class="whitespace-pre-wrap font-sans text-gray-300"
+        ></pre>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Proceso realizado
+        </h3>
+
+        <pre
+          id="modal-process"
+          class="whitespace-pre-wrap font-sans text-gray-300"
+        ></pre>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Herramientas utilizadas
+        </h3>
+
+        <pre
+          id="modal-tools"
+          class="whitespace-pre-wrap font-sans text-gray-300"
+        ></pre>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Resultado obtenido
+        </h3>
+
+        <p
+          id="modal-result"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Reflexión
+        </h3>
+
+        <p
+          id="modal-reflection"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- LINKS -->
+      <div
+        id="modal-links"
+        class="space-y-2"
+      ></div>
+
     </div>
 
-    <div>
-      <h3 class="font-semibold">Proceso</h3>
-      <pre id="modal-process" class="text-gray-300 whitespace-pre-wrap"></pre>
-    </div>
-
-    <div id="modal-links" class="space-y-1"></div>
-
-    <div id="modal-docs" class="space-y-1"></div>
-
+    <!-- BOTÓN -->
     <button
-      class="bg-white text-black px-4 py-2 rounded-lg mt-2"
+      class="mt-8 rounded-xl bg-white px-5 py-2 font-medium text-black transition hover:bg-gray-200"
       onclick="closeModal()"
     >
       Cerrar
@@ -263,48 +224,78 @@ const MODUNO = [
 
 <!-- SCRIPT -->
 <script is:inline>
-  function openModal(item) {
-    document.getElementById("modal-title").innerText = item.name;
-    document.getElementById("modal-img").src = item.image;
 
-    document.getElementById("modal-full").innerText = item.fullDescription || "";
-    document.getElementById("modal-analysis").innerText = item.analysis || "";
-    document.getElementById("modal-process").innerText = item.process || "";
+  function openModal(item) {
+
+    document.getElementById("modal-title").innerText =
+      item.name || "";
+
+    document.getElementById("modal-short").innerText =
+      item.shortDescription || "";
+
+    document.getElementById("modal-img").src =
+      item.image || "";
+
+    document.getElementById("modal-topic").innerText =
+      item.topic || "";
+
+    document.getElementById("modal-objective").innerText =
+      item.objective || "";
+
+    document.getElementById("modal-learned").innerText =
+      item.learned || "";
+
+    document.getElementById("modal-process").innerText =
+      item.process || "";
+
+    document.getElementById("modal-tools").innerText =
+      item.tools || "";
+
+    document.getElementById("modal-result").innerText =
+      item.result || "";
+
+    document.getElementById("modal-reflection").innerText =
+      item.reflection || "";
 
     // LINKS
-    const linksContainer = document.getElementById("modal-links");
+    const linksContainer =
+      document.getElementById("modal-links");
+
     linksContainer.innerHTML = "";
 
     if (item.links?.length) {
-      linksContainer.innerHTML += "<h3 class='font-semibold'>Links</h3>";
+
+      linksContainer.innerHTML += `
+        <h3 class="text-lg font-semibold text-cyan-400">
+          Recursos
+        </h3>
+      `;
+
       item.links.forEach(link => {
+
         linksContainer.innerHTML += `
-          <a href="${link.url}" target="_blank" class="text-blue-400 underline block">
+          <a
+            href="${link.url}"
+            target="_blank"
+            class="block text-blue-400 underline hover:text-blue-300"
+          >
             ${link.label}
           </a>
         `;
+
       });
     }
 
-    // DOCS
-    const docsContainer = document.getElementById("modal-docs");
-    docsContainer.innerHTML = "";
-
-    if (item.docs?.length) {
-      docsContainer.innerHTML += "<h3 class='font-semibold'>Documentos</h3>";
-      item.docs.forEach(doc => {
-        docsContainer.innerHTML += `
-          <a href="${doc.url}" target="_blank" class="text-green-400 underline block">
-            ${doc.label}
-          </a>
-        `;
-      });
-    }
-
-    document.getElementById("modal").classList.remove("hidden");
+    document
+      .getElementById("modal")
+      .classList.remove("hidden");
   }
 
   function closeModal() {
-    document.getElementById("modal").classList.add("hidden");
+
+    document
+      .getElementById("modal")
+      .classList.add("hidden");
   }
+
 </script>
