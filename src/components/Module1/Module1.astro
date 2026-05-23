@@ -11,6 +11,9 @@ const MODUNO = [
     topic:
       "Modelo Entidad-Relación (MER)",
 
+    exerciseStatement:
+      "Una aerolínea necesita controlar la información relacionada con sus aviones, pilotos, tripulación y vuelos. Cada avión pertenece a una base específica y puede ser asignado a múltiples vuelos. Los pilotos y la tripulación también pertenecen a una base operativa. Se requiere representar las relaciones entre vuelos, personal y aeronaves mediante un Modelo Entidad-Relación.",
+
     objective:
       "Aplicar los conceptos fundamentales del modelado conceptual mediante el desarrollo de un MER capaz de representar la gestión de vuelos, aviones, pilotos, tripulación y bases operativas.",
 
@@ -31,7 +34,8 @@ const MODUNO = [
 
     tools:
       `• draw.io\n
-• app.diagrams.net`,
+• app.diagrams.net\n
+• Oracle DataModeler`,
 
     result:
       "Se obtuvo un modelo MER organizado y coherente que representa adecuadamente la operación logística de una aerolínea, permitiendo visualizar claramente las relaciones entre recursos físicos, personal y vuelos.",
@@ -63,19 +67,21 @@ const MODUNO = [
           onclick={`openModal(${JSON.stringify(moduno)})`}
         >
 
+          <!-- Imagen -->
           <img
             src={moduno.image}
             alt={moduno.name}
             class="w-full"
           />
 
+          <!-- Contenido -->
           <div class="space-y-4 p-6">
 
             <h2 class="text-2xl font-bold text-white">
               {moduno.name}
             </h2>
 
-            <p class="text-sm text-cyan-400">
+            <p class="text-sm font-medium text-cyan-400">
               {moduno.topic}
             </p>
 
@@ -126,6 +132,7 @@ const MODUNO = [
     <!-- CONTENIDO -->
     <div class="space-y-6">
 
+      <!-- Tema -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Tema trabajado
@@ -137,6 +144,19 @@ const MODUNO = [
         ></p>
       </div>
 
+      <!-- Enunciado -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Enunciado del ejercicio
+        </h3>
+
+        <p
+          id="modal-statement"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- Objetivo -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Objetivo
@@ -148,6 +168,7 @@ const MODUNO = [
         ></p>
       </div>
 
+      <!-- Aprendizaje -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Conceptos aprendidos
@@ -159,6 +180,7 @@ const MODUNO = [
         ></pre>
       </div>
 
+      <!-- Proceso -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Proceso realizado
@@ -170,6 +192,7 @@ const MODUNO = [
         ></pre>
       </div>
 
+      <!-- Herramientas -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Herramientas utilizadas
@@ -181,6 +204,7 @@ const MODUNO = [
         ></pre>
       </div>
 
+      <!-- Resultado -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Resultado obtenido
@@ -192,6 +216,7 @@ const MODUNO = [
         ></p>
       </div>
 
+      <!-- Reflexión -->
       <div>
         <h3 class="mb-2 text-lg font-semibold text-cyan-400">
           Reflexión
@@ -203,7 +228,7 @@ const MODUNO = [
         ></p>
       </div>
 
-      <!-- LINKS -->
+      <!-- Links -->
       <div
         id="modal-links"
         class="space-y-2"
@@ -211,7 +236,7 @@ const MODUNO = [
 
     </div>
 
-    <!-- BOTÓN -->
+    <!-- Botón -->
     <button
       class="mt-8 rounded-xl bg-white px-5 py-2 font-medium text-black transition hover:bg-gray-200"
       onclick="closeModal()"
@@ -220,6 +245,7 @@ const MODUNO = [
     </button>
 
   </div>
+
 </div>
 
 <!-- SCRIPT -->
@@ -227,33 +253,47 @@ const MODUNO = [
 
   function openModal(item) {
 
+    // Título
     document.getElementById("modal-title").innerText =
       item.name || "";
 
-    document.getElementById("modal-short").innerText =
-      item.shortDescription || "";
-
+    // Imagen
     document.getElementById("modal-img").src =
       item.image || "";
 
+    // Descripción
+    document.getElementById("modal-short").innerText =
+      item.shortDescription || "";
+
+    // Tema
     document.getElementById("modal-topic").innerText =
       item.topic || "";
 
+    // Enunciado
+    document.getElementById("modal-statement").innerText =
+      item.exerciseStatement || "";
+
+    // Objetivo
     document.getElementById("modal-objective").innerText =
       item.objective || "";
 
+    // Aprendizaje
     document.getElementById("modal-learned").innerText =
       item.learned || "";
 
+    // Proceso
     document.getElementById("modal-process").innerText =
       item.process || "";
 
+    // Herramientas
     document.getElementById("modal-tools").innerText =
       item.tools || "";
 
+    // Resultado
     document.getElementById("modal-result").innerText =
       item.result || "";
 
+    // Reflexión
     document.getElementById("modal-reflection").innerText =
       item.reflection || "";
 
@@ -267,7 +307,7 @@ const MODUNO = [
 
       linksContainer.innerHTML += `
         <h3 class="text-lg font-semibold text-cyan-400">
-          Recursos
+          Recursos y diagramas
         </h3>
       `;
 
@@ -277,7 +317,7 @@ const MODUNO = [
           <a
             href="${link.url}"
             target="_blank"
-            class="block text-blue-400 underline hover:text-blue-300"
+            class="block text-blue-400 underline transition hover:text-blue-300"
           >
             ${link.label}
           </a>
@@ -286,6 +326,7 @@ const MODUNO = [
       });
     }
 
+    // Mostrar modal
     document
       .getElementById("modal")
       .classList.remove("hidden");
