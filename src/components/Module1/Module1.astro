@@ -52,6 +52,370 @@ const MODUNO = [
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
   //BIBLIOTECA
+  {
+  name: "Ejercicio 2 en Clase_BIBLIOTECA",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación (MER) para representar el funcionamiento de una biblioteca y fortalecer el análisis de entidades, préstamos y relaciones de autoría.",
+
+  topic:
+    "Modelo Entidad-Relación (MER)",
+
+  exerciseStatement:
+    "Una biblioteca necesita gestionar la información de sus socios, libros y autores. Cada socio puede solicitar préstamos de libros y cada libro puede estar asociado a uno o varios autores. Además, se requiere controlar el estado físico de los libros y almacenar información relacionada con las fechas de préstamo y devolución.",
+
+  objective:
+    "Aplicar los conceptos fundamentales del Modelo Entidad-Relación mediante la construcción de un sistema capaz de representar el control de libros, socios, autores y préstamos dentro de una biblioteca.",
+
+  learned:
+    `• Identificación de entidades principales y atributos.\n
+• Uso de atributos compuestos y multivalorados.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Comprensión de la relación de préstamo como parte central del sistema.\n
+• Organización de información temporal mediante atributos en relaciones.\n
+• Interpretación de reglas de negocio relacionadas con inventario y préstamos.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para socios, libros y autores.\n
+3. Se establecieron las relaciones entre libros, autores y socios.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la relación de préstamo incluyendo la información de fechas.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER organizado y funcional que representa correctamente la administración de préstamos, libros y usuarios dentro de una biblioteca, facilitando la visualización de relaciones y reglas de negocio.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor la importancia de separar entidades independientes y manejar correctamente las relaciones Muchos a Muchos para evitar redundancia y mejorar la organización del modelo.",
+
+  links: [
+    {
+      label: "Diagrama MER",
+      url: "https://drive.google.com/file/d/1qYQh-jPekDigvccEAYjN1_CCn9q4_n6L/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
+},
+//PAQUETERIA
+{
+  name: "Taller 1 MER-RE Ejercicio 1 PAQUETERIA",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el funcionamiento logístico de una empresa de transporte y distribución de paquetes.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una empresa de transporte necesita gestionar la información de conductores, camiones, paquetes y ciudades de destino. Un conductor puede manejar diferentes camiones en distintas fechas y cada paquete debe ser entregado a una ciudad específica. Además, se requiere controlar qué conductor distribuye cada paquete dentro del sistema.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos logísticos relacionados con transporte, distribución de mercancía y asignación de recursos.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema logístico.\n
+• Aplicación de relaciones Muchos a Muchos y Uno a Muchos.\n
+• Interpretación de reglas de negocio relacionadas con transporte y distribución.\n
+• Comprensión del uso de relaciones intermedias para representar historial de operaciones.\n
+• Organización de información geográfica mediante entidades independientes.\n
+• Fortalecimiento del análisis de cardinalidades y dependencias.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para conductores, camiones, paquetes y ciudades.\n
+3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la relación entre conductores y camiones considerando el historial de uso.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER-RE estructurado y coherente que representa correctamente la operación logística de una empresa de transporte, permitiendo visualizar las relaciones entre conductores, vehículos, paquetes y destinos.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor la importancia de las relaciones Muchos a Muchos y cómo representar procesos logísticos complejos sin generar redundancia dentro del modelo conceptual.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/paqueteria.png",
+},
+//BIENES RAICES
+{
+  name: "Taller 1 MER-RE Ejercicio 2 BIENES RAICES",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar la gestión de propiedades, clientes y agentes dentro de una empresa inmobiliaria.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una empresa de bienes raíces necesita gestionar la información de agentes, dueños, clientes, firmas y propiedades. Cada propiedad debe estar asociada a un dueño y puede ser administrada por una firma inmobiliaria. Además, los agentes deben gestionar clientes y propiedades disponibles según diferentes características y rangos de precio.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos inmobiliarios relacionados con propiedades, clientes, agentes y firmas comerciales.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema inmobiliario.\n
+• Uso de atributos compuestos y atributos derivados.\n
+• Aplicación de relaciones ternarias y relaciones de pertenencia.\n
+• Interpretación de reglas de negocio relacionadas con administración de propiedades.\n
+• Comprensión de dependencias entre clientes, agentes y propiedades.\n
+• Fortalecimiento del análisis de cardinalidades y organización del modelo conceptual.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para agentes, dueños, casas y firmas.\n
+3. Se establecieron las relaciones entre propiedades, clientes y agentes.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con características y administración de propiedades.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente la gestión inmobiliaria, permitiendo visualizar la relación entre propiedades, agentes, dueños y firmas comerciales.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de relaciones complejas dentro de un sistema empresarial y la importancia de estructurar correctamente la información para evitar redundancia y mejorar la organización del modelo.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/10wQNOVIzKaaIHCVCZrBF7xVNMJGnQnzF/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/bienesRaices.png",
+},
+//PROVEEDOR
+{
+  name: "Taller 1 MER-RE Ejercicio 3 PROVEEDOR",
+
+  shortDescription:
+    "Ejercicio enfocado en la reconstrucción de un Modelo Entidad-Relación Extendido (MER-RE) a partir de un esquema relacional relacionado con clientes, proveedores y pedidos.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "A partir de un conjunto de tablas relacionales suministradas, se requiere reconstruir el Modelo Entidad-Relación correspondiente para representar la interacción entre clientes, proveedores y elementos. El sistema debe permitir identificar qué proveedor vende determinados productos, qué clientes realizan pedidos y la cantidad solicitada en cada transacción.",
+
+  objective:
+    "Aplicar técnicas de ingeniería inversa para interpretar un esquema relacional y reconstruir un Modelo Entidad-Relación Extendido que represente correctamente las relaciones comerciales del sistema.",
+
+  learned:
+    `• Interpretación de esquemas relacionales para reconstruir modelos conceptuales.\n
+• Identificación de entidades, atributos y llaves primarias a partir de tablas.\n
+• Comprensión de relaciones complejas dentro de sistemas comerciales.\n
+• Uso de relaciones intermedias para representar pedidos y ventas.\n
+• Análisis de dependencias entre clientes, proveedores y productos.\n
+• Fortalecimiento de la lógica de modelado mediante ingeniería inversa.`,
+
+  process:
+    `1. Se analizaron las tablas proporcionadas para identificar entidades y atributos.\n
+2. Se determinaron las posibles llaves primarias y relaciones entre tablas.\n
+3. Se reconstruyeron las relaciones comerciales entre clientes, proveedores y elementos.\n
+4. Se establecieron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con precios y cantidades dentro de las relaciones.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER-RE coherente y estructurado que representa correctamente las relaciones comerciales y transaccionales entre clientes, proveedores y productos dentro del sistema.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor cómo interpretar estructuras relacionales ya existentes y convertirlas nuevamente en modelos conceptuales organizados y comprensibles.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/19hIvxS4Qh95XasWiD-iNGcLTMUJw2N2-/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/proveedor.png",
+},
+//PRESTAMOS BIBLIOTECA
+{
+  name: "Taller 1 MER-RE Ejercicio 4 PRESTAMOS BIBLIOTECA",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el sistema de préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una biblioteca necesita gestionar el préstamo de artículos como libros, CD y cintas a diferentes usuarios. El sistema debe controlar fechas de entrega, penalizaciones por retrasos y el patrocinio obligatorio para usuarios menores de edad. Además, se requiere registrar la información de los artículos y las relaciones entre préstamos y multas.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos relacionados con préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema de préstamos.\n
+• Uso de relaciones recursivas para representar patrocinadores.\n
+• Comprensión de agregaciones dentro del modelo conceptual.\n
+• Aplicación de atributos derivados y multivalorados.\n
+• Interpretación de reglas de negocio relacionadas con penalizaciones y control de usuarios.\n
+• Fortalecimiento del análisis de cardinalidades y dependencias.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para usuarios, artículos y penalizaciones.\n
+3. Se establecieron las relaciones entre préstamos, usuarios y artículos.\n
+4. Se organizó la relación recursiva de patrocinio para usuarios menores de edad.\n
+5. Se implementó la agregación relacionada con préstamos y penalizaciones.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente el flujo de préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor el uso de relaciones recursivas y agregaciones dentro de modelos conceptuales complejos, fortaleciendo la organización y representación de reglas de negocio.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/1Uh5CpTJPbA51WKbNoiZu8J4FmWjGZEFo/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/prestamosBiblioteca.png",
+},
+//SUPERMERCADO
+{
+  name: "Taller 1 MER-RE Ejercicio 5 SUPERMERCADO",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el funcionamiento operativo y comercial de un supermercado.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Un supermercado necesita gestionar la información relacionada con productos, proveedores, empleados, clientes y ventas. Cada producto pertenece a una categoría específica y puede ser suministrado por diferentes proveedores. Además, el sistema debe registrar las compras realizadas por los clientes y controlar la participación de los empleados en las ventas.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos comerciales relacionados con inventario, ventas y gestión de clientes dentro de un supermercado.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema comercial.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Comprensión de procesos de ventas e inventario.\n
+• Organización de dependencias entre productos, clientes y proveedores.\n
+• Interpretación de reglas de negocio relacionadas con abastecimiento y compras.\n
+• Fortalecimiento del análisis de cardinalidades y estructura del modelo conceptual.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para productos, clientes, proveedores y empleados.\n
+3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con ventas e inventario.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente las operaciones principales de un supermercado, permitiendo visualizar la relación entre productos, ventas, clientes y proveedores.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de procesos comerciales y la importancia de estructurar correctamente las relaciones entre inventario, ventas y clientes dentro de un modelo conceptual.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/1wG6MmO7ieeOSGC1VQvEcZc3UfkkIT76J/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/supermercado.png",
+},
+//UNIVERSIDAD
+{
+  name: "Taller MER-RE UNIVERSIDAD",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar la gestión académica y administrativa de una universidad.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una universidad necesita gestionar la información relacionada con estudiantes, docentes, materias, programas académicos y grupos. El sistema debe permitir registrar las materias cursadas por los estudiantes, los docentes encargados de dictarlas y la relación entre programas académicos y asignaturas ofrecidas durante cada periodo académico.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos académicos y administrativos dentro de una universidad.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un entorno académico.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Organización de procesos relacionados con matrícula y asignación académica.\n
+• Comprensión de dependencias entre estudiantes, docentes y materias.\n
+• Interpretación de reglas de negocio relacionadas con programas académicos y grupos.\n
+• Fortalecimiento del análisis de cardinalidades y estructura del modelo conceptual.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para estudiantes, docentes, materias y programas académicos.\n
+3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con asignación de materias y grupos.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n
+• app.diagrams.net\n
+• Oracle DataModeler`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente los procesos académicos y administrativos de una universidad, permitiendo visualizar la relación entre estudiantes, docentes, materias y programas académicos.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de sistemas académicos complejos y la importancia de estructurar correctamente las relaciones entre entidades para representar adecuadamente los procesos universitarios.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/13SUsb53VuIUu_GFYthiSEK6jRTe7lhfs/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/universidad.png",
+},
+//TALLERES ENTREGADOS
 ];
 ---
 
