@@ -107,20 +107,25 @@ const MODUNO = [
 
     <h2 id="modal-title" class="text-2xl font-bold"></h2>
 
-    <p id="modal-full" class="text-gray-300"></p>
+    <!-- FULL DESCRIPTION (MARKDOWN) -->
+    <div id="modal-full" class="text-gray-300"></div>
 
+    <!-- ANALYSIS (MARKDOWN) -->
     <div>
       <h3 class="font-semibold">Análisis</h3>
-      <p id="modal-analysis" class="text-gray-300"></p>
+      <div id="modal-analysis" class="text-gray-300"></div>
     </div>
 
+    <!-- PROCESS (MARKDOWN) -->
     <div>
       <h3 class="font-semibold">Proceso</h3>
-      <pre id="modal-process" class="text-gray-300 whitespace-pre-wrap"></pre>
+      <div id="modal-process" class="text-gray-300"></div>
     </div>
 
+    <!-- LINKS -->
     <div id="modal-links" class="space-y-1"></div>
 
+    <!-- DOCS -->
     <div id="modal-docs" class="space-y-1"></div>
 
     <button
@@ -139,9 +144,14 @@ const MODUNO = [
     document.getElementById("modal-title").innerText = item.name;
     document.getElementById("modal-img").src = item.image;
 
-    document.getElementById("modal-full").innerText = item.fullDescription || "";
-    document.getElementById("modal-analysis").innerText = item.analysis || "";
-    document.getElementById("modal-process").innerText = item.process || "";
+    document.getElementById("modal-full").innerHTML =
+      marked.parse(item.fullDescription || "");
+
+    document.getElementById("modal-analysis").innerHTML =
+      marked.parse(item.analysis || "");
+
+    document.getElementById("modal-process").innerHTML =
+      marked.parse(item.process || "");
 
     // LINKS
     const linksContainer = document.getElementById("modal-links");
