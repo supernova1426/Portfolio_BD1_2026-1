@@ -1,4 +1,5 @@
 ---
+import { marked } from "marked";
 import Section from "../UI/Section.astro";
 
 const MODUNO = [
@@ -11,25 +12,23 @@ const MODUNO = [
       "Se ha planteado un modelo entidad relacion para una aerolínea que necesita gestionar el flujo constante entre sus activos físicos (Aviones) y su capital humano (Pilotos y Tripulación). El diseño se centra en la operación de retorno, asegurando que tanto el personal como las aeronaves tengan una Base asignada para cumplir con mantenimientos y jornadas laborales. Además, se ha integrado la gestión de rutas aéreas definidas por trayectos específicos (origen/destino) y horarios programados.",
 
     analysis:
-      `<b>Entidades y Atributos</b>\n
+      `Entidades y Atributos\n
       Para modelar esta operación de manera rigurosa, se definieron las siguientes entidades principales con sus respectivos atributos descriptivos: \n
-      <b>AVIÓN:</b> Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota.\n
-      <b>PILOTO:</b> Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada.\n
-      <b>TRIPULACIÓN:</b> Se identifican por un CodigoTripulante (llave primaria). Se configuró el campo Teléfono como un atributo multivalorado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto.\n
-      <b>BASE:</b> Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País.\n
-      <b>VUELO:</b> Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora.\n
+      **AVIÓN:** Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota.\n
+      PILOTO: Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada.\n
+      TRIPULACIÓN: Se identifican por un CodigoTripulante (llave primaria). Se configuró el campo Teléfono como un atributo multivalorado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto.\n
+      BASE: Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País.\n
+      VUELO: Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora.\n
       
-      <b>Relaciones y Cardinalidades</b>\n
+      Relaciones y Cardinalidades\n
       La dinámica operativa de la aerolínea se resolvió mediante conexiones lógicas binarias, lo que evita enredos en el diagrama y facilita la lectura natural del modelo:\n
-      <b>Relaciones de Pertenencia hacia la BASE:</b> En lugar de cruzar líneas en una sola relación confusa, se desglosó el retorno en tres conexiones independientes de Muchos a Uno (N:1). Así, la Base ALBERGA muchos Aviones, ADSCRIBE a muchos Pilotos y a ella PERTENECE la Tripulación. Esto indica que muchos recursos están vinculados a un único nodo logístico al cual deben regresar al terminar sus jornadas o ciclos de mantenimiento.\n
-      <b>Relación Asigna (AVIÓN - VUELO):</b> Conexión de Uno a Muchos (1:N). Un avión físico puede ser programado para realizar muchos vuelos a lo largo del tiempo, pero un vuelo específico en el itinerario se le asigna a un solo avión.\n
-      <b>Relación Comanda (PILOTO - VUELO):</b> Conexión de Uno a Muchos (1:N). Un piloto puede estar al mando de muchos vuelos en su jornada, pero por normatividad, cada vuelo individual es guiado por un único piloto comandante.\n
-      <b>Relación Aborda (TRIPULACIÓN - VUELO):</b> Conexión de Muchos a Muchos (N:M). Varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea.\n`,
+      Relaciones de Pertenencia hacia la BASE: En lugar de cruzar líneas en una sola relación confusa, se desglosó el retorno en tres conexiones independientes de Muchos a Uno (N:1). Así, la Base ALBERGA muchos Aviones, ADSCRIBE a muchos Pilotos y a ella PERTENECE la Tripulación. Esto indica que muchos recursos están vinculados a un único nodo logístico al cual deben regresar al terminar sus jornadas o ciclos de mantenimiento.\n
+      Relación Asigna (AVIÓN - VUELO): Conexión de Uno a Muchos (1:N). Un avión físico puede ser programado para realizar muchos vuelos a lo largo del tiempo, pero un vuelo específico en el itinerario se le asigna a un solo avión.\n
+      Relación Comanda (PILOTO - VUELO): Conexión de Uno a Muchos (1:N). Un piloto puede estar al mando de muchos vuelos en su jornada, pero por normatividad, cada vuelo individual es guiado por un único piloto comandante.\n
+      Relación Aborda (TRIPULACIÓN - VUELO): Conexión de Muchos a Muchos (N:M). Varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea.\n`,
 
     process:
-      `<b>1. Análisis Crítico:</b> Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n
-      <b>2. Prevención de Redundancias:</b> Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n
-     <b>3. Estructuración Semántica y Digitalización:</b> Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
+      `1. Análisis Crítico: Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n2. Prevención de Redundancias: Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n3. Estructuración Semántica y Digitalización: Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
 
     links: [
       { label: "Diagrama MER", url: "#" },
