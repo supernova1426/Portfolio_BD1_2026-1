@@ -35,6 +35,7 @@ const MODUNO = [
 
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
+
   {
     name: "Ejercicio 2 en Clase_BIBLIOTECA",
     shortDescription: "Se ha planteado como objetivo principal diseñar un modelo Entidad-Relación óptimo y normalizado que automatice el control de inventario, la autoría y el flujo de préstamos de la biblioteca.",
@@ -61,8 +62,9 @@ const MODUNO = [
     ],
     image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
   },
+
   {
-    name: "Taller MER-RE Ejercicio 1 PAQUETERIA",
+    name: "Taller 1 MER-RE Ejercicio 1 PAQUETERIA",
     shortDescription:
       "El propósito de esta práctica fue diseñar un Modelo Entidad-Relación (MER) sólido y eficiente para una empresa de transporte y logística en Colombia.",
 
@@ -87,10 +89,40 @@ const MODUNO = [
       `1. Extracción de Lógica de Fechas: Al analizar el enunciado, se identificó que la conexión entre conductores y camiones cambia con el tiempo ("fechas diferentes"). En la reducción a tablas, esto implica que la tabla intermedia generada por la relación Muchos a Muchos debe incluir un campo de fecha para registrar el historial sin sobreescribir datos.\n2. Evitar Enredos Geográficos: Se tomó la decisión correcta de mantener separados el atributo de la ciudad donde vive el conductor (que es solo un texto descriptivo en su ficha personal) de la entidad CIUDAD de destino. Esto evita que el sistema confunda el lugar de residencia del empleado con el lugar físico a donde se debe entregar la mercancía.\n3. Modelado Limpio y Digitalización: Mapeo de las dependencias de los paquetes (que dependen tanto de quién los lleva como de a dónde van) y traslado final del bosquejo a una herramienta digital profesional con colores organizados y una distribución de nodos simétrica para facilitar su comprensión.`,
 
     links: [
-      { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing" },
+      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing" },
     ],
 
     image: "/Portfolio_BD1_2026-1/images/modone/paqueteria.png",
+  },
+
+  {
+    name: "Taller 1 MER-RE Ejercicio 2 BIENES RAICES",
+    shortDescription:
+      "Se ha planteado como objetivo principal diseñar un modelo Entidad-Relación estructurado y flexible que controle el mercado inmobiliario de la empresa, permitiendo asociar de forma eficiente el inventario de casas con sus respectivos dueños, firmas y agentes responsables.",
+
+    fullDescription:
+      "Se ha planteado el diseño de un sistema de información para una empresa de bienes raíces enfocado en el cruce de información entre la oferta inmobiliaria (Casas) y la demanda del mercado (Clientes). El diseño se centra en la trazabilidad comercial de los inmuebles, identificando si están vinculados internamente a la Firma mediante contratos directos con sus Agentes, o si pertenecen a firmas competidoras. Un requisito indispensable que se ha integrado es la gestión de perfiles detallados tanto para el personal (rastreando métricas de rendimiento y datos demográficos) como para las propiedades y clientes, unificando los criterios de búsqueda (características físicas y rangos de precios) para automatizar el emparejamiento de opciones.",
+
+    analysis:
+      `Entidades y Atributos\n
+      Para estructurar la lógica del negocio de manera limpia, se han identificado las siguientes entidades con sus respectivos atributos técnicos basados en el modelado: \n
+      AGENTE: Representa a los corredores inmobiliarios de la empresa. Se ha seleccionado la Cédula como su llave primaria. Su nombre completo se ha planteado como un atributo compuesto para desglosar meticulosamente cada campo. Adicionalmente, Edad se ha configurado como un atributo derivado (línea discontinua) ya que se calcula dinámicamente a partir de la FechaNacimiento.\n
+      DUEÑO: Representa a los propietarios de los inmuebles. Se ha establecido un Código único como su llave primaria, complementado con atributos simples de contacto como nombre, dirección y teléfono.\n
+      CASA: Representa los activos inmobiliarios en venta. Se ha asignado un Código de propiedad como llave primaria.\n
+      FIRMA: Representa a la inmobiliaria local o a empresas externas del sector. Se ha identificado mediante un Código de firma único, nombre y dirección corporativa.\n
+      
+      Relaciones y Cardinalidades\n
+      La interacción operativa y las dependencias del modelo se han resuelto mediante las siguientes reglas de correspondencia:\n
+      Relación de Contratación (Contratar): Se ha determinado una cardinalidad de Muchos a Uno ($M:1$) entre Dueño y Agente. Esta decisión refleja que un dueño puede contratar a un agente específico de la firma para gestionar sus propiedades, y un agente puede manejar una cartera de múltiples clientes propietarios simultáneamente. En el rombo se ha incluido el atributo VentasÚltimoMes como una métrica del resultado de dicha relación.\n
+      Relación de Afiliación (Pertenecer): Se ha planteado una relación de tipo condicional o de pertenencia entre las Casas, los Dueños y la Firma. En la gráfica, se ha estructurado una relación ternaria indirecta (etiquetada como MINNESOTA) para conectar la propiedad con la empresa que posee la exclusividad del listado en el mercado.\n`,
+
+    process:
+      `1. Análisis Crítico: Se interpretó el enunciado textual para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que el requerimiento de las "características de la casa" (baños, dormitorios, garaje) y las "preferencias del cliente" compartían la misma naturaleza semántica. Se previó que tratarlos como atributos simples y fijos congelaría el modelo, optando críticamente por un enfoque flexible que permita que varíen entre propiedades sin alterar la estructura física de la base de datos.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al no almacenar la edad del agente de forma estática en la entidad. Al definirla como un atributo derivado basado en la fecha de nacimiento, se garantizó la integridad del modelo en el tiempo, evitando información desactualizada o redundante que requiera mantenimiento manual cada año.\n3.Estructuración Semántica y Digitalización: Se separaron las conexiones operativas de los bienes raíces en verbos claros (Pertenecer para la exclusividad del inventario y Contratar para el vínculo laboral-comercial) y se realizó el mapeo final en limpio utilizando la herramienta digital para lograr una presentación impecable, organizada por colores y sin enredos de líneas, visibilizando correctamente la jerarquía de los atributos compuestos y derivados.`,
+    links: [
+      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/10wQNOVIzKaaIHCVCZrBF7xVNMJGnQnzF/view?usp=sharing" },
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/bienesRaices.png",
   },
 ];
 ---
