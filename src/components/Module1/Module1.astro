@@ -17,7 +17,7 @@ const MODUNO = [
       <b>PILOTO:</b> Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada.\n
       <b>TRIPULACIÓN:</b> Se identifican por un CodigoTripulante (llave primaria). Se configuró el campo Teléfono como un atributo multivalorado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto.\n
       <b>BASE:</b> Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País.\n
-      <b>VUELO:</b> Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora./n
+      <b>VUELO:</b> Se estructuró como una entidad independiente para centralizar la operación. Su llave primaria es NumeroVuelo y cuenta con los atributos descriptivos Origen, Destino y Hora.\n
       
       <b>Relaciones y Cardinalidades</b>\n
       La dinámica operativa de la aerolínea se resolvió mediante conexiones lógicas binarias, lo que evita enredos en el diagrama y facilita la lectura natural del modelo:\n
@@ -30,7 +30,7 @@ const MODUNO = [
     process:
       "<b>1. Análisis Crítico:</b> Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n
       <b>2. Prevención de Redundancias:</b> Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n
-     <b>3. Estructuración Semántica y Digitalización:<b/> Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.",
+     <b>3. Estructuración Semántica y Digitalización:</b> Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.",
 
     links: [
       { label: "Diagrama MER", url: "#" },
