@@ -153,6 +153,36 @@ const MODUNO = [
 
     image: "/Portfolio_BD1_2026-1/images/modone/proveedor.png",
   },
+
+    {
+    name: "Taller 1 MER-RE Ejercicio 4 PRESTAMOS BIBLIOTECA",
+    shortDescription:
+      "Se ha planteado como objetivo principal reconstruir de forma inversa el modelo Entidad-Relación que dio origen al esquema de tablas suministrado.",
+
+    fullDescription:
+      "Se ha planteado la gestión logística de un catálogo de Artículos (que abarca libros, CD y cintas) prestados a los Usuarios de la comunidad. El negocio exige un control estricto sobre los tiempos de entrega, determinando que cualquier artículo devuelto por fuera de la fecha límite acumule una Penalización económica inmediata. Como restricción crítica, los usuarios menores de 18 años deben contar obligatoriamente con un Patrocinador adulto que asuma la responsabilidad legal de pagar sus multas o reemplazar los elementos en caso de pérdida.",
+
+    analysis:
+      `Entidades y Atributos\n
+      Para estructurar la información de manera clara en el diagrama, se han identificado las siguientes entidades y tipos de atributos:\n
+      USUARIO: Representa a los afiliados. Se ha seleccionado NúmeroCuenta como su llave primaria. Cuenta con atributos simples como Salario y Ciudad, y atributos multievaluados para Dirección y Teléfono. Además, Edad se ha configurado como un atributo derivado basado en la fechaNacimiento para calcular de forma automática la minoría de edad.\n
+      ARTÍCULO: Modela los recursos disponibles de la biblioteca. Se ha establecido IdArticulo como su llave primaria y Titulo como atributo descriptivo, unificando bajo un mismo concepto los libros, CD y cintas.\n
+      PENALIZACIÓN: Estructura de control financiero para las sanciones. Se identifica mediante un IdPenalización único y registra la FechaLímiteEntrega para validar la vigencia del recargo.\n
+
+      Relaciones y Cardinalidades\n
+      La interacción operativa y las políticas de la biblioteca se han resuelto mediante las siguientes conexiones lógicas:\n
+      Relación "Prestar" (1:M): Conecta a Usuario con Artículo. Esta cardinalidad indica que un artículo físico específico solo puede estar en manos de un usuario a la vez, aunque un usuario tiene la facultad de retirar múltiples recursos de forma simultánea.\n
+      Relación "Patrocinar" (Recursiva): Conecta a la entidad Usuario consigo misma. Al definir los roles de patrocinador (adulto) y patrocinado (menor), se resuelve el respaldo económico solicitado sin necesidad de duplicar tablas ni crear entidades espejo.\n
+      Agregación "PRESTAMO" y relación "Generador" (1:1): Se ha encapsulado el acto del préstamo (Usuario + Artículo) en una súper-entidad dotada de un IdPrestamo. Esta estructura se conecta directamente con la entidad PENALIZACIÓN mediante el verbo Generador, asegurando que a cada préstamo vencido le corresponda una única multa histórica.\n`,
+
+    process:
+      `1. Análisis Crítico: Se interpretó el texto para aislar las variables del negocio. Al identificar que los libros, CD y cintas compartían exactamente el mismo comportamiento (se prestan y penalizan igual), se tomó la decisión crítica de unificarlos en la entidad ARTÍCULO, evitando la complejidad de crear tablas individuales para cada formato.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al resolver el amparo de los menores mediante una relación recursiva en Usuario y al situar la multa fuera del flujo estático del usuario. Al conectar la Penalización a una agregación del préstamo, se garantizó que el historial de multas dependa de la transacción y no altere los datos demográficos del socio.\n3.Estructuración Semántica y Digitalización: Se separaron las operaciones del negocio en verbos claros y se realizó el mapeo final en limpio utilizando la herramienta digital. El resultado es un diagrama impecable estructurado bajo la notación de Chen, ordenado por bloques de color para distinguir las entidades, relaciones, agregaciones y la jerarquía de los atributos.`,
+    links: [
+      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/1Uh5CpTJPbA51WKbNoiZu8J4FmWjGZEFo/view?usp=sharing" },
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/prestamosBiblioteca.png",
+  },
 ];
 ---
 
