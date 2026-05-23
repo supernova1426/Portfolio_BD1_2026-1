@@ -124,6 +124,35 @@ const MODUNO = [
 
     image: "/Portfolio_BD1_2026-1/images/modone/bienesRaices.png",
   },
+
+    {
+    name: "Taller 1 MER-RE Ejercicio 3 PROVEDOR",
+    shortDescription:
+      "Se ha planteado como objetivo principal reconstruir de forma inversa el modelo Entidad-Relación que dio origen al esquema de tablas suministrado.",
+
+    fullDescription:
+      "Se ha planteado la ingeniería inversa de un sistema logístico y de compras que vincula tres componentes fundamentales: el catálogo de mercancías (Elementos), las empresas que los comercializan (Proveedores) fijando un valor económico específico, y los consumidores finales (Clientes). El núcleo del diseño radica en estructurar el ciclo transaccional de los Pedidos, garantizando que el sistema registre de forma inequívoca qué cliente le compra a qué proveedor un artículo determinado y en qué volumen exacto.",
+
+    analysis:
+      `Entidades y Atributos\n
+      Para mostrar la estructura requerida y fundamentar el diagrama digitalizado, se han identificado las siguientes entidades principales con sus atributos descriptivos: \n
+      CLIENTE: Representa a los compradores del sistema. Se ha seleccionado el atributo NombreCliente (CName) como su llave primaria única, complementado por la propiedad simple Dirección (Address).\n
+      PROVEEDOR: Representa a las organizaciones vendedoras. Se ha establecido NombreProveedor (SName) como su identificador o llave primaria.\n
+      ELEMENTO: Representa los artículos disponibles en el mercado. Se ha asignado NombreItem (ItemName) como llave primaria y Descripción como su atributo descriptivo secundario.\n
+
+      Relaciones y Cardinalidades\n
+      La interacción operativa y el flujo transaccional reflejado en las tablas originales se han resuelto mediante el planteamiento de las siguientes relaciones complejas:\n
+      Relación de Catálogo y Oferta (Vendedor): Conecta a las entidades Proveedor y Elemento. En ella se ha inyectado el atributo descriptivo Precio, ya que el valor económico no es una propiedad intrínseca del artículo ni de la empresa, sino que nace únicamente cuando un proveedor decide vender un ítem específico.\n
+      Relación de Demanda y Transacción (Contactar / Pedido): Vincula la interacción de compra. En esta unión se ha ubicado el atributo Cantidad (Qty), el cual registra de manera exacta el volumen físico que un Cliente ha solicitado formalmente de un Elemento suministrado por un Proveedor.\n`,
+
+    process:
+      `1. Análisis Crítico: Se interpretó el enunciado textual de las tablas para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que las tablas de origen presentaban una fuerte interdependencia de llaves compuestas. Se previó el riesgo de aislar los pedidos como una simple relación binaria, deduciendo críticamente que el "Pedido" y la "Venta" actúan como puentes lógicos que necesitan cruzar simultáneamente al Cliente, al Proveedor y al Elemento para no perder la integridad de la cadena de suministro.\n2. Prevención de Redundancias: Se tomó una decisión de diseño clave al no fragmentar o crear identificadores artificiales numéricos (como IDs autonuméricos) que no estuvieran explícitamente en el requerimiento del esquema relacional original. Al mantener los nombres (SName, CName, ItemName) como las llaves primarias naturales de sus respectivas entidades, se garantizó que la reducción inversa a tablas correspondiera de forma exacta y matemática con la estructura provista en el enunciado.\n3.Estructuración Semántica y Digitalización: Se separaron las conexiones del negocio en verbos operativos claros (Vendedor para la oferta comercial y Contactar para la ejecución del pedido) y se realizó el mapeo final en limpio utilizando la herramienta digital para lograr una presentación impecable, organizada por colores consistentes (bloques oscuros para entidades y rombos contrastados para relaciones), evitando el cruce desordenado de líneas y destacando visualmente los atributos subrayados que componen las llaves primarias.`,
+    links: [
+      { label: "Diagrama MER-RE",   url: "https://drive.google.com/file/d/19hIvxS4Qh95XasWiD-iNGcLTMUJw2N2-/view?usp=sharing" },
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/proveedor.png",
+  },
 ];
 ---
 
