@@ -14,7 +14,7 @@ const MODUNO = [
     analysis:
       `Entidades y Atributos\n
       Para modelar esta operación de manera rigurosa, se definieron las siguientes entidades principales con sus respectivos atributos descriptivos: \n
-      **AVIÓN:** Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota.\n
+      AVIÓN: Se ha establecido el CodigoAvion (número de cola) como su llave primaria. Se incluye el TipoAvion para diferenciar la flota.\n
       PILOTO: Se define mediante un CodigoPiloto como llave primaria. Siguiendo una buena práctica de diseño, su nombre se planteó como un atributo compuesto (Nombre, Apellidos) y se incluye el atributo HoraVuelo para rastrear su experiencia acumulada.\n
       TRIPULACIÓN: Se identifican por un CodigoTripulante (llave primaria). Se configuró el campo Teléfono como un atributo multivalorado (con doble óvalo en el diagrama), previendo que el personal pueda registrar múltiples medios de contacto.\n
       BASE: Esta entidad funciona como el nodo logístico central. Se identifica con un CodigoBase e incluye atributos de ubicación como NombreBase, Ciudad y País.\n
@@ -139,15 +139,9 @@ const MODUNO = [
     document.getElementById("modal-title").innerText = item.name;
     document.getElementById("modal-img").src = item.image;
 
-    //MARKED
-    document.getElementById("modal-full").innerHTML =
-      marked.parse(item.fullDescription || "");
-
-    document.getElementById("modal-analysis").innerHTML =
-      marked.parse(item.analysis || "");
-
-    document.getElementById("modal-process").innerHTML =
-      marked.parse(item.process || "");
+    document.getElementById("modal-full").innerText = item.fullDescription || "";
+    document.getElementById("modal-analysis").innerText = item.analysis || "";
+    document.getElementById("modal-process").innerText = item.process || "";
 
     // LINKS
     const linksContainer = document.getElementById("modal-links");
