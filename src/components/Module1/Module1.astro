@@ -27,7 +27,9 @@ const MODUNO = [
       Relación Aborda (TRIPULACIÓN - VUELO): Conexión de Muchos a Muchos (N:M). Varios tripulantes de cabina abordan un mismo vuelo para prestar servicio, y a lo largo del tiempo, ese mismo personal rota entre diferentes vuelos programados por la aerolínea.\n`,
 
     process:
-      `1. Análisis Crítico: Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n2. Prevención de Redundancias: Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n3. Estructuración Semántica y Digitalización: Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
+      `1. Análisis Crítico: Interpretación del enunciado textual para aislar las variables del negocio y prever problemas comunes de diseño antes de empezar a dibujar.\n
+      2. Prevención de Redundancias: Decisión de diseño clave al identificar que los datos del viaje (origen, destino, hora) no debían ir dentro de los rombos de relación. Al elevar VUELO a una entidad propia, se garantizó la independencia de los itinerarios.\n
+      3. Estructuración Semántica y Digitalización: Separación de las conexiones de la base en tres verbos claros y mapeo final en limpio usando la herramienta digital draw.io para lograr una presentación impecable, organizada por colores y sin enredos de líneas.`,
 
     links: [
       { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1DgBU0lWG01YNXXNIAARiruJyB5dDWwut/view?usp=sharing" },
@@ -36,18 +38,31 @@ const MODUNO = [
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
   {
-    name: "Modelo Aerolínea",
-    shortDescription: "Modelo relacional para operaciones aéreas.",
+    name: "Ejercicio 2 en Clase_BIBLIOTECA",
+    shortDescription: "Se ha planteado como objetivo principal diseñar un modelo Entidad-Relación óptimo y normalizado que automatice el control de inventario, la autoría y el flujo de préstamos de la biblioteca.",
 
     fullDescription:
-      "Transformación del modelo conceptual a modelo relacional optimizado para implementación en bases de datos SQL.",
+      "Se ha planteado la creación de un sistema de gestión para una biblioteca que requiere un control estricto sobre sus activos y usuarios. El diseño se enfoca en tres ejes: la identificación detallada de los Socios (incluyendo datos de contacto y localización), la gestión del catálogo de Libros (considerando su ciclo de vida desde la creación hasta la edición) y la vinculación con sus respectivos Autores. Un requisito indispensable que se ha integrado es la capacidad de monitorear el estado físico de cada libro para determinar si se encuentra dañado.",
 
     analysis:
-      "Se normalizaron las tablas hasta 3FN para evitar redundancia y mejorar integridad.",
+      `Entidades y Atributos\n
+      Para estructurar la información, se han identificado las siguientes entidades con sus respectivos atributos técnicos:\n
+      SOCIO: Se ha definido como la entidad que representa a los usuarios. Se ha seleccionado el CodigoSocio como llave primaria. El nombre y los apellidos se han planteado como atributos compuestos para mejorar la organización de la data, y el Teléfono como un atributo multievaluado para permitir múltiples entradas de contacto.\n
+      LIBRO: Representa el inventario físico. Se ha establecido el ISBN como identificador único. Entre sus atributos se han incluido el título, la editorial y los años de creación y edición. Fundamentalmente, se ha incorporado el atributo Estado para registrar la integridad física del ejemplar.\n
+      AUTOR: Se ha modelado como una entidad independiente para evitar la redundancia. Se ha asignado un CodigoAutor como llave primaria y un atributo compuesto para su nombre completo.\n
+      
+      Relaciones y Cardinalidades\n
+      La lógica de interacción entre los datos se ha resuelto mediante las siguientes reglas de correspondencia:\n
+      Relación de Autoría (Escribir): Se ha determinado una cardinalidad de Muchos a Muchos (N:M). Esta decisión se tomó para reflejar que un autor puede escribir múltiples libros y que un libro puede ser el resultado del trabajo de varios autores simultáneamente.\n
+      Relación de Préstamo: Se ha planteado como la conexión entre Socio y Libro. Se ha definido con una cardinalidad de Uno a Muchos (1:N), partiendo de la restricción física de que un ejemplar de libro solo puede estar en posesión de un socio a la vez, aunque un socio pueda tener varios libros bajo su responsabilidad.\n`,  
 
     process:
-      "1. Conversión MER → Relacional\n2. Normalización\n3. Definición de claves primarias y foráneas",
-
+      `1. Análisis Crítico: Se interpretó el enunciado textual para aislar las variables del negocio, previendo problemas comunes de diseño antes de empezar a dibujar. En este análisis, se identificó que dejar el nombre del autor como un simple texto dentro de la entidad Libro congelaría la base de datos y causaría inconsistencias masivas cuando un escritor publicara múltiples obras.\n
+      2. Prevención de Redundancias: Se tomó una decisión de diseño clave al determinar que los datos de la temporalidad (fechas de inicio, fin y devolución) no debían ir dentro de las entidades estáticas de Socio o Libro. Al elevar estos atributos directamente al rombo de la relación PRÉSTAMO, se garantizó la independencia de los históricos transaccionales, permitiendo que un libro sea prestado infinitas veces en el tiempo sin duplicar la información del inventario.\n
+      3. Estructuración Semántica y Digitalización: Se separaron las conexiones de la base en dos verbos claros (Escribir para la autoría y Préstamo para la operación) y se realizó el mapeo final en limpio usando la herramienta digital para lograr una presentación impecable, organizada por colores y sin enredos de líneas, facilitando la lectura de los atributos compuestos y multievaluados.\n`,
+    links: [
+      { label: "Diagrama MER",   url: "https://drive.google.com/file/d/1qYQh-jPekDigvccEAYjN1_CCn9q4_n6L/view?usp=sharing" },
+    ],
     image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
   },
 ];
