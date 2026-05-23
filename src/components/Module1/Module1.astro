@@ -5,13 +5,41 @@ const MODUNO = [
   {
     name: "Ejercicio 1 en Clase_AEREOLINEA",
     shortDescription:
-      "El propósito de esta práctica fue diseñar el Modelo Entidad-Relación (MER) para controlar las operaciones diarias de una aerolínea.",
+      "Diseño del Modelo Entidad-Relación para una aerolínea.",
+
+    fullDescription:
+      "Proyecto enfocado en el diseño conceptual de una base de datos para una aerolínea, incluyendo análisis de entidades, relaciones y restricciones.",
+
+    analysis:
+      "Se identificaron entidades clave como Vuelo, Pasajero y Aeronave, analizando sus relaciones y cardinalidades para garantizar consistencia en el modelo.",
+
+    process:
+      "1. Levantamiento de requerimientos\n2. Identificación de entidades\n3. Diseño del MER\n4. Validación del modelo",
+
+    links: [
+      { label: "Diagrama MER", url: "#" },
+      { label: "Repositorio GitHub", url: "#" },
+    ],
+
+    docs: [
+      { label: "PDF del análisis", url: "#" },
+    ],
+
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
   {
     name: "Modelo Aerolínea",
-    shortDescription:
-      "Modelo relacional para operaciones aéreas.",
+    shortDescription: "Modelo relacional para operaciones aéreas.",
+
+    fullDescription:
+      "Transformación del modelo conceptual a modelo relacional optimizado para implementación en bases de datos SQL.",
+
+    analysis:
+      "Se normalizaron las tablas hasta 3FN para evitar redundancia y mejorar integridad.",
+
+    process:
+      "1. Conversión MER → Relacional\n2. Normalización\n3. Definición de claves primarias y foráneas",
+
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
 ];
@@ -57,9 +85,8 @@ const MODUNO = [
   class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50"
   onclick="closeModal()"
 >
-
   <div
-    class="bg-gray-900 text-white p-6 rounded-2xl max-w-lg w-full space-y-4"
+    class="bg-gray-900 text-white p-6 rounded-2xl max-w-2xl w-full space-y-5"
     onclick="event.stopPropagation()"
   >
 
@@ -67,10 +94,24 @@ const MODUNO = [
 
     <h2 id="modal-title" class="text-2xl font-bold"></h2>
 
-    <p id="modal-desc" class="text-gray-300"></p>
+    <p id="modal-full" class="text-gray-300"></p>
+
+    <div>
+      <h3 class="font-semibold">Análisis</h3>
+      <p id="modal-analysis" class="text-gray-300"></p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold">Proceso</h3>
+      <pre id="modal-process" class="text-gray-300 whitespace-pre-wrap"></pre>
+    </div>
+
+    <div id="modal-links" class="space-y-1"></div>
+
+    <div id="modal-docs" class="space-y-1"></div>
 
     <button
-      class="bg-white text-black px-4 py-2 rounded-lg"
+      class="bg-white text-black px-4 py-2 rounded-lg mt-2"
       onclick="closeModal()"
     >
       Cerrar
@@ -83,8 +124,41 @@ const MODUNO = [
 <script is:inline>
   function openModal(item) {
     document.getElementById("modal-title").innerText = item.name;
-    document.getElementById("modal-desc").innerText = item.shortDescription;
     document.getElementById("modal-img").src = item.image;
+
+    document.getElementById("modal-full").innerText = item.fullDescription || "";
+    document.getElementById("modal-analysis").innerText = item.analysis || "";
+    document.getElementById("modal-process").innerText = item.process || "";
+
+    // LINKS
+    const linksContainer = document.getElementById("modal-links");
+    linksContainer.innerHTML = "";
+
+    if (item.links?.length) {
+      linksContainer.innerHTML += "<h3 class='font-semibold'>Links</h3>";
+      item.links.forEach(link => {
+        linksContainer.innerHTML += `
+          <a href="${link.url}" target="_blank" class="text-blue-400 underline block">
+            ${link.label}
+          </a>
+        `;
+      });
+    }
+
+    // DOCS
+    const docsContainer = document.getElementById("modal-docs");
+    docsContainer.innerHTML = "";
+
+    if (item.docs?.length) {
+      docsContainer.innerHTML += "<h3 class='font-semibold'>Documentos</h3>";
+      item.docs.forEach(doc => {
+        docsContainer.innerHTML += `
+          <a href="${doc.url}" target="_blank" class="text-green-400 underline block">
+            ${doc.label}
+          </a>
+        `;
+      });
+    }
 
     document.getElementById("modal").classList.remove("hidden");
   }
