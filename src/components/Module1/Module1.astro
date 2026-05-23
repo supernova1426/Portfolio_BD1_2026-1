@@ -4,19 +4,14 @@ import Section from "../UI/Section.astro";
 const MODUNO = [
   {
     name: "Ejercicio 1 en Clase_AEREOLINEA",
-
     shortDescription:
       "El propósito de esta práctica fue diseñar el Modelo Entidad-Relación (MER) para controlar las operaciones diarias de una aerolínea.",
-
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
-
   {
     name: "Modelo Aerolínea",
-
     shortDescription:
       "Modelo relacional para operaciones aéreas.",
-
     image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
 ];
@@ -24,14 +19,15 @@ const MODUNO = [
 
 <Section id="modulos" title="Módulo 1">
 
+  <!-- GRID -->
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
 
     {
       MODUNO.map((moduno) => (
         <article
-          class="overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl"
+          class="cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl hover:scale-[1.02] transition"
+          onclick={`openModal(${JSON.stringify(moduno)})`}
         >
-
           <img
             src={moduno.image}
             alt={moduno.name}
@@ -39,7 +35,6 @@ const MODUNO = [
           />
 
           <div class="p-6 space-y-4">
-
             <h2 class="text-2xl font-bold text-white">
               {moduno.name}
             </h2>
@@ -47,9 +42,7 @@ const MODUNO = [
             <p class="text-gray-300">
               {moduno.shortDescription}
             </p>
-
           </div>
-
         </article>
       ))
     }
@@ -57,3 +50,46 @@ const MODUNO = [
   </div>
 
 </Section>
+
+<!-- MODAL -->
+<div
+  id="modal"
+  class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+  onclick="closeModal()"
+>
+
+  <div
+    class="bg-gray-900 text-white p-6 rounded-2xl max-w-lg w-full space-y-4"
+    onclick="event.stopPropagation()"
+  >
+
+    <img id="modal-img" class="w-full rounded-xl" />
+
+    <h2 id="modal-title" class="text-2xl font-bold"></h2>
+
+    <p id="modal-desc" class="text-gray-300"></p>
+
+    <button
+      class="bg-white text-black px-4 py-2 rounded-lg"
+      onclick="closeModal()"
+    >
+      Cerrar
+    </button>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script is:inline>
+  function openModal(item) {
+    document.getElementById("modal-title").innerText = item.name;
+    document.getElementById("modal-desc").innerText = item.shortDescription;
+    document.getElementById("modal-img").src = item.image;
+
+    document.getElementById("modal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("modal").classList.add("hidden");
+  }
+</script>
