@@ -1,0 +1,152 @@
+---
+import { Icon } from "astro-icon/components";
+
+const mejoras = [
+    "Agregar disivisiones de semetres para las evidencias.",
+    "Agregar informacion de los temas vistos en cada modulo.",
+    "Poder mostrar mis conocimientos en diferentes lenguajes de programacion",
+    "Añadir una sección de certificados y tecnologías aprendidas.",
+];
+---
+
+<section class="relative z-20 px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+        <!-- Título -->
+        <div class="text-center mb-14">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                Mejoras Futuras
+            </h2>
+
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Ideas y mejoras que me gustaría implementar en este portafolio
+                en el futuro.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Mejoras -->
+            <div
+                class="bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="bg-primary/10 p-4 rounded-2xl text-primary"
+                    >
+                        <Icon
+                            name="lucide:rocket"
+                            class="size-8"
+                        />
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white">
+                        Próximas Mejoras
+                    </h3>
+                </div>
+
+                <div class="space-y-4">
+                    {
+                        mejoras.map((mejora) => (
+                            <div
+                                class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl p-4"
+                            >
+                                <Icon
+                                    name="lucide:check-circle"
+                                    class="size-5 text-primary mt-0.5"
+                                />
+
+                                <p class="text-gray-300">
+                                    {mejora}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Feedback -->
+            <div
+                class="bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="bg-primary/10 p-4 rounded-2xl text-primary"
+                    >
+                        <Icon
+                            name="lucide:mail"
+                            class="size-8"
+                        />
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white">
+                        Enviar Sugerencias
+                    </h3>
+                </div>
+
+                <p class="text-gray-400 mb-6">
+                    Si deseas dar una recomendación o sugerencia para mejorar
+                    este portafolio, puedes enviarme un correo.
+                </p>
+
+                <!-- Formulario -->
+                <form
+                    action="gserratob@unbosque.edu.co"
+                    method="POST"
+                    enctype="text/plain"
+                    class="space-y-5"
+                >
+                    <div>
+                        <label class="block text-gray-300 mb-2">
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            name="nombre"
+                            placeholder="Tu nombre"
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white outline-none focus:border-primary"
+                        />
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 mb-2">
+                            Sugerencia
+                        </label>
+
+                        <textarea
+                            name="mensaje"
+                            rows="5"
+                            placeholder="Escribe aquí tu sugerencia..."
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white outline-none focus:border-primary resize-none"
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-primary hover:bg-primary/80 transition-all duration-300 text-white font-semibold py-4 rounded-2xl flex items-center justify-center gap-3"
+                    >
+                        <Icon
+                            name="lucide:send"
+                            class="size-5"
+                        />
+
+                        Enviar Correo
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .bg-primary {
+        background-color: #1c0deb;
+    }
+
+    .text-primary {
+        color: #1c0deb;
+    }
+
+    .focus\:border-primary:focus {
+        border-color: #1c0deb;
+    }
+</style>
