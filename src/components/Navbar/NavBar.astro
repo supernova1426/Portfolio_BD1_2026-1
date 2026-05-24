@@ -7,84 +7,104 @@
     class="fixed top-0 left-0 w-full z-50 bg-gray-950/20 backdrop-blur-md border-b border-white/10"
   >
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="/" class="flex items-center">
-        <h3 class="text-white text-2xl font-bold text-shadow-blue">Daniela Serrato</h3>
+
+      <!-- Logo -->
+      <a href="/Portfolio_BD1_2026-1/" class="flex items-center">
+        <h3 class="text-white text-2xl font-bold text-shadow-blue">
+          Daniela Serrato
+        </h3>
       </a>
 
-      <!-- Links md+ -->
-      <ul class="hidden md:flex space-x-8">
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-8">
+
+        <!-- Home -->
         <li>
           <a
-            href="/Portfolio_BD1_2026-1/#home""
+            href="/Portfolio_BD1_2026-1/#home"
             class="relative group text-white font-bold transition-colors duration-300 hover:text-secondary"
-            ><span
-              class="absolute left-0 -bottom-2 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
-            ></span>Home</a
           >
+            <span
+              class="absolute left-0 -bottom-2 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
+            ></span>
+            Home
+          </a>
         </li>
+
+        <!-- Presentación -->
         <li>
           <a
             href="/Portfolio_BD1_2026-1/#about"
             class="relative group text-white font-bold transition-colors duration-300 hover:text-secondary"
-            ><span
-              class="absolute left-0 -bottom-2 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
-            ></span>Presentación</a
           >
+            <span
+              class="absolute left-0 -bottom-2 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
+            ></span>
+            Presentación
+          </a>
         </li>
+
+        <!-- Evidencias -->
         <li class="relative group">
-  <span
-    class="cursor-pointer text-white font-bold transition-colors duration-300 hover:text-secondary"
-  >
-    Evidencias
-  </span>
+          <span
+            class="cursor-pointer text-white font-bold transition-colors duration-300 hover:text-secondary"
+          >
+            Evidencias
+          </span>
 
-  <ul
-    class="absolute left-0 mt-3 w-44 bg-gray-900 rounded-xl shadow-lg
-           opacity-0 invisible group-hover:opacity-100 group-hover:visible
-           transition-all duration-300"
-  >
-    <li>
-     <a
-  href="/Portfolio_BD1_2026-1/Evidence/modulo1"
-  class="block px-4 py-2 text-white hover:text-secondary"
->
-  Modulo 1
-</a>
-    </li>
-    <li>
-      <a
-        href="/Portfolio_BD1_2026-1/Evidence/modulo2"
-        class="block px-4 py-2 text-white hover:text-secondary"
-      >
-        Modulo 2
-      </a>
-    </li>
-    <li>
-      <a
-        href="/Portfolio_BD1_2026-1/Evidence/modulo3"
-        class="block px-4 py-2 text-white hover:text-secondary"
-      >
-        Modulo 3
-      </a>
-    </li>
-  </ul>
-</li>
+          <ul
+            class="absolute left-0 mt-3 w-44 bg-gray-900 rounded-xl shadow-lg
+                   opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                   transition-all duration-300"
+          >
+            <li>
+              <a
+                href="/Portfolio_BD1_2026-1/Evidence/modulo1"
+                class="block px-4 py-2 text-white hover:text-secondary"
+              >
+                Modulo 1
+              </a>
+            </li>
 
+            <li>
+              <a
+                href="/Portfolio_BD1_2026-1/Evidence/modulo2"
+                class="block px-4 py-2 text-white hover:text-secondary"
+              >
+                Modulo 2
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/Portfolio_BD1_2026-1/Evidence/modulo3"
+                class="block px-4 py-2 text-white hover:text-secondary"
+              >
+                Modulo 3
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Contacto -->
+        <li>
           <a
             href="/Portfolio_BD1_2026-1/#contact"
             class="px-6 py-3 bg-primary hover:bg-secondary text-white font-semibold rounded-3xl transition-all duration-150
-         drop-shadow-[2px_2px_0_#0debd8] active:translate-0.5 active:drop-shadow-none"
+            drop-shadow-[2px_2px_0_#0debd8] active:translate-0.5 active:drop-shadow-none"
           >
             Contactame
           </a>
         </li>
+
       </ul>
 
-      <!-- Botón hamburguesa móvil -->
+      <!-- Botón hamburguesa -->
       <label
         for="menu-toggle"
         class="md:hidden cursor-pointer z-50 flex items-center"
       >
+        <!-- Icono menú -->
         <svg
           class="h-6 w-6 text-white peer-checked:hidden"
           fill="none"
@@ -95,8 +115,11 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
         </svg>
+
+        <!-- Icono cerrar -->
         <svg
           class="h-6 w-6 text-white hidden peer-checked:block"
           fill="none"
@@ -107,7 +130,8 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
         </svg>
       </label>
     </div>
@@ -116,90 +140,89 @@
   <!-- Overlay -->
   <label
     for="menu-toggle"
-    class="fixed inset-0 bg-black/60 hidden peer-checked:block cursor-pointer z-50"
+    class="fixed inset-0 bg-black/60 hidden peer-checked:block cursor-pointer z-40"
   ></label>
 
-  <!-- Sidebar sólido móvil -->
+  <!-- Sidebar móvil -->
   <div
-    class="fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg transform translate-x-full transition-transform duration-300 peer-checked:translate-x-0 z-60"
+    class="fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg
+           transform translate-x-full transition-transform duration-300
+           peer-checked:translate-x-0 z-50"
   >
-    <ul class="flex flex-col space-y-6 mt-10 ml-6">
+    <ul class="flex flex-col space-y-6 mt-20 ml-6">
 
-  <li>
-    <a href="/Portfolio_BD1_2026-1/#home" class="text-white text-lg font-bold hover:text-secondary">
-      Home
-    </a>
-  </li>
-
-  <li>
-    <a href="/Portfolio_BD1_2026-1/#about" class="text-white text-lg font-bold hover:text-secondary">
-      Presentación
-    </a>
-  </li>
-
-  <!-- Evidencias móvil -->
-  <li>
-    <p class="text-white text-lg font-bold">Evidencias</p>
-    <ul class="ml-4 mt-2 space-y-2">
+      <!-- Home -->
       <li>
         <a
-          href="/Portfolio_BD1_2026-1/Evidence/Modeling"
-          class="text-white hover:text-secondary"
+          href="/Portfolio_BD1_2026-1/#home"
+          class="text-white text-lg font-bold hover:text-secondary"
         >
-          Modulo 1
+          Home
         </a>
       </li>
-      <li>
-       <a
-  href="/Portfolio_BD1_2026-1/Evidence/modulo1"
-  class="text-white hover:text-secondary"
->
-  Modulo 2
-</a>
-      </li>
+
+      <!-- Presentación -->
       <li>
         <a
-          href="/Portfolio_BD1_2026-1/Evidence/modulo2"
-          class="text-white hover:text-secondary"
+          href="/Portfolio_BD1_2026-1/#about"
+          class="text-white text-lg font-bold hover:text-secondary"
         >
-          Modulo 2
+          Presentación
         </a>
       </li>
+
+      <!-- Evidencias -->
+      <li>
+        <p class="text-white text-lg font-bold">Evidencias</p>
+
+        <ul class="ml-4 mt-2 space-y-2">
+
+          <li>
+            <a
+              href="/Portfolio_BD1_2026-1/Evidence/modulo1"
+              class="text-white hover:text-secondary"
+            >
+              Modulo 1
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/Portfolio_BD1_2026-1/Evidence/modulo2"
+              class="text-white hover:text-secondary"
+            >
+              Modulo 2
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/Portfolio_BD1_2026-1/Evidence/modulo3"
+              class="text-white hover:text-secondary"
+            >
+              Modulo 3
+            </a>
+          </li>
+
+        </ul>
+      </li>
+
+      <!-- Contacto -->
       <li>
         <a
-          href="/Portfolio_BD1_2026-1/Evidence/Modeling"
-          class="text-white hover:text-secondary"
+          href="/Portfolio_BD1_2026-1/#contact"
+          class="inline-block px-6 py-3 bg-primary hover:bg-secondary text-white font-semibold rounded-3xl"
         >
-          Modulo 1
+          Contactame
         </a>
       </li>
-      <li>
-       <a
-  href="/Portfolio_BD1_2026-1/Evidence/modulo3"
-  class="text-white hover:text-secondary"
->
-  Modulo 3
-</a>
-      </li>
+
     </ul>
-  </li>
-
-
-  <li>
-    <a
-      href="/Portfolio_BD1_2026-1/#contact"
-      class="px-6 py-3 bg-primary hover:bg-secondary text-white font-semibold rounded-3xl"
-    >
-      Contact me
-    </a>
-  </li>
-</ul>
-
   </div>
 </div>
 
 <style>
-    .text-shadow-blue {
-        text-shadow: 2px 2px 0 #1c0deb;
-    }
+  .text-shadow-blue {
+    text-shadow: 2px 2px 0 #1c0deb;
+  }
 </style>
