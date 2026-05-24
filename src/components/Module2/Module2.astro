@@ -164,7 +164,7 @@ const TALLER_ENTREGADO = [
 
   // TALLER — SISTEMA DE ENVÍO INTERNACIONAL DE MERCANCÍA
 {
-  name: "Taller 1 - Envío Internacional de Mercancía",
+  name: "Taller 1 - Ejercicio 1 Envío Internacional de Mercancía",
 
   shortDescription:
     "Proceso completo de normalización de un sistema logístico de envíos internacionales, aplicando dependencias funcionales y transformación progresiva hasta la Tercera Forma Normal (3FN).",
@@ -202,9 +202,7 @@ La información se encontraba inicialmente almacenada en una única relación no
 8. Finalmente se consolidó el modelo relacional completamente normalizado en 3FN utilizando llaves primarias y foráneas.`,
 
   tools:
-    `• Microsoft Excel\n
-• Draw.io\n
-• MySQL Workbench\n`,
+    `• Microsoft Excel\n`,
 
   result:
     "Se obtuvo una base de datos relacional organizada y normalizada hasta la Tercera Forma Normal (3FN), capaz de gestionar correctamente envíos internacionales, paquetes, rastreos, pagos y recursos logísticos.",
@@ -225,6 +223,115 @@ La información se encontraba inicialmente almacenada en una única relación no
 
   image: "/Portfolio_BD1_2026-1/images/modtwo/envioMercancia.png",
 },
+// TALLER — SISTEMA DE ALQUILER DE PELÍCULAS
+{
+  name: "Taller 1 - Ejercicio 2 Sistema de Alquiler STREAM&GO",
+
+  shortDescription:
+    "Proceso de normalización de una base de datos para la gestión de alquiler de películas, membresías, actores, categorías y control de préstamos.",
+
+  topic:
+    "Normalización • Dependencias Funcionales • 1FN • 2FN • 3FN",
+
+  exerciseStatement:
+    `La cadena STREAM&GO administra locales físicos dedicados al alquiler de películas en formato DVD y Blu-ray.
+
+Cada película puede tener múltiples copias físicas, pertenecer a varias categorías y contar con diferentes actores protagónicos y directores. Además, los clientes poseen membresías asociadas a planes tarifarios que determinan costos y tiempos de préstamo.
+
+Toda la información se encontraba almacenada en una sola tabla no normalizada, por lo que fue necesario desarrollar el proceso formal de normalización hasta la Tercera Forma Normal (3FN).`,
+
+  objective:
+    "Diseñar una estructura relacional organizada mediante el proceso de normalización para optimizar la gestión de alquileres, películas, clientes y recargos.",
+
+  learned:
+    `• Identificación de atributos multivalorados y grupos repetitivos.\n
+• Aplicación formal de la Primera, Segunda y Tercera Forma Normal.\n
+• Reconocimiento de dependencias parciales y transitivas.\n
+• Diseño de relaciones entre películas, actores, categorías y alquileres.\n
+• Implementación de llaves primarias y foráneas.\n
+• Organización de información relacionada con membresías y planes tarifarios.\n
+• Modelado eficiente de préstamos y recargos por mora.`,
+
+  process:
+    `1. Se analizó el esquema inicial no normalizado para identificar redundancias y dependencias funcionales.\n
+2. Se detectaron atributos multivalorados relacionados con actores y categorías de películas.\n
+3. Se definió la entidad principal correspondiente a los alquileres realizados por los clientes.\n
+4. Se aplicó la Primera Forma Normal (1FN) separando valores repetitivos en registros individuales.\n
+5. Posteriormente se eliminaron dependencias parciales creando tablas independientes para clientes, sucursales, películas, actores, directores y categorías.\n
+6. Se identificaron dependencias transitivas relacionadas con planes de membresía y tarifas.\n
+7. Se diseñaron tablas intermedias para representar relaciones muchos a muchos entre películas, actores y categorías.\n
+8. Finalmente, se consolidó un modelo relacional completamente normalizado hasta la Tercera Forma Normal (3FN).`,
+
+  tools:
+    `• Microsoft Excel\n`,
+
+  result:
+    "Se obtuvo un modelo relacional eficiente y organizado capaz de gestionar alquileres, clientes, membresías, películas, actores y recargos de manera consistente y sin redundancia.",
+
+  reflection:
+    "Este taller permitió fortalecer la comprensión del proceso de normalización aplicado a escenarios reales de gestión audiovisual, resaltando la importancia de separar correctamente las entidades y relaciones complejas dentro de una base de datos.",
+
+  diagrams: [
+    {
+      label: "Proceso de Normalización",
+      url: "/Portfolio_BD1_2026-1/documents/modtwo/Taller2Nor.ods"
+    },
+    {
+      label: "Modelo Relacional",
+      url: "/Portfolio_BD1_2026-1/documents/modtwo/TallerNorma.pdf"
+    }
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modtwo/videoClub.png",
+},
+// TALLER — ÁLGEBRA RELACIONAL
+{
+  name: "Taller 2 - Álgebra Relacional Universidades",
+
+  shortDescription:
+    "Desarrollo de consultas utilizando operadores de álgebra relacional aplicados a relaciones de empleados, universidades y jefes.",
+
+  topic:
+    "Álgebra Relacional • Consultas Relacionales • Operadores Relacionales",
+
+  exerciseStatement:
+    `A partir de las relaciones EMPLEADO, TRABAJA, UNIVERSIDAD y JEFE, se desarrollaron múltiples expresiones de álgebra relacional para responder consultas relacionadas con empleados, universidades, salarios y ciudades de residencia.
+
+Las consultas incluían operaciones de selección, proyección, producto cartesiano, joins, diferencias y comparaciones entre conjuntos de datos.`,
+
+  objective:
+    "Aplicar operadores de álgebra relacional para construir consultas capaces de recuperar información específica dentro de un sistema relacional universitario.",
+
+  learned:
+    `• Uso del operador selección (σ).\n
+• Aplicación del operador proyección (π).\n
+• Implementación de joins entre relaciones.\n
+• Manejo de diferencias de conjuntos.\n
+• Desarrollo de consultas complejas utilizando álgebra relacional.\n
+• Interpretación lógica de relaciones entre entidades.\n
+• Comprensión de consultas sobre salarios, ciudades y dependencias laborales.`,
+
+  process:
+    `1. Se analizaron las relaciones proporcionadas en el ejercicio.\n
+2. Se identificaron las llaves comunes entre EMPLEADO, TRABAJA, UNIVERSIDAD y JEFE.\n
+3. Se construyeron consultas básicas utilizando selección y proyección.\n
+4. Posteriormente se desarrollaron joins para relacionar empleados con universidades y jefes.\n
+5. Se aplicaron condiciones de filtrado relacionadas con ciudades, salarios y nombres de universidades.\n
+6. También se utilizaron operaciones de diferencia y comparación entre conjuntos.\n
+7. Finalmente, se validaron las expresiones obtenidas para garantizar que respondieran correctamente cada consulta planteada.`,
+
+  tools:
+    `• Microsoft Word\n`,
+
+  result:
+    "Se obtuvo un conjunto completo de expresiones de álgebra relacional capaces de resolver consultas relacionadas con empleados, universidades, ciudades y salarios dentro del sistema planteado.",
+
+  reflection:
+    "Este taller permitió fortalecer el razonamiento lógico aplicado a bases de datos relacionales y comprender cómo el álgebra relacional sirve como base conceptual para la construcción de consultas SQL.",
+
+  image: "/Portfolio_BD1_2026-1/images/modtwo/tallerAlgebraRela.png",
+},
+
 ];
 ---
 
