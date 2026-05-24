@@ -886,34 +886,38 @@ Sistema para gestionar empleados, departamentos, proyectos y dependientes.`,
     document.getElementById("modal-reflection").innerText =
       item.reflection || "";
 
-    // LINKS
-    const linksContainer =
-      document.getElementById("modal-links");
+// LINKS O DIAGRAMAS
+const linksContainer =
+  document.getElementById("modal-links");
 
-    linksContainer.innerHTML = "";
+linksContainer.innerHTML = "";
 
-    if (item.links?.length) {
+// Detecta si el objeto usa links o diagrams
+const resources =
+  item.links || item.diagrams || [];
 
-      linksContainer.innerHTML += `
-        <h3 class="text-lg font-semibold text-cyan-400">
-          Recursos y diagramas
-        </h3>
-      `;
+if (resources.length) {
 
-      item.links.forEach(link => {
+  linksContainer.innerHTML += `
+    <h3 class="text-lg font-semibold text-cyan-400">
+      Recursos y diagramas
+    </h3>
+  `;
 
-        linksContainer.innerHTML += `
-          <a
-            href="${link.url}"
-            target="_blank"
-            class="block text-blue-400 underline transition hover:text-blue-300"
-          >
-            ${link.label}
-          </a>
-        `;
+  resources.forEach(link => {
 
-      });
-    }
+    linksContainer.innerHTML += `
+      <a
+        href="${link.url}"
+        target="_blank"
+        class="block text-blue-400 underline transition hover:text-blue-300"
+      >
+        ${link.label}
+      </a>
+    `;
+
+  });
+}
 
     // MOSTRAR MODAL CENTRADO
     const modal = document.getElementById("modal");
