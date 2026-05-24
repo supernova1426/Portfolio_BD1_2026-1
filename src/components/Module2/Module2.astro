@@ -162,74 +162,73 @@ const MODUNO = [
 ];
 const TALLER_ENTREGADO = [
 
-  // EJERCICIO 1
-  {
-    name: "Ejercicio 1 - Residuos Tóxicos",
+  // TALLER — SISTEMA DE ENVÍO INTERNACIONAL DE MERCANCÍA
+{
+  name: "Taller 1 - Envío Internacional de Mercancía",
 
-    shortDescription:
-      "Diseño completo del modelo conceptual y lógico para la gestión de residuos tóxicos y peligrosos.",
+  shortDescription:
+    "Proceso completo de normalización de un sistema logístico de envíos internacionales, aplicando dependencias funcionales y transformación progresiva hasta la Tercera Forma Normal (3FN).",
 
-    topic:
-      "MER • MER-E • Crow's Foot",
+  topic:
+    "Normalización • Dependencias Funcionales • 1FN • 2FN • 3FN",
 
-    exerciseStatement:
-      `BLOQUE 1: LOS RESIDUOS TÓXICOS
+  exerciseStatement:
+    `La empresa LOGISTIC SYSTEMS S.A.S. requiere administrar información relacionada con envíos internacionales de mercancía. 
 
-Se desea abordar la problemática ambiental de los residuos tóxicos y peligrosos cuya incorrecta gestión produce daños de gran importancia en el medio ambiente y en la salud del ser humano.
+Cada guía de envío puede incluir múltiples paquetes y está asociada a clientes remitentes, destinatarios, empleados, vehículos, zonas tarifarias, eventos de rastreo y métodos de pago.
 
-La información a contemplar es la que corresponde desde que es producido el residuo por un centro o empresa productora hasta que éste se encuentra en lugar seguro.
+La información se encontraba inicialmente almacenada en una única relación no normalizada, por lo que fue necesario aplicar el proceso formal de normalización hasta la Tercera Forma Normal (3FN).`,
 
-El sistema debe gestionar productores, residuos, empresas transportistas, traslados, envases, tipos de transporte y tratamientos finales.`,
+  objective:
+    "Aplicar correctamente el proceso de normalización para eliminar redundancia, dependencias parciales y transitivas dentro de un sistema logístico complejo.",
 
-    objective:
-      "Diseñar un modelo conceptual y lógico capaz de representar correctamente el flujo completo de residuos tóxicos.",
+  learned:
+    `• Identificación de atributos multivalorados.\n
+• Reconocimiento de dependencias funcionales complejas.\n
+• Aplicación formal de la 1FN, 2FN y 3FN.\n
+• Separación de entidades logísticas y operativas.\n
+• Diseño de relaciones mediante llaves primarias y foráneas.\n
+• Modelado eficiente de paquetes, eventos de rastreo y pagos.\n
+• Organización de sistemas de transporte y zonas tarifarias.`,
 
-    learned:
-      `• Relaciones complejas N:M.\n
-• Uso de entidades débiles.\n
-• Modelado de transporte y logística.\n
-• Conversión de MER a Crow's Foot.\n
-• Aplicación de restricciones semánticas avanzadas.`,
+  process:
+    `1. Se analizó el esquema inicial no normalizado proporcionado en el taller.\n
+2. Se identificaron grupos repetitivos y atributos multivalorados relacionados con paquetes y eventos.\n
+3. Se definió la llave principal correspondiente a la guía de envío.\n
+4. Se aplicó la Primera Forma Normal (1FN) separando información repetitiva en registros individuales.\n
+5. Posteriormente se eliminaron dependencias parciales mediante la creación de tablas independientes para remitentes, destinatarios, empleados, vehículos y zonas.\n
+6. Se identificaron dependencias transitivas relacionadas con tarifas, tipos de vehículo y métodos de pago.\n
+7. Se diseñaron tablas independientes para paquetes, rastreos, pagos y planes tarifarios.\n
+8. Finalmente se consolidó el modelo relacional completamente normalizado en 3FN utilizando llaves primarias y foráneas.`,
 
-    process:
-      `1. Análisis del enunciado.\n
-2. Identificación de entidades y relaciones.\n
-3. Construcción del MER.\n
-4. Extensión a MER-E.\n
-5. Conversión a Crow's Foot.\n
-6. Documentación final.`,
+  tools:
+    `• Microsoft Excel\n
+• Draw.io\n
+• MySQL Workbench\n`,
 
-    tools:
-      `• draw.io\n
-• DataModeler\n`,
+  result:
+    "Se obtuvo una base de datos relacional organizada y normalizada hasta la Tercera Forma Normal (3FN), capaz de gestionar correctamente envíos internacionales, paquetes, rastreos, pagos y recursos logísticos.",
 
-    result:
-      "Se obtuvo un modelo completo capaz de representar productores, residuos, transportes y tratamientos.",
+  reflection:
+    "Este taller permitió fortalecer el análisis de dependencias funcionales y comprender cómo la normalización mejora la integridad, escalabilidad y eficiencia de sistemas logísticos complejos.",
 
-    reflection:
-      "Este ejercicio permitió fortalecer el modelado avanzado y el análisis semántico de reglas de negocio complejas.",
+  diagrams: [
+    {
+      label: "Proceso de Normalización",
+      url: "/Portfolio_BD1_2026-1/documents/modtwo/Taller1Nor.ods"
+    },
+    {
+      label: "Respuestas Teoricas y Diagramas pdf",
+      url: "/Portfolio_BD1_2026-1/documents/modtwo/TallerNorma.pdf"
+    }
+  ],
 
-    diagrams: [
-      {
-        label: "Modelo MER",
-        url: "https://drive.google.com/file/d/1wXZNOZCWI19iIEWY0chACq4DSqXGkzk_/view?usp=sharing"
-      },
-      {
-        label: "Modelo MER-E",
-        url: "https://drive.google.com/file/d/1wXZNOZCWI19iIEWY0chACq4DSqXGkzk_/view?usp=sharing"
-      },
-      {
-        label: "Modelo Crow's Foot zip",
-        url: "/Portfolio_BD1_2026-1/documents/tResiduos.zip"
-      }
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/tResiduos.png",
-  },
+  image: "/Portfolio_BD1_2026-1/images/modtwo/envioMercancia.png",
+},
 ];
 ---
 
-<Section id="modulos" title="Módulo 2 - Normalización y Algebra relacional">
+<Section id="modulos" title="Módulo 2 - Normalización y Álgebra Relacional">
 
   <!-- GRID -->
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
