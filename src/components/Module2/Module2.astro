@@ -36,9 +36,7 @@ const MODUNO = [
 7. Finalmente se creó una tabla intermedia de ASIGNACION para relacionar empleados y proyectos mediante las horas asignadas, obteniendo así el modelo en 3FN.`,
 
   tools:
-    `• Microsoft Excel\n
-• Draw.io\n
-• MySQL Workbench\n`,
+    `• Microsoft Excel\n`,
 
   result:
     "Se obtuvo un modelo de datos correctamente normalizado hasta la Tercera Forma Normal (3FN), eliminando redundancias y permitiendo una estructura más eficiente, organizada y fácil de mantener.",
@@ -48,14 +46,119 @@ const MODUNO = [
 
   links: [
     {
-      label: "Proceso de Normalización",
+      label: "Proceso de Normalización ods",
       url: "/Portfolio_BD1_2026-1/documents/modtwo/ejercicio1.ods",
     },
   ],
 
   image: "/Portfolio_BD1_2026-1/images/modtwo/ejercicio1.png",
 },
+// NORMALIZACIÓN – TABLA DE ESTUDIANTES
+{
+  name: "Ejercicio 2 en Clase_NORMALIZACION_ESTUDIANTES",
 
+  shortDescription:
+    "Ejercicio enfocado en la identificación de violaciones a la Primera Forma Normal (1FN) dentro de una tabla de estudiantes y el rediseño de la estructura relacional para cumplir con las reglas de normalización.",
+
+  topic:
+    "Primera Forma Normal (1FN) y Diseño Relacional",
+
+  exerciseStatement:
+    "A partir de una tabla de estudiantes que contenía información de cursos y calificaciones almacenadas en atributos multivalorados, se debía analizar si la estructura cumplía con la Primera Forma Normal (1FN). Posteriormente, se realizó el rediseño de las tablas necesarias para almacenar correctamente la información utilizando llaves primarias y foráneas.",
+
+  objective:
+    "Aplicar los principios de la Primera Forma Normal (1FN) para eliminar grupos repetitivos y atributos multivalorados, garantizando estructuras relacionales organizadas y consistentes.",
+
+  learned:
+    `• Identificación de atributos multivalorados dentro de una tabla.\n
+• Comprensión de las reglas de la Primera Forma Normal (1FN).\n
+• Separación de datos repetitivos en tablas independientes.\n
+• Diseño de relaciones mediante llaves primarias y foráneas.\n
+• Organización adecuada de cursos y calificaciones dentro de un modelo relacional.\n
+• Reducción de redundancia y mejora de la integridad de los datos.`,
+
+  process:
+    `1. Se analizó la tabla inicial de estudiantes para identificar posibles violaciones a la 1FN.\n
+2. Se determinó que la tabla no cumplía con la Primera Forma Normal debido a que los atributos Courses y GradePoints almacenaban múltiples valores en una sola celda.\n
+3. Se identificó el código del estudiante como llave primaria principal.\n
+4. Se separó la información de los cursos en una tabla independiente relacionada con los estudiantes.\n
+5. Se creó una tabla de inscripciones o asignaciones para almacenar cada curso y su respectiva calificación de manera individual.\n
+6. Se definieron las llaves foráneas necesarias para mantener la integridad referencial entre estudiantes y cursos.\n
+7. Finalmente, se reorganizó la estructura obteniendo tablas completamente normalizadas en 1FN.`,
+
+  tools:
+    `• Microsoft Excel\n
+• Draw.io\n`,
+
+  result:
+    "Se obtuvo una estructura de tablas organizada y consistente, donde cada atributo almacena únicamente valores atómicos, cumpliendo correctamente con los principios de la Primera Forma Normal (1FN).",
+
+  reflection:
+    "Este ejercicio permitió comprender la importancia de evitar atributos multivalorados dentro de una tabla y cómo la normalización facilita el manejo adecuado de la información académica mediante estructuras más limpias y eficientes.",
+
+  links: [
+    {
+      label: "Proceso de Normalización ods",
+      url: "/Portfolio_BD1_2026-1/documents/modtwo/ejercicio2.ods",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modtwo/ejercicio2.png",
+},
+// NORMALIZACIÓN – GERENCIA DE RESTAURANTE NOCTURNO
+{
+  name: "Ejercicio 3 en Clase_NORMALIZACION_MEMBER_DINNER",
+
+  shortDescription:
+    "Ejercicio enfocado en el análisis de valores multivalorados, dependencias funcionales y proceso de normalización de una tabla relacionada con miembros, cenas y platos de un restaurante nocturno.",
+
+  topic:
+    "Primera, Segunda y Tercera Forma Normal (1FN, 2FN y 3FN)",
+
+  exerciseStatement:
+    "A partir de una tabla utilizada por la gerencia de un restaurante nocturno para registrar miembros, cenas, ubicaciones y platos servidos, se debía analizar la existencia de valores multivalorados, construir el esquema relacional inicial, identificar dependencias funcionales y realizar el proceso completo de normalización hasta llegar a la Tercera Forma Normal (3FN).",
+
+  objective:
+    "Aplicar técnicas de normalización para eliminar redundancias, separar correctamente entidades y garantizar la integridad de los datos dentro de un sistema de gestión de cenas y asistentes.",
+
+  learned:
+    `• Identificación de valores multivalorados dentro de una tabla.\n
+• Reconocimiento de dependencias funcionales y transitivas.\n
+• Aplicación de la Primera, Segunda y Tercera Forma Normal.\n
+• Separación adecuada de entidades relacionadas con miembros, cenas y platos.\n
+• Diseño de tablas utilizando llaves primarias y foráneas.\n
+• Organización eficiente de relaciones muchos a muchos mediante tablas intermedias.`,
+
+  process:
+    `1. Se analizó la Tabla No. 3 para identificar redundancias y posibles valores multivalorados.\n
+2. Se determinó que los platos asociados a cada cena representaban un atributo multivalorado, ya que una cena podía contener múltiples alimentos.\n
+3. Se planteó el esquema relacional inicial denominado Member_Dinner utilizando la llave compuesta MEMBER_NUM + DINNER_NUM.\n
+4. Se identificaron las dependencias funcionales entre miembros, cenas, ubicaciones y platos.\n
+5. Se elaboró el diagrama de dependencias funcionales correspondiente a la Primera Forma Normal (1FN).\n
+6. Posteriormente, se separaron los datos dependientes únicamente del miembro en una tabla MEMBER.\n
+7. Se creó una tabla DINNER para almacenar la información propia de cada cena.\n
+8. Se aisló la información de los lugares en una tabla VENUE para eliminar dependencias transitivas.\n
+9. Se creó una tabla FOOD para almacenar los platos disponibles.\n
+10. Finalmente, se diseñó una tabla intermedia para relacionar cenas y platos, logrando un modelo completamente normalizado en 3FN.`,
+
+  tools:
+    `• Microsoft Excel\n`,
+
+  result:
+    "Se obtuvo un modelo relacional organizado y normalizado hasta la Tercera Forma Normal (3FN), eliminando redundancia de datos y permitiendo una administración eficiente de miembros, cenas, ubicaciones y platos servidos.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de las dependencias funcionales y la importancia de separar entidades correctamente para evitar inconsistencias dentro de bases de datos relacionales complejas.",
+
+  links: [
+    {
+      label: "Proceso de Normalización ods",
+      url: "/Portfolio_BD1_2026-1/documents/modtwo/ejercicio3.ods",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modtwo/ejercicio3.png",
+},
 ];
 const TALLER_ENTREGADO = [
 
@@ -126,7 +229,7 @@ El sistema debe gestionar productores, residuos, empresas transportistas, trasla
 ];
 ---
 
-<Section id="modulos" title="Módulo 1 - MER">
+<Section id="modulos" title="Módulo 2 - Normalización y Algebra relacional">
 
   <!-- GRID -->
   <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -173,7 +276,7 @@ El sistema debe gestionar productores, residuos, empresas transportistas, trasla
 <!-- TALLER ENTREGADO -->
 <Section
   id="taller-entregado"
-  title="Taller Entregado"
+  title="Talleres Entregados"
 >
 
   <div class="mt-10 space-y-8">
