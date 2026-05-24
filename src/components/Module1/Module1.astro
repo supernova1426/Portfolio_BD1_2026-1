@@ -463,7 +463,7 @@ El sistema debe gestionar productores, residuos, empresas transportistas, trasla
       },
       {
         label: "Modelo Crow's Foot zip",
-        url: "/documentos/tResiduos.zip"
+        url: "/documents/tResiduos.zip"
       }
     ],
 
@@ -525,7 +525,7 @@ El sistema debe controlar ingredientes, tamaños, pedidos, promociones, repartid
       },
       {
         label: "Modelo Crow's Foot zip",
-        url: "/documentos/tEatnGo.zip"
+        url: "/documents/tEatnGo.zip"
       }
     ],
 
@@ -908,10 +908,10 @@ if (resources.length) {
 
     linksContainer.innerHTML += `
       <a
-        href="${link.url}"
-        target="_blank"
-        class="block text-blue-400 underline transition hover:text-blue-300"
-      >
+    href="${link.url}"
+    download
+    class="block text-blue-400 underline transition hover:text-blue-300"
+  >
         ${link.label}
       </a>
     `;
