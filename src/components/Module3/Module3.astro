@@ -2,7 +2,7 @@
 import Section from "../UI/Section.astro";
 
 const MODUNO = [
-  // MÓDULO 3 — SQL ORACLE: SELECT
+  // Ejercicio 1 - SQL ORACLE: SELECT
 {
   name: "Ejercicio SQL 1 - SELECT",
 
@@ -35,8 +35,7 @@ Se trabajó con selección de columnas específicas, alias personalizados y conc
 5. Finalmente, se validó la salida de las consultas ejecutadas en Oracle SQL.`,
 
   tools:
-    `• Oracle SQL Developer\n
-• Oracle Database XE\n`,
+    `• Oracle SQL Developer\n`,
 
   result:
     "Se obtuvieron consultas funcionales capaces de recuperar y presentar información de manera organizada utilizando SELECT y operadores básicos.",
@@ -53,7 +52,7 @@ Se trabajó con selección de columnas específicas, alias personalizados y conc
 
   image: "/Portfolio_BD1_2026-1/images/modthree/1Select.png",
 },
-// MÓDULO 3 — SQL ORACLE: RESTRICTING AND SORTING DATA
+// Ejercicio 2 - SQL ORACLE: RESTRICTING AND SORTING DATA
 {
   name: "Ejercicio SQL 2 - Restricting and Sorting Data",
 
@@ -99,7 +98,7 @@ Se trabajó con selección de columnas específicas, alias personalizados y conc
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modthree/3Restricting.png",
+  image: "/Portfolio_BD1_2026-1/public/images/modthree/2Restricting.png",
 },
 // MÓDULO 3 — SQL ORACLE: SINGLE ROW FUNCTIONS
 {
@@ -147,7 +146,7 @@ Se trabajó con selección de columnas específicas, alias personalizados y conc
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modthree/3Single.png",
+  image: "/Portfolio_BD1_2026-1/public/images/modthree/3Single.png",
 },
 // MÓDULO 3 — SQL ORACLE: CONVERSION FUNCTIONS
 {
@@ -391,72 +390,260 @@ Se trabajó con selección de columnas específicas, alias personalizados y conc
 },
 ];
 const TALLER_ENTREGADO = [
+// 1. DIAGNÓSTICO
+{
+  name: "Taller Lab Parte 1 - Diagnóstico de Empleados y Departamentos",
 
-  // EJERCICIO 1
-  {
-    name: "Ejercicio 1 - Residuos Tóxicos",
+  shortDescription:
+    "Análisis inicial de empleados, salarios y departamentos antes de realizar ajustes salariales.",
 
-    shortDescription:
-      "Diseño completo del modelo conceptual y lógico para la gestión de residuos tóxicos y peligrosos.",
+  topic:
+    "Consultas SQL • JOIN • CTE • Funciones Analíticas",
 
-    topic:
-      "MER • MER-E • Crow's Foot",
+  exerciseStatement:
+    "Se realizó una consulta diagnóstica sobre las tablas T1_EMPLOYEES, T1_DEPARTMENTS y T1_JOB_HISTORY con el objetivo de analizar la situación salarial de los empleados, calcular promedios departamentales y detectar historiales laborales recientes.",
 
-    exerciseStatement:
-      `BLOQUE 1: LOS RESIDUOS TÓXICOS
+  objective:
+    "Identificar empleados potencialmente elegibles para ajustes salariales mediante consultas SQL avanzadas y análisis de información organizacional.",
 
-Se desea abordar la problemática ambiental de los residuos tóxicos y peligrosos cuya incorrecta gestión produce daños de gran importancia en el medio ambiente y en la salud del ser humano.
+  learned:
+    `• Uso de JOIN entre múltiples tablas.\n
+• Aplicación de CTE para organizar consultas complejas.\n
+• Uso de funciones analíticas como DENSE_RANK().\n
+• Cálculo de promedios salariales por departamento.\n
+• Identificación de historial laboral reciente.\n
+• Interpretación de métricas salariales organizacionales.`,
 
-La información a contemplar es la que corresponde desde que es producido el residuo por un centro o empresa productora hasta que éste se encuentra en lugar seguro.
+  process:
+    `1. Se analizaron las tablas de empleados, departamentos e historial laboral.\n
+2. Se construyó una consulta utilizando JOIN entre las tablas principales.\n
+3. Se calcularon métricas como promedio salarial y cantidad de empleados por departamento.\n
+4. Se utilizó DENSE_RANK() para determinar posiciones salariales.\n
+5. Se identificaron empleados con historial laboral reciente.\n
+6. Finalmente se organizó la información diagnóstica para apoyar la toma de decisiones.`,
 
-El sistema debe gestionar productores, residuos, empresas transportistas, traslados, envases, tipos de transporte y tratamientos finales.`,
+  tools:
+    `• Oracle SQL Developer\n`,
 
-    objective:
-      "Diseñar un modelo conceptual y lógico capaz de representar correctamente el flujo completo de residuos tóxicos.",
+  result:
+    "Se obtuvo un diagnóstico completo de la situación salarial de los empleados y de las condiciones necesarias para determinar elegibilidad en el proceso de ajuste.",
 
-    learned:
-      `• Relaciones complejas N:M.\n
-• Uso de entidades débiles.\n
-• Modelado de transporte y logística.\n
-• Conversión de MER a Crow's Foot.\n
-• Aplicación de restricciones semánticas avanzadas.`,
+  reflection:
+    "Esta etapa permitió fortalecer el manejo de consultas analíticas y comprender cómo los datos organizacionales pueden utilizarse para apoyar decisiones empresariales.",
 
-    process:
-      `1. Análisis del enunciado.\n
-2. Identificación de entidades y relaciones.\n
-3. Construcción del MER.\n
-4. Extensión a MER-E.\n
-5. Conversión a Crow's Foot.\n
-6. Documentación final.`,
+  links: [
+    {
+      label: "Consulta Diagnóstica SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/TallerSolucion.sql",
+    },
+  ],
 
-    tools:
-      `• draw.io\n
-• DataModeler\n`,
+  image: "/Portfolio_BD1_2026-1/images/modthree/1.Diagnostico.png",
+},
 
-    result:
-      "Se obtuvo un modelo completo capaz de representar productores, residuos, transportes y tratamientos.",
+// 2. DECISIÓN
+{
+  name: "Taller Lab Parte 2 - Decisión de Empleados Elegibles",
 
-    reflection:
-      "Este ejercicio permitió fortalecer el modelado avanzado y el análisis semántico de reglas de negocio complejas.",
+  shortDescription:
+    "Evaluación de empleados elegibles y no elegibles para ajustes salariales según reglas de negocio y variantes establecidas.",
 
-    diagrams: [
-      {
-        label: "Modelo MER",
-        url: "https://drive.google.com/file/d/1wXZNOZCWI19iIEWY0chACq4DSqXGkzk_/view?usp=sharing"
-      },
-      {
-        label: "Modelo MER-E",
-        url: "https://drive.google.com/file/d/1wXZNOZCWI19iIEWY0chACq4DSqXGkzk_/view?usp=sharing"
-      },
-      {
-        label: "Modelo Crow's Foot zip",
-        url: "/Portfolio_BD1_2026-1/documents/tResiduos.zip"
-      }
-    ],
+  topic:
+    "SQL • CASE • Reglas de Negocio • Validación de Elegibilidad",
 
-    image: "/Portfolio_BD1_2026-1/images/modone/tResiduos.png",
-  },
+  exerciseStatement:
+    "A partir del diagnóstico inicial, se desarrolló una consulta que permitiera determinar qué empleados cumplían las condiciones para recibir ajustes salariales según la variante asignada y las restricciones definidas.",
 
+  objective:
+    "Aplicar reglas de negocio y validaciones SQL para clasificar empleados elegibles y no elegibles dentro del proceso transaccional.",
+
+  learned:
+    `• Uso de expresiones CASE.\n
+• Aplicación de reglas de negocio dinámicas.\n
+• Validación de antigüedad y departamentos restringidos.\n
+• Clasificación de registros según criterios empresariales.\n
+• Identificación de exclusiones y restricciones.\n
+• Interpretación de variantes parametrizadas.`,
+
+  process:
+    `1. Se analizaron las reglas definidas en la tabla T1_VARIANTS.\n
+2. Se validó antigüedad, historial laboral y departamento de cada empleado.\n
+3. Se clasificaron empleados como ELEGIBLE o NO_ELEGIBLE.\n
+4. Se asignaron motivos de exclusión mediante CASE.\n
+5. Se calcularon porcentajes de ajuste según la brecha salarial.\n
+6. Finalmente se organizó la población elegible para el proceso de actualización.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se logró identificar correctamente qué empleados podían participar en el ajuste salarial y cuáles debían excluirse según las reglas del negocio.",
+
+  reflection:
+    "Este ejercicio permitió comprender cómo las reglas empresariales pueden implementarse directamente mediante consultas SQL y estructuras condicionales.",
+
+  links: [
+    {
+      label: "Consulta de Elegibilidad SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/TallerSolucion.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/2.Decision.png",
+},
+
+// 3. PREVALIDACIÓN
+{
+  name: "Taller Lab Parte 3 - Prevalidación de Ajustes Salariales",
+
+  shortDescription:
+    "Simulación y validación previa de los ajustes salariales antes de ejecutar la transacción real.",
+
+  topic:
+    "SQL • Validación • Simulación de Transacciones",
+
+  exerciseStatement:
+    "Se realizaron consultas de prevalidación para calcular el impacto económico de los ajustes salariales, verificar topes máximos y analizar el comportamiento de los salarios antes de ejecutar la actualización definitiva.",
+
+  objective:
+    "Validar previamente los resultados del proceso de ajuste salarial para evitar inconsistencias y garantizar cumplimiento de restricciones.",
+
+  learned:
+    `• Simulación de cambios antes de actualizar datos.\n
+• Cálculo de incrementos salariales proyectados.\n
+• Validación de topes máximos por departamento.\n
+• Uso de funciones agregadas.\n
+• Interpretación de impactos financieros.\n
+• Prevención de inconsistencias antes de COMMIT.`,
+
+  process:
+    `1. Se calcularon salarios actuales y salarios proyectados.\n
+2. Se generó un resumen económico del incremento salarial.\n
+3. Se validaron topes máximos permitidos según la variante.\n
+4. Se revisó el impacto financiero total del proceso.\n
+5. Se identificaron posibles incumplimientos.\n
+6. Finalmente se verificó que la actualización pudiera ejecutarse correctamente.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se obtuvo una simulación completa del ajuste salarial y se verificó que los empleados elegibles cumplían con las restricciones definidas.",
+
+  reflection:
+    "La prevalidación permitió comprender la importancia de revisar escenarios antes de modificar datos reales dentro de una transacción.",
+
+  links: [
+    {
+      label: "Prevalidación SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/TallerSolucion.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/3.Prevalidacion.png",
+},
+
+// 4. EJECUCIÓN
+{
+  name: "Taller Lab Parte 4 - Ejecución Transaccional y Auditoría",
+
+  shortDescription:
+    "Implementación del proceso de actualización salarial utilizando transacciones SQL y registro de auditoría.",
+
+  topic:
+    "Transacciones SQL • ACID • SAVEPOINT • COMMIT • Auditoría",
+
+  exerciseStatement:
+    "Se ejecutó la actualización real de salarios únicamente para empleados elegibles, utilizando transacciones SQL, SAVEPOINT y registro de auditoría para garantizar integridad y trazabilidad.",
+
+  objective:
+    "Aplicar principios ACID y control transaccional en un proceso real de actualización de datos.",
+
+  learned:
+    `• Uso de SAVEPOINT y COMMIT.\n
+• Aplicación de transacciones ACID.\n
+• Actualización controlada de registros.\n
+• Registro de auditoría de cambios.\n
+• Validación de integridad transaccional.\n
+• Manejo seguro de operaciones UPDATE.`,
+
+  process:
+    `1. Se creó un SAVEPOINT antes de iniciar la actualización.\n
+2. Se actualizaron los salarios de empleados elegibles.\n
+3. Se registraron los cambios en la tabla de auditoría.\n
+4. Se ejecutó una validación intermedia.\n
+5. Se verificó el cumplimiento de restricciones.\n
+6. Finalmente se realizó COMMIT para confirmar los cambios.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se ejecutó exitosamente el proceso transaccional y se registró la auditoría correspondiente para cada ajuste salarial realizado.",
+
+  reflection:
+    "Este ejercicio permitió comprender cómo las transacciones garantizan seguridad, consistencia e integridad en operaciones críticas de bases de datos.",
+
+  links: [
+    {
+      label: "Transacción SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/TallerSolucion.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/4.Ejecucion.png",
+},
+
+// 5. VALIDACIÓN
+{
+  name: "Taller Lab Parte 5 - Validación Posterior y Auditoría Final",
+
+  shortDescription:
+    "Verificación final de los cambios realizados y validación de auditoría posterior a la ejecución transaccional.",
+
+  topic:
+    "Validación SQL • Auditoría • Control de Resultados",
+
+  exerciseStatement:
+    "Después de ejecutar la transacción, se realizaron consultas de validación para comprobar los cambios salariales, verificar restricciones y analizar la información almacenada en la auditoría.",
+
+  objective:
+    "Comprobar que la transacción se ejecutó correctamente y que los cambios realizados cumplen las reglas establecidas.",
+
+  learned:
+    `• Validación posterior de transacciones.\n
+• Consulta de registros de auditoría.\n
+• Comparación de valores antes y después.\n
+• Control de topes salariales.\n
+• Verificación de integridad de datos.\n
+• Interpretación de resultados transaccionales.`,
+
+  process:
+    `1. Se consultaron los empleados impactados por la transacción.\n
+2. Se verificaron salarios antes y después del ajuste.\n
+3. Se revisó el resumen económico final.\n
+4. Se validaron los topes salariales establecidos.\n
+5. Se analizaron los registros generados en auditoría.\n
+6. Finalmente se confirmó la integridad de la operación.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se comprobó correctamente que los ajustes salariales y la auditoría fueron ejecutados conforme a las reglas y restricciones establecidas.",
+
+  reflection:
+    "La validación final permitió entender la importancia de comprobar resultados después de una transacción para garantizar consistencia y trazabilidad.",
+
+  links: [
+    {
+      label: "Validación Final SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/TallerSolucion.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/5.Validacion.png",
+},
 ];
 ---
 
@@ -765,7 +952,7 @@ if (resources.length) {
 
   linksContainer.innerHTML += `
     <h3 class="text-lg font-semibold text-cyan-400">
-      Recursos y diagramas
+      Scrips
     </h3>
   `;
 
