@@ -2,406 +2,393 @@
 import Section from "../UI/Section.astro";
 
 const MODUNO = [
-  //AEREOLINEA
-  {
-    name: "Ejercicio 1 en Clase_AEREOLINEA",
+  // MÓDULO 3 — SQL ORACLE: SELECT
+{
+  name: "Ejercicio SQL 1 - SELECT",
 
-    shortDescription:
-      "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación (MER) para representar la operación básica de una aerolínea y fortalecer el análisis de entidades, relaciones y cardinalidades.",
+  shortDescription:
+    "Práctica introductoria enfocada en consultas básicas SELECT, alias y concatenación de datos en Oracle SQL.",
 
-    topic:
-      "Modelo Entidad-Relación (MER)",
+  topic:
+    "SQL Oracle • SELECT • Alias • Concatenación",
 
-    exerciseStatement:
-      "Una aerolínea necesita controlar la información relacionada con sus aviones, pilotos, tripulación y vuelos. Cada avión pertenece a una base específica y puede ser asignado a múltiples vuelos. Los pilotos y la tripulación también pertenecen a una base operativa. Se requiere representar las relaciones entre vuelos, personal y aeronaves mediante un Modelo Entidad-Relación.",
+  exerciseStatement:
+    `Durante esta práctica se desarrollaron consultas básicas utilizando la sentencia SELECT para recuperar información de diferentes tablas del esquema HR de Oracle.
 
-    objective:
-      "Aplicar los conceptos fundamentales del modelado conceptual mediante el desarrollo de un MER capaz de representar la gestión de vuelos, aviones, pilotos, tripulación y bases operativas.",
+Se trabajó con selección de columnas específicas, alias personalizados y concatenación de cadenas para construir resultados más descriptivos.`,
 
-    learned:
-      `• Identificación de entidades principales y atributos.\n
-• Uso de llaves primarias para representar entidades únicas.\n
-• Aplicación de relaciones 1:N y N:M.\n
-• Manejo de atributos compuestos y multivalorados.\n
-• Organización correcta de procesos operativos dentro de entidades independientes para evitar redundancia.\n
-• Interpretación de reglas de negocio a partir de un caso real.`,
+  objective:
+    "Comprender el uso básico de SELECT para consultar información dentro de bases de datos Oracle.",
 
-    process:
-      `1. Se analizó el problema planteado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para cada entidad.\n
-3. Se establecieron las relaciones entre aviones, vuelos, pilotos, tripulación y bases.\n
-4. Se determinaron las cardinalidades según las reglas del negocio.\n
-5. Finalmente, el modelo fue digitalizado y organizado utilizando draw.io.`,
+  learned:
+    `• Uso básico de SELECT.\n
+• Selección de columnas específicas.\n
+• Aplicación de alias con AS.\n
+• Concatenación de cadenas utilizando ||.\n
+• Formateo de resultados en Oracle SQL.`,
 
-    tools:
-      `• draw.io\n`,
+  process:
+    `1. Se realizaron consultas para visualizar todas las columnas de una tabla.\n
+2. Se seleccionaron atributos específicos de empleados y departamentos.\n
+3. Se aplicaron alias personalizados para mejorar la presentación de resultados.\n
+4. Se utilizaron operadores de concatenación para unir textos y atributos.\n
+5. Finalmente, se validó la salida de las consultas ejecutadas en Oracle SQL.`,
 
-    result:
-      "Se obtuvo un modelo MER organizado y coherente que representa adecuadamente la operación logística de una aerolínea, permitiendo visualizar claramente las relaciones entre recursos físicos, personal y vuelos.",
+  tools:
+    `• Oracle SQL Developer\n
+• Oracle Database XE\n`,
 
-    reflection:
-      "Este ejercicio permitió fortalecer la comprensión de las cardinalidades y la importancia de separar correctamente las entidades operativas para evitar redundancia en el diseño conceptual.",
+  result:
+    "Se obtuvieron consultas funcionales capaces de recuperar y presentar información de manera organizada utilizando SELECT y operadores básicos.",
+
+  reflection:
+    "Este ejercicio permitió comprender la base de las consultas SQL y la importancia de estructurar correctamente la recuperación de datos.",
+  
+    links: [
+    {
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/1Select.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/1Select.png",
+},
+// MÓDULO 3 — SQL ORACLE: RESTRICTING AND SORTING DATA
+{
+  name: "Ejercicio SQL 2 - Restricting and Sorting Data",
+
+  shortDescription:
+    "Práctica enfocada en el filtrado y ordenamiento de registros mediante cláusulas WHERE y ORDER BY.",
+
+  topic:
+    "SQL Oracle • WHERE • ORDER BY • LIKE • IN • BETWEEN",
+
+  exerciseStatement:
+    `Se desarrollaron consultas SQL para filtrar registros utilizando operadores relacionales y lógicos, además de ordenar resultados de acuerdo con diferentes criterios.`,
+
+  objective:
+    "Aplicar filtros y condiciones para recuperar únicamente la información requerida dentro de una consulta SQL.",
+
+  learned:
+    `• Uso de WHERE para filtrar registros.\n
+• Aplicación de operadores AND y OR.\n
+• Uso de BETWEEN, IN y LIKE.\n
+• Manejo de valores NULL.\n
+• Ordenamiento de resultados con ORDER BY.`,
+
+  process:
+    `1. Se aplicaron filtros utilizando igualdad y desigualdad.\n
+2. Se realizaron búsquedas utilizando patrones con LIKE.\n
+3. Se implementaron condiciones múltiples con AND y OR.\n
+4. Se trabajó con valores NULL utilizando IS NULL e IS NOT NULL.\n
+5. Finalmente, se ordenaron resultados utilizando ORDER BY ASC y DESC.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se obtuvieron consultas capaces de recuperar información específica aplicando filtros y ordenamientos correctamente.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer el manejo de condiciones y criterios de búsqueda dentro de SQL.",
+  
+    links: [
+    {
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/public/documents/modthree/2RestrictingSortingData.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/3Restricting.png",
+},
+// MÓDULO 3 — SQL ORACLE: SINGLE ROW FUNCTIONS
+{
+  name: "Ejercicio SQL 3 - Single Row Functions",
+
+  shortDescription:
+    "Práctica enfocada en funciones de una sola fila para manipulación de texto, números y fechas en Oracle SQL.",
+
+  topic:
+    "SQL Oracle • Funciones de Texto • Funciones Numéricas • Funciones de Fecha",
+
+  exerciseStatement:
+    `Durante esta práctica se utilizaron funciones integradas de Oracle SQL para transformar y manipular datos de texto, valores numéricos y fechas.`,
+
+  objective:
+    "Comprender el uso de funciones de una sola fila para procesar información dentro de consultas SQL.",
+
+  learned:
+    `• Uso de funciones UPPER, LOWER e INITCAP.\n
+• Aplicación de LENGTH y SUBSTR.\n
+• Uso de funciones numéricas como ROUND, TRUNC y MOD.\n
+• Manejo de fechas mediante SYSDATE.\n
+• Transformación y manipulación de datos.`,
+
+  process:
+    `1. Se realizaron transformaciones de texto utilizando funciones de mayúsculas y minúsculas.\n
+2. Se extrajeron fragmentos de texto con SUBSTR.\n
+3. Se aplicaron funciones numéricas para redondear y truncar valores.\n
+4. Se trabajó con operaciones matemáticas utilizando MOD.\n
+5. Finalmente, se utilizaron funciones de fecha para consultar la fecha actual del sistema.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se obtuvieron consultas capaces de transformar datos y mejorar la presentación de información utilizando funciones integradas de Oracle.",
+
+  reflection:
+    "Este ejercicio permitió comprender cómo las funciones SQL facilitan el procesamiento y análisis de datos.",
+  
+    links: [
+    {
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/public/documents/modthree/3SingleRowFunctions.sql",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modthree/3Single.png",
+},
+// MÓDULO 3 — SQL ORACLE: CONVERSION FUNCTIONS
+{
+  name: "Ejercicio SQL 4 - Conversion Functions",
+
+  shortDescription:
+    "Práctica enfocada en la conversión de tipos de datos utilizando funciones de Oracle SQL.",
+
+  topic:
+    "SQL Oracle • TO_CHAR • TO_NUMBER • TO_DATE",
+
+  exerciseStatement:
+    `Se desarrollaron consultas para convertir datos entre distintos formatos como texto, números y fechas utilizando funciones de conversión de Oracle.`,
+
+  objective:
+    "Aplicar funciones de conversión para adaptar tipos de datos dentro de consultas SQL.",
+
+  learned:
+    `• Conversión de números y fechas a texto.\n
+• Uso de formatos personalizados de fecha.\n
+• Conversión de texto a números.\n
+• Conversión de texto a fechas.\n
+• Manipulación correcta de formatos de datos.`,
+
+  process:
+    `1. Se realizaron conversiones de salarios utilizando TO_CHAR.\n
+2. Se aplicaron formatos de fecha personalizados.\n
+3. Se utilizaron conversiones numéricas mediante TO_NUMBER.\n
+4. Se transformaron cadenas de texto en fechas con TO_DATE.\n
+5. Finalmente, se validó el comportamiento de cada conversión.`,
+
+  tools:
+    `• Oracle SQL Developer\n`,
+
+  result:
+    "Se obtuvieron consultas capaces de transformar correctamente distintos tipos de datos dentro de Oracle SQL.",
+
+  reflection:
+    "Este ejercicio permitió comprender la importancia de las conversiones de datos para evitar errores y mejorar la compatibilidad entre consultas.",
 
     links: [
-      {
-        label: "Diagrama MER",
-        url: "https://drive.google.com/file/d/1DgBU0lWG01YNXXNIAARiruJyB5dDWwut/view?usp=sharing",
-      },
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
-  },
-  //BIBLIOTECA
-  {
-  name: "Ejercicio 2 en Clase_BIBLIOTECA",
-
-  shortDescription:
-    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación (MER) para representar el funcionamiento de una biblioteca y fortalecer el análisis de entidades, préstamos y relaciones de autoría.",
-
-  topic:
-    "Modelo Entidad-Relación (MER)",
-
-  exerciseStatement:
-    "Una biblioteca necesita gestionar la información de sus socios, libros y autores. Cada socio puede solicitar préstamos de libros y cada libro puede estar asociado a uno o varios autores. Además, se requiere controlar el estado físico de los libros y almacenar información relacionada con las fechas de préstamo y devolución.",
-
-  objective:
-    "Aplicar los conceptos fundamentales del Modelo Entidad-Relación mediante la construcción de un sistema capaz de representar el control de libros, socios, autores y préstamos dentro de una biblioteca.",
-
-  learned:
-    `• Identificación de entidades principales y atributos.\n
-• Uso de atributos compuestos y multivalorados.\n
-• Aplicación de relaciones 1:N y N:M.\n
-• Comprensión de la relación de préstamo como parte central del sistema.\n
-• Organización de información temporal mediante atributos en relaciones.\n
-• Interpretación de reglas de negocio relacionadas con inventario y préstamos.`,
-
-  process:
-    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para socios, libros y autores.\n
-3. Se establecieron las relaciones entre libros, autores y socios.\n
-4. Se determinaron las cardinalidades correspondientes para cada relación.\n
-5. Se organizó la relación de préstamo incluyendo la información de fechas.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
-
-  tools:
-    `• draw.io\n`,
-
-  result:
-    "Se obtuvo un modelo MER organizado y funcional que representa correctamente la administración de préstamos, libros y usuarios dentro de una biblioteca, facilitando la visualización de relaciones y reglas de negocio.",
-
-  reflection:
-    "Este ejercicio permitió comprender mejor la importancia de separar entidades independientes y manejar correctamente las relaciones Muchos a Muchos para evitar redundancia y mejorar la organización del modelo.",
-
-  links: [
     {
-      label: "Diagrama MER",
-      url: "https://drive.google.com/file/d/1qYQh-jPekDigvccEAYjN1_CCn9q4_n6L/view?usp=sharing",
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/public/documents/modthree/4ConversionFunctions.sql",
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
+  image: "/Portfolio_BD1_2026-1/images/modthree/4Conversion.png",
 },
-//PAQUETERIA
+// MÓDULO 3 — SQL ORACLE: AGGREGATE DATA GROUP FUNCTIONS
 {
-  name: "Taller 1 MER-RE Ejercicio 1 PAQUETERIA",
+  name: "Ejercicio SQL 5 - Aggregate Group Functions",
 
   shortDescription:
-    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el funcionamiento logístico de una empresa de transporte y distribución de paquetes.",
+    "Práctica enfocada en funciones de agrupamiento y cálculo de estadísticas dentro de Oracle SQL.",
 
   topic:
-    "Modelo Entidad-Relación Extendido (MER-RE)",
+    "SQL Oracle • COUNT • AVG • SUM • GROUP BY • HAVING",
 
   exerciseStatement:
-    "Una empresa de transporte necesita gestionar la información de conductores, camiones, paquetes y ciudades de destino. Un conductor puede manejar diferentes camiones en distintas fechas y cada paquete debe ser entregado a una ciudad específica. Además, se requiere controlar qué conductor distribuye cada paquete dentro del sistema.",
+    `Durante esta práctica se utilizaron funciones de agrupamiento para calcular promedios, sumas, máximos, mínimos y cantidades de registros.`,
 
   objective:
-    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos logísticos relacionados con transporte, distribución de mercancía y asignación de recursos.",
+    "Aplicar funciones agregadas para resumir y analizar información almacenada en bases de datos.",
 
   learned:
-    `• Identificación de entidades y relaciones dentro de un sistema logístico.\n
-• Aplicación de relaciones Muchos a Muchos y Uno a Muchos.\n
-• Interpretación de reglas de negocio relacionadas con transporte y distribución.\n
-• Comprensión del uso de relaciones intermedias para representar historial de operaciones.\n
-• Organización de información geográfica mediante entidades independientes.\n
-• Fortalecimiento del análisis de cardinalidades y dependencias.`,
+    `• Uso de COUNT, AVG, SUM, MAX y MIN.\n
+• Agrupamiento de registros con GROUP BY.\n
+• Filtrado de grupos mediante HAVING.\n
+• Interpretación de estadísticas sobre datos.\n
+• Análisis de información agrupada.`,
 
   process:
-    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para conductores, camiones, paquetes y ciudades.\n
-3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
-4. Se determinaron las cardinalidades correspondientes para cada relación.\n
-5. Se organizó la relación entre conductores y camiones considerando el historial de uso.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+    `1. Se calcularon cantidades totales de registros.\n
+2. Se obtuvieron promedios salariales por departamento.\n
+3. Se realizaron sumatorias y búsquedas de valores máximos y mínimos.\n
+4. Se agruparon registros utilizando GROUP BY.\n
+5. Finalmente, se aplicaron filtros sobre grupos mediante HAVING.`,
 
   tools:
-    `• draw.io\n`,
+    `• Oracle SQL Developer\n`,
 
   result:
-    "Se obtuvo un modelo MER-RE estructurado y coherente que representa correctamente la operación logística de una empresa de transporte, permitiendo visualizar las relaciones entre conductores, vehículos, paquetes y destinos.",
+    "Se obtuvieron consultas capaces de resumir grandes volúmenes de información mediante funciones agregadas.",
 
   reflection:
-    "Este ejercicio permitió comprender mejor la importancia de las relaciones Muchos a Muchos y cómo representar procesos logísticos complejos sin generar redundancia dentro del modelo conceptual.",
+    "Este ejercicio permitió comprender cómo SQL facilita el análisis estadístico de datos empresariales.",
 
-  links: [
+    links: [
     {
-      label: "Diagrama MER-RE",
-      url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing",
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/public/documents/modthree/5AgregateDataGroupFuctions.sql",
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modone/paqueteria.png",
+  image: "/Portfolio_BD1_2026-1/images/modthree/5Agregate.png",
 },
-//BIENES RAICES
+// MÓDULO 3 — SQL ORACLE: JOINS
 {
-  name: "Taller 1 MER-RE Ejercicio 2 BIENES RAICES",
+  name: "Ejercicio SQL 6 - Joins",
 
   shortDescription:
-    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar la gestión de propiedades, clientes y agentes dentro de una empresa inmobiliaria.",
+    "Práctica enfocada en la unión de tablas relacionadas mediante distintos tipos de JOIN en Oracle SQL.",
 
   topic:
-    "Modelo Entidad-Relación Extendido (MER-RE)",
+    "SQL Oracle • INNER JOIN • OUTER JOIN • CROSS JOIN • NATURAL JOIN",
 
   exerciseStatement:
-    "Una empresa de bienes raíces necesita gestionar la información de agentes, dueños, clientes, firmas y propiedades. Cada propiedad debe estar asociada a un dueño y puede ser administrada por una firma inmobiliaria. Además, los agentes deben gestionar clientes y propiedades disponibles según diferentes características y rangos de precio.",
+    `Se desarrollaron consultas utilizando diferentes tipos de joins para relacionar información entre empleados, departamentos, ubicaciones, países y regiones.`,
 
   objective:
-    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos inmobiliarios relacionados con propiedades, clientes, agentes y firmas comerciales.",
+    "Comprender el funcionamiento de las uniones entre tablas y su aplicación dentro de consultas relacionales.",
 
   learned:
-    `• Identificación de entidades y relaciones dentro de un sistema inmobiliario.\n
-• Uso de atributos compuestos y atributos derivados.\n
-• Aplicación de relaciones ternarias y relaciones de pertenencia.\n
-• Interpretación de reglas de negocio relacionadas con administración de propiedades.\n
-• Comprensión de dependencias entre clientes, agentes y propiedades.\n
-• Fortalecimiento del análisis de cardinalidades y organización del modelo conceptual.`,
+    `• Uso de INNER JOIN.\n
+• Aplicación de LEFT, RIGHT y FULL OUTER JOIN.\n
+• Uso de NATURAL JOIN y CROSS JOIN.\n
+• Relaciones entre múltiples tablas.\n
+• Recuperación de información relacionada mediante claves.`,
 
   process:
-    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para agentes, dueños, casas y firmas.\n
-3. Se establecieron las relaciones entre propiedades, clientes y agentes.\n
-4. Se determinaron las cardinalidades correspondientes para cada relación.\n
-5. Se organizó la información relacionada con características y administración de propiedades.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+    `1. Se realizaron joins básicos entre empleados y departamentos.\n
+2. Se aplicaron joins externos para recuperar registros sin coincidencias.\n
+3. Se trabajó con NATURAL JOIN y CROSS JOIN.\n
+4. Se construyeron joins múltiples entre regiones, países y ubicaciones.\n
+5. Finalmente, se identificaron empleados sin departamento asociado.`,
 
   tools:
-    `• draw.io\n`,
+    `• Oracle SQL Developer\n`,
 
   result:
-    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente la gestión inmobiliaria, permitiendo visualizar la relación entre propiedades, agentes, dueños y firmas comerciales.",
+    "Se obtuvieron consultas relacionales complejas capaces de combinar información proveniente de múltiples tablas.",
 
   reflection:
-    "Este ejercicio permitió fortalecer la comprensión de relaciones complejas dentro de un sistema empresarial y la importancia de estructurar correctamente la información para evitar redundancia y mejorar la organización del modelo.",
-
-  links: [
+    "Este ejercicio permitió fortalecer la comprensión de relaciones entre tablas y la importancia de las claves dentro de bases de datos relacionales.",
+  
+    links: [
     {
-      label: "Diagrama MER-RE",
-      url: "https://drive.google.com/file/d/10wQNOVIzKaaIHCVCZrBF7xVNMJGnQnzF/view?usp=sharing",
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/documents/modthree/6Joins.sql",
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modone/bienesRaices.png",
+  image: "/Portfolio_BD1_2026-1/images/modthree/6Joins.png",
 },
-//PROVEEDOR
+// MÓDULO 3 — SQL ORACLE: SUBQUERIES
 {
-  name: "Taller 1 MER-RE Ejercicio 3 PROVEEDOR",
+  name: "Ejercicio SQL 7 - Subqueries",
 
   shortDescription:
-    "Ejercicio enfocado en la reconstrucción de un Modelo Entidad-Relación Extendido (MER-RE) a partir de un esquema relacional relacionado con clientes, proveedores y pedidos.",
+    "Práctica enfocada en el uso de subconsultas para resolver consultas complejas en Oracle SQL.",
 
   topic:
-    "Modelo Entidad-Relación Extendido (MER-RE)",
+    "SQL Oracle • Subqueries • Nested Queries",
 
   exerciseStatement:
-    "A partir de un conjunto de tablas relacionales suministradas, se requiere reconstruir el Modelo Entidad-Relación correspondiente para representar la interacción entre clientes, proveedores y elementos. El sistema debe permitir identificar qué proveedor vende determinados productos, qué clientes realizan pedidos y la cantidad solicitada en cada transacción.",
+    `Se desarrollaron consultas anidadas para recuperar información basada en resultados obtenidos por otras consultas internas.`,
 
   objective:
-    "Aplicar técnicas de ingeniería inversa para interpretar un esquema relacional y reconstruir un Modelo Entidad-Relación Extendido que represente correctamente las relaciones comerciales del sistema.",
+    "Aplicar subconsultas para resolver problemas de búsqueda y filtrado avanzado en SQL.",
 
   learned:
-    `• Interpretación de esquemas relacionales para reconstruir modelos conceptuales.\n
-• Identificación de entidades, atributos y llaves primarias a partir de tablas.\n
-• Comprensión de relaciones complejas dentro de sistemas comerciales.\n
-• Uso de relaciones intermedias para representar pedidos y ventas.\n
-• Análisis de dependencias entre clientes, proveedores y productos.\n
-• Fortalecimiento de la lógica de modelado mediante ingeniería inversa.`,
+    `• Uso de subconsultas simples.\n
+• Consultas anidadas dentro de WHERE.\n
+• Comparación de resultados con operadores relacionales.\n
+• Filtrado avanzado mediante consultas internas.\n
+• Relación entre consultas principales y secundarias.`,
 
   process:
-    `1. Se analizaron las tablas proporcionadas para identificar entidades y atributos.\n
-2. Se determinaron las posibles llaves primarias y relaciones entre tablas.\n
-3. Se reconstruyeron las relaciones comerciales entre clientes, proveedores y elementos.\n
-4. Se establecieron las cardinalidades correspondientes para cada relación.\n
-5. Se organizó la información relacionada con precios y cantidades dentro de las relaciones.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+    `1. Se desarrollaron subconsultas para calcular promedios salariales.\n
+2. Se utilizaron consultas internas dentro de cláusulas WHERE.\n
+3. Se aplicaron operadores IN y comparaciones numéricas.\n
+4. Se relacionaron resultados entre consultas internas y externas.\n
+5. Finalmente, se validaron los resultados obtenidos.`,
 
   tools:
-    `• draw.io\n`,
+    `• Oracle SQL Developer\n`,
 
   result:
-    "Se obtuvo un modelo MER-RE coherente y estructurado que representa correctamente las relaciones comerciales y transaccionales entre clientes, proveedores y productos dentro del sistema.",
+    "Se obtuvieron consultas avanzadas capaces de utilizar resultados internos para filtrar y recuperar información específica.",
 
   reflection:
-    "Este ejercicio permitió comprender mejor cómo interpretar estructuras relacionales ya existentes y convertirlas nuevamente en modelos conceptuales organizados y comprensibles.",
-
-  links: [
+    "Este ejercicio permitió comprender cómo las subconsultas aumentan la capacidad de análisis dentro de SQL.",
+  
+    links: [
     {
-      label: "Diagrama MER-RE",
-      url: "https://drive.google.com/file/d/19hIvxS4Qh95XasWiD-iNGcLTMUJw2N2-/view?usp=sharing",
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/public/documents/modthree/7Subqueries.sql",
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modone/proveedor.png",
+  image: "/Portfolio_BD1_2026-1/images/modthree/7Subqueries.png",
 },
-//PRESTAMOS BIBLIOTECA
+// MÓDULO 3 — SQL ORACLE: SET OPERATIONS
 {
-  name: "Taller 1 MER-RE Ejercicio 4 PRESTAMOS BIBLIOTECA",
+  name: "Ejercicio SQL 8 - Set Operations",
 
   shortDescription:
-    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el sistema de préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+    "Práctica enfocada en operaciones de conjuntos para combinar resultados de múltiples consultas SQL.",
 
   topic:
-    "Modelo Entidad-Relación Extendido (MER-RE)",
+    "SQL Oracle • UNION • UNION ALL • INTERSECT • MINUS",
 
   exerciseStatement:
-    "Una biblioteca necesita gestionar el préstamo de artículos como libros, CD y cintas a diferentes usuarios. El sistema debe controlar fechas de entrega, penalizaciones por retrasos y el patrocinio obligatorio para usuarios menores de edad. Además, se requiere registrar la información de los artículos y las relaciones entre préstamos y multas.",
+    `Durante esta práctica se utilizaron operadores de conjuntos para unir, comparar y diferenciar resultados obtenidos de distintas consultas.`,
 
   objective:
-    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos relacionados con préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+    "Comprender el funcionamiento de las operaciones de conjuntos dentro de Oracle SQL.",
 
   learned:
-    `• Identificación de entidades y relaciones dentro de un sistema de préstamos.\n
-• Uso de relaciones recursivas para representar patrocinadores.\n
-• Comprensión de agregaciones dentro del modelo conceptual.\n
-• Aplicación de atributos derivados y multivalorados.\n
-• Interpretación de reglas de negocio relacionadas con penalizaciones y control de usuarios.\n
-• Fortalecimiento del análisis de cardinalidades y dependencias.`,
+    `• Uso de UNION y UNION ALL.\n
+• Aplicación de INTERSECT.\n
+• Uso del operador MINUS.\n
+• Combinación de resultados de múltiples consultas.\n
+• Comparación de conjuntos de datos.`,
 
   process:
-    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para usuarios, artículos y penalizaciones.\n
-3. Se establecieron las relaciones entre préstamos, usuarios y artículos.\n
-4. Se organizó la relación recursiva de patrocinio para usuarios menores de edad.\n
-5. Se implementó la agregación relacionada con préstamos y penalizaciones.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+    `1. Se realizaron consultas utilizando UNION para combinar resultados.\n
+2. Se trabajó con UNION ALL para conservar registros repetidos.\n
+3. Se aplicó INTERSECT para identificar valores comunes.\n
+4. Se utilizó MINUS para obtener diferencias entre conjuntos.\n
+5. Finalmente, se validó la compatibilidad entre columnas de las consultas.`,
 
   tools:
-    `• draw.io\n`,
+    `• Oracle SQL Developer\n`,
 
   result:
-    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente el flujo de préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+    "Se obtuvieron consultas capaces de combinar y comparar conjuntos de datos mediante operadores relacionales avanzados.",
 
   reflection:
-    "Este ejercicio permitió comprender mejor el uso de relaciones recursivas y agregaciones dentro de modelos conceptuales complejos, fortaleciendo la organización y representación de reglas de negocio.",
+    "Este ejercicio permitió comprender cómo las operaciones de conjuntos facilitan el análisis comparativo dentro de SQL.",
 
   links: [
     {
-      label: "Diagrama MER-RE",
-      url: "https://drive.google.com/file/d/1Uh5CpTJPbA51WKbNoiZu8J4FmWjGZEFo/view?usp=sharing",
+      label: "Scrips SQL",
+      url: "/Portfolio_BD1_2026-1/public/documents/modthree/8SetOperations.sql",
     },
   ],
 
-  image: "/Portfolio_BD1_2026-1/images/modone/prestamosBiblioteca.png",
+  image: "/Portfolio_BD1_2026-1/images/modthree/8Set.png",
 },
-//SUPERMERCADO
-{
-  name: "Taller 1 MER-RE Ejercicio 5 SUPERMERCADO",
-
-  shortDescription:
-    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el funcionamiento operativo y comercial de un supermercado.",
-
-  topic:
-    "Modelo Entidad-Relación Extendido (MER-RE)",
-
-  exerciseStatement:
-    "Un supermercado necesita gestionar la información relacionada con productos, proveedores, empleados, clientes y ventas. Cada producto pertenece a una categoría específica y puede ser suministrado por diferentes proveedores. Además, el sistema debe registrar las compras realizadas por los clientes y controlar la participación de los empleados en las ventas.",
-
-  objective:
-    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos comerciales relacionados con inventario, ventas y gestión de clientes dentro de un supermercado.",
-
-  learned:
-    `• Identificación de entidades y relaciones dentro de un sistema comercial.\n
-• Aplicación de relaciones 1:N y N:M.\n
-• Comprensión de procesos de ventas e inventario.\n
-• Organización de dependencias entre productos, clientes y proveedores.\n
-• Interpretación de reglas de negocio relacionadas con abastecimiento y compras.\n
-• Fortalecimiento del análisis de cardinalidades y estructura del modelo conceptual.`,
-
-  process:
-    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para productos, clientes, proveedores y empleados.\n
-3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
-4. Se determinaron las cardinalidades correspondientes para cada relación.\n
-5. Se organizó la información relacionada con ventas e inventario.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
-
-  tools:
-    `• draw.io\n`,
-
-  result:
-    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente las operaciones principales de un supermercado, permitiendo visualizar la relación entre productos, ventas, clientes y proveedores.",
-
-  reflection:
-    "Este ejercicio permitió fortalecer la comprensión de procesos comerciales y la importancia de estructurar correctamente las relaciones entre inventario, ventas y clientes dentro de un modelo conceptual.",
-
-  links: [
-    {
-      label: "Diagrama MER-RE",
-      url: "https://drive.google.com/file/d/1wG6MmO7ieeOSGC1VQvEcZc3UfkkIT76J/view?usp=sharing",
-    },
-  ],
-
-  image: "/Portfolio_BD1_2026-1/images/modone/supermercado.png",
-},
-//UNIVERSIDAD
-{
-  name: "Taller MER-RE UNIVERSIDAD",
-
-  shortDescription:
-    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar la gestión académica y administrativa de una universidad.",
-
-  topic:
-    "Modelo Entidad-Relación Extendido (MER-RE)",
-
-  exerciseStatement:
-    "Una universidad necesita gestionar la información relacionada con estudiantes, docentes, materias, programas académicos y grupos. El sistema debe permitir registrar las materias cursadas por los estudiantes, los docentes encargados de dictarlas y la relación entre programas académicos y asignaturas ofrecidas durante cada periodo académico.",
-
-  objective:
-    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos académicos y administrativos dentro de una universidad.",
-
-  learned:
-    `• Identificación de entidades y relaciones dentro de un entorno académico.\n
-• Aplicación de relaciones 1:N y N:M.\n
-• Organización de procesos relacionados con matrícula y asignación académica.\n
-• Comprensión de dependencias entre estudiantes, docentes y materias.\n
-• Interpretación de reglas de negocio relacionadas con programas académicos y grupos.\n
-• Fortalecimiento del análisis de cardinalidades y estructura del modelo conceptual.`,
-
-  process:
-    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
-2. Se definieron atributos y llaves primarias para estudiantes, docentes, materias y programas académicos.\n
-3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
-4. Se determinaron las cardinalidades correspondientes para cada relación.\n
-5. Se organizó la información relacionada con asignación de materias y grupos.\n
-6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
-
-  tools:
-    `• draw.io\n`,
-
-  result:
-    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente los procesos académicos y administrativos de una universidad, permitiendo visualizar la relación entre estudiantes, docentes, materias y programas académicos.",
-
-  reflection:
-    "Este ejercicio permitió fortalecer la comprensión de sistemas académicos complejos y la importancia de estructurar correctamente las relaciones entre entidades para representar adecuadamente los procesos universitarios.",
-
-  links: [
-    {
-      label: "Diagrama MER-RE",
-      url: "https://drive.google.com/file/d/13SUsb53VuIUu_GFYthiSEK6jRTe7lhfs/view?usp=sharing",
-    },
-  ],
-
-  image: "/Portfolio_BD1_2026-1/images/modone/universidad.png",
-},
-
 ];
 const TALLER_ENTREGADO = [
 
@@ -468,128 +455,6 @@ El sistema debe gestionar productores, residuos, empresas transportistas, trasla
     ],
 
     image: "/Portfolio_BD1_2026-1/images/modone/tResiduos.png",
-  },
-
-  // EJERCICIO 2
-  {
-    name: "Ejercicio 2 - Eat'n Go",
-
-    shortDescription:
-      "Sistema de modelado para franquicia internacional de comidas rápidas.",
-
-    topic:
-      "MER • MER-E • Crow's Foot",
-
-    exerciseStatement:
-      `BLOQUE 2: EAT'N GO
-
-Eat'n Go es una empresa internacional dedicada a pizzas, bocadillos y productos complementarios.
-
-El sistema debe controlar ingredientes, tamaños, pedidos, promociones, repartidores, scooters y clientes.`,
-
-    objective:
-      "Representar correctamente la operación comercial y logística de la franquicia.",
-
-    learned:
-      `• Modelado de ventas.\n
-• Manejo de promociones.\n
-• Relaciones ternarias.\n
-• Gestión de pedidos y repartos.\n
-• Conversión a Crow's Foot.`,
-
-    process:
-      `1. Identificación de entidades.\n
-2. Diseño del MER.\n
-3. Construcción del MER-E.\n
-4. Conversión al modelo Crow's Foot.\n
-5. Organización documental.`,
-
-    tools:
-      `• draw.io\n
-• DataModeler\n`,
-
-    result:
-      "Se obtuvo un sistema estructurado para representar ventas, ingredientes, pedidos y logística.",
-
-    reflection:
-      "El ejercicio permitió comprender sistemas comerciales complejos y reglas de negocio extensas.",
-
-    diagrams: [
-      {
-        label: "Modelo MER",
-        url: "https://drive.google.com/file/d/1JufN4nMns2J4DQhCCCUTnU1BfYI0SrUa/view?usp=sharing"
-      },
-      {
-        label: "Modelo MER-E",
-        url: "https://drive.google.com/file/d/1JufN4nMns2J4DQhCCCUTnU1BfYI0SrUa/view?usp=sharing"
-      },
-      {
-        label: "Modelo Crow's Foot zip",
-        url: "/Portfolio_BD1_2026-1/documents/tEatnGo.zip"
-      }
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/tEatnGo.png",
-  },
-
-  // EJERCICIO 3
-  {
-    name: "Ejercicio 3 - Company",
-
-    shortDescription:
-      "Sistema organizacional y administrativo de una compañía multinacional.",
-
-    topic:
-      "MER • MER-E • Crow's Foot",
-
-    exerciseStatement:
-      `BLOQUE 3: LA COMPAÑÍA (COMPANY)
-
-Sistema para gestionar empleados, departamentos, proyectos y dependientes.`,
-
-    objective:
-      "Diseñar un sistema organizacional completo basado en estructuras jerárquicas empresariales.",
-
-    learned:
-      `• Relaciones recursivas.\n
-• Entidades débiles.\n
-• Jerarquías organizacionales.\n
-• Gestión de proyectos.\n
-• Conversión a Crow's Foot.`,
-
-    process:
-      `1. Interpretación del caso.\n
-2. Diseño del MER.\n
-3. Extensión a MER-E.\n
-4. Conversión a Crow's Foot.\n
-5. Validación del modelo.`,
-
-    tools:
-      `• draw.io\n
-• DataModeler\n`,
-
-    result:
-      "Se logró representar correctamente la estructura organizacional y operativa de la empresa.",
-
-    reflection:
-      "El ejercicio fortaleció la comprensión de dependencias, jerarquías y entidades débiles.",
-
-    diagrams: [
-      {
-        label: "Modelo MER",
-        url: "https://drive.google.com/file/d/1rXd3Jt5RxFl00jTsUilPhmqpUUXxksh2/view?usp=sharing"
-      },
-      {
-        label: "Modelo MER-E",
-        url: "https://drive.google.com/file/d/1rXd3Jt5RxFl00jTsUilPhmqpUUXxksh2/view?usp=sharing"
-      },
-      {
-        label: "Modelo Crow's Foot zip",
-        url: "/Portfolio_BD1_2026-1/documents/tCompany.zip"
-      }
-    ],
-
-    image: "/Portfolio_BD1_2026-1/images/modone/tCompany.png",
   },
 
 ];
