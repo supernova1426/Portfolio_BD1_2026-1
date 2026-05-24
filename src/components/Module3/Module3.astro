@@ -1,243 +1,938 @@
 ---
 import Section from "../UI/Section.astro";
 
-const MODTRES = [
+const MODUNO = [
+  //AEREOLINEA
   {
-    name: "Modelo Biblioteca",
+    name: "Ejercicio 1 en Clase_AEREOLINEA",
 
     shortDescription:
-      "Sistema E/R para gestión bibliotecaria.",
+      "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación (MER) para representar la operación básica de una aerolínea y fortalecer el análisis de entidades, relaciones y cardinalidades.",
 
-    fullDescription:
-      "Diseño completo orientado a préstamos, socios y control de libros dañados.",
+    topic:
+      "Modelo Entidad-Relación (MER)",
+
+    exerciseStatement:
+      "Una aerolínea necesita controlar la información relacionada con sus aviones, pilotos, tripulación y vuelos. Cada avión pertenece a una base específica y puede ser asignado a múltiples vuelos. Los pilotos y la tripulación también pertenecen a una base operativa. Se requiere representar las relaciones entre vuelos, personal y aeronaves mediante un Modelo Entidad-Relación.",
+
+    objective:
+      "Aplicar los conceptos fundamentales del modelado conceptual mediante el desarrollo de un MER capaz de representar la gestión de vuelos, aviones, pilotos, tripulación y bases operativas.",
+
+    learned:
+      `• Identificación de entidades principales y atributos.\n
+• Uso de llaves primarias para representar entidades únicas.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Manejo de atributos compuestos y multivalorados.\n
+• Organización correcta de procesos operativos dentro de entidades independientes para evitar redundancia.\n
+• Interpretación de reglas de negocio a partir de un caso real.`,
 
     process:
-      "Análisis de requerimientos, identificación de entidades, relaciones y normalización.",
+      `1. Se analizó el problema planteado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para cada entidad.\n
+3. Se establecieron las relaciones entre aviones, vuelos, pilotos, tripulación y bases.\n
+4. Se determinaron las cardinalidades según las reglas del negocio.\n
+5. Finalmente, el modelo fue digitalizado y organizado utilizando draw.io.`,
 
-    skills: [
-      "Modelo E/R",
-      "Normalización",
-      "Bases de Datos",
-    ],
+    tools:
+      `• draw.io\n`,
+
+    result:
+      "Se obtuvo un modelo MER organizado y coherente que representa adecuadamente la operación logística de una aerolínea, permitiendo visualizar claramente las relaciones entre recursos físicos, personal y vuelos.",
+
+    reflection:
+      "Este ejercicio permitió fortalecer la comprensión de las cardinalidades y la importancia de separar correctamente las entidades operativas para evitar redundancia en el diseño conceptual.",
 
     links: [
       {
-        name: "GitHub",
-        url: "#",
+        label: "Diagrama MER",
+        url: "https://drive.google.com/file/d/1DgBU0lWG01YNXXNIAARiruJyB5dDWwut/view?usp=sharing",
       },
     ],
 
-    documents: [
-      {
-        name: "Documento PDF",
-        url: "#",
-      },
-    ],
-
-    image: "/images/modelobiblioteca.png",
+    image: "/Portfolio_BD1_2026-1/images/modone/aereolinea.png",
   },
-
+  //BIBLIOTECA
   {
-    name: "Modelo Aerolínea",
+  name: "Ejercicio 2 en Clase_BIBLIOTECA",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación (MER) para representar el funcionamiento de una biblioteca y fortalecer el análisis de entidades, préstamos y relaciones de autoría.",
+
+  topic:
+    "Modelo Entidad-Relación (MER)",
+
+  exerciseStatement:
+    "Una biblioteca necesita gestionar la información de sus socios, libros y autores. Cada socio puede solicitar préstamos de libros y cada libro puede estar asociado a uno o varios autores. Además, se requiere controlar el estado físico de los libros y almacenar información relacionada con las fechas de préstamo y devolución.",
+
+  objective:
+    "Aplicar los conceptos fundamentales del Modelo Entidad-Relación mediante la construcción de un sistema capaz de representar el control de libros, socios, autores y préstamos dentro de una biblioteca.",
+
+  learned:
+    `• Identificación de entidades principales y atributos.\n
+• Uso de atributos compuestos y multivalorados.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Comprensión de la relación de préstamo como parte central del sistema.\n
+• Organización de información temporal mediante atributos en relaciones.\n
+• Interpretación de reglas de negocio relacionadas con inventario y préstamos.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para socios, libros y autores.\n
+3. Se establecieron las relaciones entre libros, autores y socios.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la relación de préstamo incluyendo la información de fechas.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER organizado y funcional que representa correctamente la administración de préstamos, libros y usuarios dentro de una biblioteca, facilitando la visualización de relaciones y reglas de negocio.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor la importancia de separar entidades independientes y manejar correctamente las relaciones Muchos a Muchos para evitar redundancia y mejorar la organización del modelo.",
+
+  links: [
+    {
+      label: "Diagrama MER",
+      url: "https://drive.google.com/file/d/1qYQh-jPekDigvccEAYjN1_CCn9q4_n6L/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/biblioteca.png",
+},
+//PAQUETERIA
+{
+  name: "Taller 1 MER-RE Ejercicio 1 PAQUETERIA",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el funcionamiento logístico de una empresa de transporte y distribución de paquetes.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una empresa de transporte necesita gestionar la información de conductores, camiones, paquetes y ciudades de destino. Un conductor puede manejar diferentes camiones en distintas fechas y cada paquete debe ser entregado a una ciudad específica. Además, se requiere controlar qué conductor distribuye cada paquete dentro del sistema.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos logísticos relacionados con transporte, distribución de mercancía y asignación de recursos.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema logístico.\n
+• Aplicación de relaciones Muchos a Muchos y Uno a Muchos.\n
+• Interpretación de reglas de negocio relacionadas con transporte y distribución.\n
+• Comprensión del uso de relaciones intermedias para representar historial de operaciones.\n
+• Organización de información geográfica mediante entidades independientes.\n
+• Fortalecimiento del análisis de cardinalidades y dependencias.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para conductores, camiones, paquetes y ciudades.\n
+3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la relación entre conductores y camiones considerando el historial de uso.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER-RE estructurado y coherente que representa correctamente la operación logística de una empresa de transporte, permitiendo visualizar las relaciones entre conductores, vehículos, paquetes y destinos.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor la importancia de las relaciones Muchos a Muchos y cómo representar procesos logísticos complejos sin generar redundancia dentro del modelo conceptual.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/1SQgruOeOrGVflT3cJJuJWXQJgI3xkKVd/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/paqueteria.png",
+},
+//BIENES RAICES
+{
+  name: "Taller 1 MER-RE Ejercicio 2 BIENES RAICES",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar la gestión de propiedades, clientes y agentes dentro de una empresa inmobiliaria.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una empresa de bienes raíces necesita gestionar la información de agentes, dueños, clientes, firmas y propiedades. Cada propiedad debe estar asociada a un dueño y puede ser administrada por una firma inmobiliaria. Además, los agentes deben gestionar clientes y propiedades disponibles según diferentes características y rangos de precio.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos inmobiliarios relacionados con propiedades, clientes, agentes y firmas comerciales.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema inmobiliario.\n
+• Uso de atributos compuestos y atributos derivados.\n
+• Aplicación de relaciones ternarias y relaciones de pertenencia.\n
+• Interpretación de reglas de negocio relacionadas con administración de propiedades.\n
+• Comprensión de dependencias entre clientes, agentes y propiedades.\n
+• Fortalecimiento del análisis de cardinalidades y organización del modelo conceptual.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para agentes, dueños, casas y firmas.\n
+3. Se establecieron las relaciones entre propiedades, clientes y agentes.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con características y administración de propiedades.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente la gestión inmobiliaria, permitiendo visualizar la relación entre propiedades, agentes, dueños y firmas comerciales.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de relaciones complejas dentro de un sistema empresarial y la importancia de estructurar correctamente la información para evitar redundancia y mejorar la organización del modelo.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/10wQNOVIzKaaIHCVCZrBF7xVNMJGnQnzF/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/bienesRaices.png",
+},
+//PROVEEDOR
+{
+  name: "Taller 1 MER-RE Ejercicio 3 PROVEEDOR",
+
+  shortDescription:
+    "Ejercicio enfocado en la reconstrucción de un Modelo Entidad-Relación Extendido (MER-RE) a partir de un esquema relacional relacionado con clientes, proveedores y pedidos.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "A partir de un conjunto de tablas relacionales suministradas, se requiere reconstruir el Modelo Entidad-Relación correspondiente para representar la interacción entre clientes, proveedores y elementos. El sistema debe permitir identificar qué proveedor vende determinados productos, qué clientes realizan pedidos y la cantidad solicitada en cada transacción.",
+
+  objective:
+    "Aplicar técnicas de ingeniería inversa para interpretar un esquema relacional y reconstruir un Modelo Entidad-Relación Extendido que represente correctamente las relaciones comerciales del sistema.",
+
+  learned:
+    `• Interpretación de esquemas relacionales para reconstruir modelos conceptuales.\n
+• Identificación de entidades, atributos y llaves primarias a partir de tablas.\n
+• Comprensión de relaciones complejas dentro de sistemas comerciales.\n
+• Uso de relaciones intermedias para representar pedidos y ventas.\n
+• Análisis de dependencias entre clientes, proveedores y productos.\n
+• Fortalecimiento de la lógica de modelado mediante ingeniería inversa.`,
+
+  process:
+    `1. Se analizaron las tablas proporcionadas para identificar entidades y atributos.\n
+2. Se determinaron las posibles llaves primarias y relaciones entre tablas.\n
+3. Se reconstruyeron las relaciones comerciales entre clientes, proveedores y elementos.\n
+4. Se establecieron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con precios y cantidades dentro de las relaciones.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER-RE coherente y estructurado que representa correctamente las relaciones comerciales y transaccionales entre clientes, proveedores y productos dentro del sistema.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor cómo interpretar estructuras relacionales ya existentes y convertirlas nuevamente en modelos conceptuales organizados y comprensibles.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/19hIvxS4Qh95XasWiD-iNGcLTMUJw2N2-/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/proveedor.png",
+},
+//PRESTAMOS BIBLIOTECA
+{
+  name: "Taller 1 MER-RE Ejercicio 4 PRESTAMOS BIBLIOTECA",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el sistema de préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una biblioteca necesita gestionar el préstamo de artículos como libros, CD y cintas a diferentes usuarios. El sistema debe controlar fechas de entrega, penalizaciones por retrasos y el patrocinio obligatorio para usuarios menores de edad. Además, se requiere registrar la información de los artículos y las relaciones entre préstamos y multas.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos relacionados con préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema de préstamos.\n
+• Uso de relaciones recursivas para representar patrocinadores.\n
+• Comprensión de agregaciones dentro del modelo conceptual.\n
+• Aplicación de atributos derivados y multivalorados.\n
+• Interpretación de reglas de negocio relacionadas con penalizaciones y control de usuarios.\n
+• Fortalecimiento del análisis de cardinalidades y dependencias.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para usuarios, artículos y penalizaciones.\n
+3. Se establecieron las relaciones entre préstamos, usuarios y artículos.\n
+4. Se organizó la relación recursiva de patrocinio para usuarios menores de edad.\n
+5. Se implementó la agregación relacionada con préstamos y penalizaciones.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente el flujo de préstamos, penalizaciones y control de usuarios dentro de una biblioteca.",
+
+  reflection:
+    "Este ejercicio permitió comprender mejor el uso de relaciones recursivas y agregaciones dentro de modelos conceptuales complejos, fortaleciendo la organización y representación de reglas de negocio.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/1Uh5CpTJPbA51WKbNoiZu8J4FmWjGZEFo/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/prestamosBiblioteca.png",
+},
+//SUPERMERCADO
+{
+  name: "Taller 1 MER-RE Ejercicio 5 SUPERMERCADO",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar el funcionamiento operativo y comercial de un supermercado.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Un supermercado necesita gestionar la información relacionada con productos, proveedores, empleados, clientes y ventas. Cada producto pertenece a una categoría específica y puede ser suministrado por diferentes proveedores. Además, el sistema debe registrar las compras realizadas por los clientes y controlar la participación de los empleados en las ventas.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos comerciales relacionados con inventario, ventas y gestión de clientes dentro de un supermercado.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un sistema comercial.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Comprensión de procesos de ventas e inventario.\n
+• Organización de dependencias entre productos, clientes y proveedores.\n
+• Interpretación de reglas de negocio relacionadas con abastecimiento y compras.\n
+• Fortalecimiento del análisis de cardinalidades y estructura del modelo conceptual.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para productos, clientes, proveedores y empleados.\n
+3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con ventas e inventario.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente las operaciones principales de un supermercado, permitiendo visualizar la relación entre productos, ventas, clientes y proveedores.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de procesos comerciales y la importancia de estructurar correctamente las relaciones entre inventario, ventas y clientes dentro de un modelo conceptual.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/1wG6MmO7ieeOSGC1VQvEcZc3UfkkIT76J/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/supermercado.png",
+},
+//UNIVERSIDAD
+{
+  name: "Taller MER-RE UNIVERSIDAD",
+
+  shortDescription:
+    "Ejercicio enfocado en el diseño de un Modelo Entidad-Relación Extendido (MER-RE) para representar la gestión académica y administrativa de una universidad.",
+
+  topic:
+    "Modelo Entidad-Relación Extendido (MER-RE)",
+
+  exerciseStatement:
+    "Una universidad necesita gestionar la información relacionada con estudiantes, docentes, materias, programas académicos y grupos. El sistema debe permitir registrar las materias cursadas por los estudiantes, los docentes encargados de dictarlas y la relación entre programas académicos y asignaturas ofrecidas durante cada periodo académico.",
+
+  objective:
+    "Aplicar los conceptos del Modelo Entidad-Relación Extendido mediante la representación de procesos académicos y administrativos dentro de una universidad.",
+
+  learned:
+    `• Identificación de entidades y relaciones dentro de un entorno académico.\n
+• Aplicación de relaciones 1:N y N:M.\n
+• Organización de procesos relacionados con matrícula y asignación académica.\n
+• Comprensión de dependencias entre estudiantes, docentes y materias.\n
+• Interpretación de reglas de negocio relacionadas con programas académicos y grupos.\n
+• Fortalecimiento del análisis de cardinalidades y estructura del modelo conceptual.`,
+
+  process:
+    `1. Se analizó el enunciado para identificar las entidades principales del sistema.\n
+2. Se definieron atributos y llaves primarias para estudiantes, docentes, materias y programas académicos.\n
+3. Se establecieron las relaciones entre las entidades según las reglas del negocio.\n
+4. Se determinaron las cardinalidades correspondientes para cada relación.\n
+5. Se organizó la información relacionada con asignación de materias y grupos.\n
+6. Finalmente, el modelo fue digitalizado utilizando draw.io.`,
+
+  tools:
+    `• draw.io\n`,
+
+  result:
+    "Se obtuvo un modelo MER-RE organizado y funcional que representa correctamente los procesos académicos y administrativos de una universidad, permitiendo visualizar la relación entre estudiantes, docentes, materias y programas académicos.",
+
+  reflection:
+    "Este ejercicio permitió fortalecer la comprensión de sistemas académicos complejos y la importancia de estructurar correctamente las relaciones entre entidades para representar adecuadamente los procesos universitarios.",
+
+  links: [
+    {
+      label: "Diagrama MER-RE",
+      url: "https://drive.google.com/file/d/13SUsb53VuIUu_GFYthiSEK6jRTe7lhfs/view?usp=sharing",
+    },
+  ],
+
+  image: "/Portfolio_BD1_2026-1/images/modone/universidad.png",
+},
+
+];
+const TALLER_ENTREGADO = [
+
+  // EJERCICIO 1
+  {
+    name: "Ejercicio 1 - Residuos Tóxicos",
 
     shortDescription:
-      "Modelo relacional para operaciones aéreas.",
+      "Diseño completo del modelo conceptual y lógico para la gestión de residuos tóxicos y peligrosos.",
 
-    fullDescription:
-      "Sistema orientado a vuelos, pilotos, tripulación y aviones.",
+    topic:
+      "MER • MER-E • Crow's Foot",
+
+    exerciseStatement:
+      `BLOQUE 1: LOS RESIDUOS TÓXICOS
+
+Se desea abordar la problemática ambiental de los residuos tóxicos y peligrosos cuya incorrecta gestión produce daños de gran importancia en el medio ambiente y en la salud del ser humano.
+
+La información a contemplar es la que corresponde desde que es producido el residuo por un centro o empresa productora hasta que éste se encuentra en lugar seguro.
+
+El sistema debe gestionar productores, residuos, empresas transportistas, traslados, envases, tipos de transporte y tratamientos finales.`,
+
+    objective:
+      "Diseñar un modelo conceptual y lógico capaz de representar correctamente el flujo completo de residuos tóxicos.",
+
+    learned:
+      `• Relaciones complejas N:M.\n
+• Uso de entidades débiles.\n
+• Modelado de transporte y logística.\n
+• Conversión de MER a Crow's Foot.\n
+• Aplicación de restricciones semánticas avanzadas.`,
 
     process:
-      "Análisis de entidades, cardinalidades y organización relacional.",
+      `1. Análisis del enunciado.\n
+2. Identificación de entidades y relaciones.\n
+3. Construcción del MER.\n
+4. Extensión a MER-E.\n
+5. Conversión a Crow's Foot.\n
+6. Documentación final.`,
 
-    skills: [
-      "Modelo Relacional",
-      "SQL",
-      "Bases de Datos",
-    ],
+    tools:
+      `• draw.io\n
+• DataModeler\n`,
 
-    links: [
+    result:
+      "Se obtuvo un modelo completo capaz de representar productores, residuos, transportes y tratamientos.",
+
+    reflection:
+      "Este ejercicio permitió fortalecer el modelado avanzado y el análisis semántico de reglas de negocio complejas.",
+
+    diagrams: [
       {
-        name: "GitHub",
-        url: "#",
+        label: "Modelo MER",
+        url: "https://drive.google.com/file/d/1wXZNOZCWI19iIEWY0chACq4DSqXGkzk_/view?usp=sharing"
       },
-    ],
-
-    documents: [
       {
-        name: "Documento PDF",
-        url: "#",
+        label: "Modelo MER-E",
+        url: "https://drive.google.com/file/d/1wXZNOZCWI19iIEWY0chACq4DSqXGkzk_/view?usp=sharing"
       },
+      {
+        label: "Modelo Crow's Foot zip",
+        url: "/Portfolio_BD1_2026-1/documents/tResiduos.zip"
+      }
     ],
 
-    image: "/images/modeloaereolinea.png",
+    image: "/Portfolio_BD1_2026-1/images/modone/tResiduos.png",
   },
+
+  // EJERCICIO 2
+  {
+    name: "Ejercicio 2 - Eat'n Go",
+
+    shortDescription:
+      "Sistema de modelado para franquicia internacional de comidas rápidas.",
+
+    topic:
+      "MER • MER-E • Crow's Foot",
+
+    exerciseStatement:
+      `BLOQUE 2: EAT'N GO
+
+Eat'n Go es una empresa internacional dedicada a pizzas, bocadillos y productos complementarios.
+
+El sistema debe controlar ingredientes, tamaños, pedidos, promociones, repartidores, scooters y clientes.`,
+
+    objective:
+      "Representar correctamente la operación comercial y logística de la franquicia.",
+
+    learned:
+      `• Modelado de ventas.\n
+• Manejo de promociones.\n
+• Relaciones ternarias.\n
+• Gestión de pedidos y repartos.\n
+• Conversión a Crow's Foot.`,
+
+    process:
+      `1. Identificación de entidades.\n
+2. Diseño del MER.\n
+3. Construcción del MER-E.\n
+4. Conversión al modelo Crow's Foot.\n
+5. Organización documental.`,
+
+    tools:
+      `• draw.io\n
+• DataModeler\n`,
+
+    result:
+      "Se obtuvo un sistema estructurado para representar ventas, ingredientes, pedidos y logística.",
+
+    reflection:
+      "El ejercicio permitió comprender sistemas comerciales complejos y reglas de negocio extensas.",
+
+    diagrams: [
+      {
+        label: "Modelo MER",
+        url: "https://drive.google.com/file/d/1JufN4nMns2J4DQhCCCUTnU1BfYI0SrUa/view?usp=sharing"
+      },
+      {
+        label: "Modelo MER-E",
+        url: "https://drive.google.com/file/d/1JufN4nMns2J4DQhCCCUTnU1BfYI0SrUa/view?usp=sharing"
+      },
+      {
+        label: "Modelo Crow's Foot zip",
+        url: "/Portfolio_BD1_2026-1/documents/tEatnGo.zip"
+      }
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/tEatnGo.png",
+  },
+
+  // EJERCICIO 3
+  {
+    name: "Ejercicio 3 - Company",
+
+    shortDescription:
+      "Sistema organizacional y administrativo de una compañía multinacional.",
+
+    topic:
+      "MER • MER-E • Crow's Foot",
+
+    exerciseStatement:
+      `BLOQUE 3: LA COMPAÑÍA (COMPANY)
+
+Sistema para gestionar empleados, departamentos, proyectos y dependientes.`,
+
+    objective:
+      "Diseñar un sistema organizacional completo basado en estructuras jerárquicas empresariales.",
+
+    learned:
+      `• Relaciones recursivas.\n
+• Entidades débiles.\n
+• Jerarquías organizacionales.\n
+• Gestión de proyectos.\n
+• Conversión a Crow's Foot.`,
+
+    process:
+      `1. Interpretación del caso.\n
+2. Diseño del MER.\n
+3. Extensión a MER-E.\n
+4. Conversión a Crow's Foot.\n
+5. Validación del modelo.`,
+
+    tools:
+      `• draw.io\n
+• DataModeler\n`,
+
+    result:
+      "Se logró representar correctamente la estructura organizacional y operativa de la empresa.",
+
+    reflection:
+      "El ejercicio fortaleció la comprensión de dependencias, jerarquías y entidades débiles.",
+
+    diagrams: [
+      {
+        label: "Modelo MER",
+        url: "https://drive.google.com/file/d/1rXd3Jt5RxFl00jTsUilPhmqpUUXxksh2/view?usp=sharing"
+      },
+      {
+        label: "Modelo MER-E",
+        url: "https://drive.google.com/file/d/1rXd3Jt5RxFl00jTsUilPhmqpUUXxksh2/view?usp=sharing"
+      },
+      {
+        label: "Modelo Crow's Foot zip",
+        url: "/Portfolio_BD1_2026-1/documents/tCompany.zip"
+      }
+    ],
+
+    image: "/Portfolio_BD1_2026-1/images/modone/tCompany.png",
+  },
+
 ];
 ---
 
-<Section id="modulos" title="Módulo 3" titleClassName="mb-24">
+<Section id="modulos" title="Módulo 1 - MER">
 
-  <div class="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
+  <!-- GRID -->
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
 
     {
-      MODTRES.map((modtres) => (
-        <>
+      MODUNO.map((moduno) => (
+        <article
+          class="cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:scale-[1.02]"
+          onclick={`openModal(${JSON.stringify(moduno)})`}
+        >
 
-          <!-- CARD -->
-          <article
-            class="group overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:-translate-y-2 hover:border-primary/40"
-          >
+          <!-- Imagen -->
+          <img
+            src={moduno.image}
+            alt={moduno.name}
+            class="w-full"
+          />
 
-            <!-- Imagen -->
-            <button
-              type="button"
-              class="w-full"
-              onClick={`document.getElementById('modal-${modtres.name}').showModal()`}
-            >
-              <div class="overflow-hidden">
-                <img
-                  src={modtres.image}
-                  alt={modtres.name}
-                  class="aspect-video w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
-            </button>
+          <!-- Contenido -->
+          <div class="space-y-4 p-6">
 
-            <!-- Info -->
-            <div class="space-y-4 p-6">
+            <h2 class="text-2xl font-bold text-white">
+              {moduno.name}
+            </h2>
 
-              <h3 class="text-2xl font-bold text-white">
-                {modtres.name}
-              </h3>
+            <p class="text-sm font-medium text-cyan-400">
+              {moduno.topic}
+            </p>
 
-              <p class="text-gray-300">
-                {modtres.shortDescription}
-              </p>
+            <p class="text-gray-300">
+              {moduno.shortDescription}
+            </p>
 
-              <button
-                class="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:scale-105"
-                onClick={`document.getElementById('modal-${modtres.name}').showModal()`}
-              >
-                Ver más
-              </button>
+          </div>
 
-            </div>
-          </article>
-
-          <!-- MODAL -->
-          <dialog
-            id={`modal-${modtres.name}`}
-            class="backdrop:bg-black/80 bg-transparent border-none w-full h-full max-w-none p-0"
-            onClick={`event.target === event.currentTarget && event.currentTarget.close()`}
-          >
-
-            <div class="flex min-h-full items-center justify-center p-6">
-
-              <!-- CONTENEDOR -->
-              <div class="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl border border-white/10 bg-gray-950 shadow-2xl">
-
-                <!-- BOTON CERRAR -->
-                <button
-                  type="button"
-                  class="absolute right-6 top-6 z-[999] flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-3xl font-bold text-white shadow-2xl transition hover:scale-110 hover:bg-red-500"
-                  onClick={`document.getElementById('modal-${modtres.name}').close()`}
-                >
-                  ×
-                </button>
-
-                <!-- Imagen -->
-                <img
-                  src={modtres.image}
-                  alt={modtres.name}
-                  class="h-[350px] w-full object-cover"
-                />
-
-                <!-- Contenido -->
-                <div class="space-y-8 p-8">
-
-                  <!-- Título -->
-                  <div>
-                    <h2 class="text-4xl font-bold text-white">
-                      {modtres.name}
-                    </h2>
-                  </div>
-
-                  <!-- Descripción -->
-                  <div>
-                    <h3 class="mb-2 text-xl font-semibold text-primary">
-                      Descripción
-                    </h3>
-
-                    <p class="leading-relaxed text-gray-300">
-                      {modtres.fullDescription}
-                    </p>
-                  </div>
-
-                  <!-- Proceso -->
-                  <div>
-                    <h3 class="mb-2 text-xl font-semibold text-primary">
-                      Proceso de trabajo
-                    </h3>
-
-                    <p class="leading-relaxed text-gray-300">
-                      {modtres.process}
-                    </p>
-                  </div>
-
-                  <!-- Skills -->
-                  <div>
-                    <h3 class="mb-4 text-xl font-semibold text-primary">
-                      Conocimientos aplicados
-                    </h3>
-
-                    <div class="flex flex-wrap gap-3">
-                      {
-                        modtres.skills.map((skill) => (
-                          <span class="rounded-full bg-primary/20 px-4 py-2 text-sm text-primary">
-                            {skill}
-                          </span>
-                        ))
-                      }
-                    </div>
-                  </div>
-
-                  <!-- Links -->
-                  <div class="flex flex-wrap gap-4">
-
-                    {
-                      modtres.links.map((link) => (
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          class="rounded-xl bg-white/10 px-5 py-3 text-white transition hover:bg-primary"
-                        >
-                          {link.name}
-                        </a>
-                      ))
-                    }
-
-                    {
-                      modtres.documents.map((doc) => (
-                        <a
-                          href={doc.url}
-                          target="_blank"
-                          class="rounded-xl border border-white/20 px-5 py-3 text-white transition hover:border-primary"
-                        >
-                          {doc.name}
-                        </a>
-                      ))
-                    }
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </dialog>
-
-        </>
+        </article>
       ))
     }
 
   </div>
 
 </Section>
+
+<!-- TALLER ENTREGADO -->
+<Section
+  id="taller-entregado"
+  title="Taller Entregado"
+>
+
+  <div class="mt-10 space-y-8">
+
+    {
+      TALLER_ENTREGADO.map((taller) => (
+
+        <article
+          class="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-gray-900/40 shadow-xl transition hover:scale-[1.01] md:flex-row"
+          onclick={`openModal(${JSON.stringify(taller)})`}
+        >
+
+          <!-- Imagen -->
+          <img
+            src={taller.image}
+            alt={taller.name}
+            class="h-full w-full object-cover md:w-[350px]"
+          />
+
+          <!-- Contenido -->
+          <div class="flex flex-1 flex-col justify-center p-8">
+
+            <h2 class="mb-3 text-3xl font-bold text-white">
+              {taller.name}
+            </h2>
+
+            <p class="mb-4 text-cyan-400">
+              {taller.topic}
+            </p>
+
+            <p class="text-gray-300">
+              {taller.shortDescription}
+            </p>
+
+          </div>
+
+        </article>
+
+      ))
+    }
+
+  </div>
+
+</Section>
+
+<!-- MODAL -->
+<div
+  id="modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4"
+  onclick="closeModal()"
+>
+
+  <div
+    class="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-gray-900 p-6 text-white shadow-2xl scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900"
+    onclick="event.stopPropagation()"
+  >
+
+    <!-- Imagen -->
+    <img
+      id="modal-img"
+      class="mb-6 w-full rounded-2xl"
+    />
+
+    <!-- Título -->
+    <h2
+      id="modal-title"
+      class="mb-2 text-3xl font-bold"
+    ></h2>
+
+    <!-- Descripción corta -->
+    <p
+      id="modal-short"
+      class="mb-6 text-gray-300"
+    ></p>
+
+    <!-- CONTENIDO -->
+    <div class="space-y-6">
+
+      <!-- Tema -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Tema trabajado
+        </h3>
+
+        <p
+          id="modal-topic"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- Enunciado -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Enunciado del ejercicio
+        </h3>
+
+        <p
+          id="modal-statement"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- Objetivo -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Objetivo
+        </h3>
+
+        <p
+          id="modal-objective"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- Aprendizaje -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Conceptos aprendidos
+        </h3>
+
+        <pre
+          id="modal-learned"
+          class="whitespace-pre-wrap font-sans text-gray-300"
+        ></pre>
+      </div>
+
+      <!-- Proceso -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Proceso realizado
+        </h3>
+
+        <pre
+          id="modal-process"
+          class="whitespace-pre-wrap font-sans text-gray-300"
+        ></pre>
+      </div>
+
+      <!-- Herramientas -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Herramientas utilizadas
+        </h3>
+
+        <pre
+          id="modal-tools"
+          class="whitespace-pre-wrap font-sans text-gray-300"
+        ></pre>
+      </div>
+
+      <!-- Resultado -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Resultado obtenido
+        </h3>
+
+        <p
+          id="modal-result"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- Reflexión -->
+      <div>
+        <h3 class="mb-2 text-lg font-semibold text-cyan-400">
+          Reflexión
+        </h3>
+
+        <p
+          id="modal-reflection"
+          class="text-gray-300"
+        ></p>
+      </div>
+
+      <!-- Links -->
+      <div
+        id="modal-links"
+        class="space-y-2"
+      ></div>
+
+    </div>
+
+    <!-- Botón -->
+    <button
+      class="mt-8 rounded-xl bg-white px-5 py-2 font-medium text-black transition hover:bg-gray-200"
+      onclick="closeModal()"
+    >
+      Cerrar
+    </button>
+
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script is:inline>
+
+  function openModal(item) {
+
+    // Título
+    document.getElementById("modal-title").innerText =
+      item.name || "";
+
+    // Imagen
+    document.getElementById("modal-img").src =
+      item.image || "";
+
+    // Descripción
+    document.getElementById("modal-short").innerText =
+      item.shortDescription || "";
+
+    // Tema
+    document.getElementById("modal-topic").innerText =
+      item.topic || "";
+
+    // Enunciado
+    document.getElementById("modal-statement").innerText =
+      item.exerciseStatement || "";
+
+    // Objetivo
+    document.getElementById("modal-objective").innerText =
+      item.objective || "";
+
+    // Aprendizaje
+    document.getElementById("modal-learned").innerText =
+      item.learned || "";
+
+    // Proceso
+    document.getElementById("modal-process").innerText =
+      item.process || "";
+
+    // Herramientas
+    document.getElementById("modal-tools").innerText =
+      item.tools || "";
+
+    // Resultado
+    document.getElementById("modal-result").innerText =
+      item.result || "";
+
+    // Reflexión
+    document.getElementById("modal-reflection").innerText =
+      item.reflection || "";
+
+// LINKS O DIAGRAMAS
+const linksContainer =
+  document.getElementById("modal-links");
+
+linksContainer.innerHTML = "";
+
+// Detecta si el objeto usa links o diagrams
+const resources =
+  item.links || item.diagrams || [];
+
+if (resources.length) {
+
+  linksContainer.innerHTML += `
+    <h3 class="text-lg font-semibold text-cyan-400">
+      Recursos y diagramas
+    </h3>
+  `;
+
+  resources.forEach(link => {
+
+    linksContainer.innerHTML += `
+      <a
+    href="${link.url}"
+    download
+    class="block text-blue-400 underline transition hover:text-blue-300"
+  >
+        ${link.label}
+      </a>
+    `;
+
+  });
+}
+
+    // MOSTRAR MODAL CENTRADO
+    const modal = document.getElementById("modal");
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeModal() {
+
+    // OCULTAR MODAL
+    const modal = document.getElementById("modal");
+
+    modal.classList.remove("flex");
+    modal.classList.add("hidden");
+  }
+
+</script>
