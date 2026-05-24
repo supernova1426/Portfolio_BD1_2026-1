@@ -88,21 +88,13 @@ const mejoras = [
                 </p>
 
                 <!-- Formulario -->
-                <form
-    action="https://formsubmit.co/gserratob@unbosque.edu.co"
+              <!-- Formulario -->
+<form
+    action="https://formspree.io/f/xwpqkzra"
     method="POST"
     class="space-y-5"
 >
-    <!-- Evita captcha -->
-    <input type="hidden" name="_captcha" value="false" />
-
-    <!-- Redirección después de enviar -->
-    <input
-        type="hidden"
-        name="_next"
-        value="https://supernova1426.github.io/Portfolio_BD1_2026-1/"
-    />
-
+    <!-- Nombre -->
     <div>
         <label class="block text-gray-300 mb-2">
             Nombre
@@ -113,22 +105,41 @@ const mejoras = [
             name="nombre"
             placeholder="Tu nombre"
             class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white outline-none focus:border-primary"
+            required
         />
     </div>
 
+    <!-- Correo -->
+    <div>
+        <label class="block text-gray-300 mb-2">
+            Correo
+        </label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="gserratob@unbosque.edu.co"
+            class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white outline-none focus:border-primary"
+            required
+        />
+    </div>
+
+    <!-- Mensaje -->
     <div>
         <label class="block text-gray-300 mb-2">
             Sugerencia
         </label>
 
         <textarea
-            name="mensaje"
+            name="message"
             rows="5"
             placeholder="Escribe aquí tu sugerencia..."
             class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white outline-none focus:border-primary resize-none"
+            required
         ></textarea>
     </div>
 
+    <!-- Botón -->
     <button
         type="submit"
         class="w-full bg-primary hover:bg-primary/80 transition-all duration-300 text-white font-semibold py-4 rounded-2xl flex items-center justify-center gap-3"
